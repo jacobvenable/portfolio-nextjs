@@ -28,4 +28,4 @@ Then you can run the site on a local server with:
 yarn dev
 ```
 
-For information on NextJS and its patterns, see the [NextJS docs](https://nextjs.org/docs/getting-started).
+For other commands, see [NextJS CLI API](https://nextjs.org/docs/api-reference/cli) and for more information on NextJS and its patterns, see the [NextJS docs](https://nextjs.org/docs/getting-started).
