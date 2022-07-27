@@ -53,9 +53,19 @@ const IndexPage = () => (
             {/* <FontAwesomeIcon icon={faBriefcase} className="heading__icon" />{" "} */}
             Work Experience
           </h3>
+          <h4 className="heading--6">Senior Software Engineer</h4>
+          <ul>
+            <li>July 2021 - present</li>
+            <li>Nutrien Ag Solutions</li>
+          </ul>
+          <h4 className="heading--6">Software Engineer</h4>
+          <ul>
+            <li>March 2019 - July 2021</li>
+            <li>Nutrien Ag Solutions</li>
+          </ul>
           <h4 className="heading--6">Senior Front-End Web Developer</h4>
           <ul>
-            <li>July 2016 - Present (Remote as of August 2017)</li>
+            <li>July 2016 - March 2019</li>
             <li>Purdue University Office of Marketing and Media</li>
           </ul>
           <h4 className="heading--6">Web Developer</h4>
