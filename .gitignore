@@ -3,3 +3,6 @@ node_modules
 
 # NextJS directories
 .next
+
+# OS files
+.DS_STORE
