@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import styles from "./about.module.scss";
+import styles from "./About.module.scss";
 
 const About = () => (
   <div className={styles.containerOuter}>
