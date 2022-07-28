@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-import "./about.module.scss";
+import styles from "./about.module.scss";
 
 const About = () => (
-  <div className="about">
-    <div className="about__intro">
+  <div className={styles.containerOuter}>
+    <div className={styles.containerInner}>
       <h1 className="sr-only">Jacob Venable</h1>
-      <p className="about__greeting">Hello,</p>
+      <p className="heading-2">Hello,</p>
       <p>
         I&apos;m Jacob, a front-end web developer. I&apos;ve been developing
         since high school, but found a love for the practicality and reach of
