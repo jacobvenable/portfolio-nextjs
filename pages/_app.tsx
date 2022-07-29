@@ -6,7 +6,11 @@ config.autoAddCss = false;
 
 import "../styles-global/index.scss";
 
+import Layout from "components/Layout";
+
 const App: FC<AppProps> = ({ Component, pageProps }) => (
-  <Component {...pageProps} />
+  <Layout>
+    <Component {...pageProps} />
+  </Layout>
 );
 export default App;
