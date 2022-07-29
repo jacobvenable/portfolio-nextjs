@@ -1,5 +1,6 @@
-# Dependency directories
+# Dependency files/directories
 node_modules
+yarn-error.log
 
 # NextJS directories
 .next
