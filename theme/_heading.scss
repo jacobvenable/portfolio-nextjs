@@ -8,24 +8,24 @@
 @mixin heading-1 {
   @include heading;
 
-  margin: convert-torem(50) 0 convert-torem(20);
+  margin: px-to-rem(50) 0 px-to-rem(20);
   padding: 0;
   font-family: $font-montserrat;
-  font-size: convert-torem(86);
-  line-height: convert-torem(96);
+  font-size: px-to-rem(86);
+  line-height: px-to-rem(96);
   font-weight: normal;
   color: $color-yellow-dark;
 
   @media #{$mq-large} {
-    margin: convert-torem(59) 0 convert-torem(23);
-    font-size: convert-torem(101);
-    line-height: convert-torem(112);
+    margin: px-to-rem(59) 0 px-to-rem(23);
+    font-size: px-to-rem(101);
+    line-height: px-to-rem(112);
   }
 
   @media #{$mq-mobile} {
-    margin: convert-toremmo(30) 0 convert-toremmo(35);
-    font-size: convert-toremmo(41);
-    line-height: convert-toremmo(46);
+    margin: px-to-remmo(30) 0 px-to-remmo(35);
+    font-size: px-to-remmo(41);
+    line-height: px-to-remmo(46);
     font-weight: 700;
   }
 }
@@ -33,115 +33,115 @@
 @mixin heading-2 {
   @include heading;
 
-  margin: convert-torem(30) 0 convert-torem(15);
+  margin: px-to-rem(30) 0 px-to-rem(15);
   padding: 0;
   font-family: $font-montserrat;
-  font-size: convert-torem(44);
-  line-height: convert-torem(50);
+  font-size: px-to-rem(44);
+  line-height: px-to-rem(50);
   font-weight: 700;
   color: $color-blue-light;
 
   @media #{$mq-large} {
-    font-size: convert-torem(52);
-    line-height: convert-torem(59);
+    font-size: px-to-rem(52);
+    line-height: px-to-rem(59);
   }
 
   @media #{$mq-mobile} {
-    font-size: convert-toremmo(34);
-    line-height: convert-toremmo(40);
+    font-size: px-to-remmo(34);
+    line-height: px-to-remmo(40);
   }
 }
 
 @mixin heading-3 {
   @include heading;
 
-  margin: convert-torem(25) 0 convert-torem(10);
-  padding: 0 0 convert-torem(5);
+  margin: px-to-rem(25) 0 px-to-rem(10);
+  padding: 0 0 px-to-rem(5);
   font-family: $font-montserrat;
-  font-size: convert-torem(28);
-  line-height: convert-torem(34);
+  font-size: px-to-rem(28);
+  line-height: px-to-rem(34);
   font-weight: 400;
   color: $color-white-off;
 
   @media #{$mq-large} {
-    font-size: convert-torem(32);
-    line-height: convert-torem(40);
+    font-size: px-to-rem(32);
+    line-height: px-to-rem(40);
   }
 
   @media #{$mq-mobile} {
-    font-size: convert-toremmo(20);
-    line-height: convert-toremmo(26);
-    margin: convert-torem(20) 0 convert-torem(8);
+    font-size: px-to-remmo(20);
+    line-height: px-to-remmo(26);
+    margin: px-to-rem(20) 0 px-to-rem(8);
   }
 }
 
 @mixin heading-4 {
   @include heading;
 
-  margin: convert-torem(22) 0 convert-torem(10);
+  margin: px-to-rem(22) 0 px-to-rem(10);
   padding: 0;
   font-family: $font-montserrat;
-  font-size: convert-torem(27);
-  line-height: convert-torem(31);
+  font-size: px-to-rem(27);
+  line-height: px-to-rem(31);
   font-weight: 700;
   color: $color-yellow-light;
 
   @media #{$mq-large} {
-    font-size: convert-torem(27);
-    line-height: convert-torem(31);
+    font-size: px-to-rem(27);
+    line-height: px-to-rem(31);
   }
 
   @media #{$mq-mobile} {
-    font-size: convert-toremmo(19);
-    line-height: convert-toremmo(22);
-    margin: convert-torem(20) 0 convert-torem(8);
+    font-size: px-to-remmo(19);
+    line-height: px-to-remmo(22);
+    margin: px-to-rem(20) 0 px-to-rem(8);
   }
 }
 
 @mixin heading-5 {
   @include heading;
 
-  margin: convert-torem(20) 0 convert-torem(8);
+  margin: px-to-rem(20) 0 px-to-rem(8);
   padding: 0;
   font-family: $font-opensans;
-  font-size: convert-torem(22);
-  line-height: convert-torem(24);
+  font-size: px-to-rem(22);
+  line-height: px-to-rem(24);
   font-weight: 400;
   color: $color-yellow-light;
   text-transform: uppercase;
 
   @media #{$mq-large} {
-    font-size: convert-torem(22);
-    line-height: convert-torem(24);
+    font-size: px-to-rem(22);
+    line-height: px-to-rem(24);
   }
 
   @media #{$mq-mobile} {
-    font-size: convert-toremmo(17);
-    line-height: convert-toremmo(20);
-    margin: convert-torem(20) 0 convert-torem(8);
+    font-size: px-to-remmo(17);
+    line-height: px-to-remmo(20);
+    margin: px-to-rem(20) 0 px-to-rem(8);
   }
 }
 
 @mixin heading-6 {
   @include heading;
 
-  margin: convert-torem(20) 0 convert-torem(8);
+  margin: px-to-rem(20) 0 px-to-rem(8);
   padding: 0;
   font-family: $font-opensans;
-  font-size: convert-torem(17);
-  line-height: convert-torem(20);
+  font-size: px-to-rem(17);
+  line-height: px-to-rem(20);
   font-weight: 400;
   color: $color-yellow-light;
   text-transform: uppercase;
 
   @media #{$mq-large} {
-    font-size: convert-torem(17);
-    line-height: convert-torem(20);
+    font-size: px-to-rem(17);
+    line-height: px-to-rem(20);
   }
 
   @media #{$mq-mobile} {
-    font-size: convert-toremmo(14);
-    line-height: convert-toremmo(17);
-    margin: convert-torem(20) 0 convert-torem(8);
+    font-size: px-to-remmo(14);
+    line-height: px-to-remmo(17);
+    margin: px-to-rem(20) 0 px-to-rem(8);
   }
 }

@@ -2,10 +2,10 @@
   @return $i / $font-size-px * 1em;
 }
 
-@function convert-torem($i) {
+@function px-to-rem($i) {
   @return $i / $font-size-px * 1rem;
 }
 
-@function convert-toremmo($i) {
+@function px-to-remmo($i) {
   @return $i / $font-size-px-mo * 1rem;
 }

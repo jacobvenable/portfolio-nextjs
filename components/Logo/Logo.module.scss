@@ -10,7 +10,7 @@
   flex: 0 0 auto;
   transition: max-width 0.1s ease-out;
   position: relative;
-  width: convert-torem(60);
+  width: px-to-rem(60);
   border: none;
 
   &:link,

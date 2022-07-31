@@ -1,16 +1,16 @@
 @mixin blockquote {
   position: relative;
   display: block;
-  margin: 0 0 convert-torem(26) 0;
-  border-left: solid convert-torem(5) $color-yellow-light;
-  padding: 0 0 0 convert-torem(10);
+  margin: 0 0 px-to-rem(26) 0;
+  border-left: solid px-to-rem(5) $color-yellow-light;
+  padding: 0 0 0 px-to-rem(10);
   font-size: 1em;
   line-height: 1.72em;
   color: $color-yellow-light;
 
   @media #{$mq-large} {
-    margin: 0 0 convert-torem(30) 0;
-    padding: 0 0 0 convert-torem(12);
+    margin: 0 0 px-to-rem(30) 0;
+    padding: 0 0 0 px-to-rem(12);
   }
 }
 

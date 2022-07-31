@@ -1,20 +1,20 @@
 @mixin list-base {
   display: block;
-  margin: 0 0 convert-torem(26) 0;
+  margin: 0 0 px-to-rem(26) 0;
   list-style-type: none;
 
   @media #{$mq-large} {
-    margin: 0 0 convert-torem(30) 0;
-    padding: 0 0 0 convert-torem(47);
+    margin: 0 0 px-to-rem(30) 0;
+    padding: 0 0 0 px-to-rem(47);
   }
 }
 
 @mixin list-unordered {
-  padding: 0 0 0 convert-torem(40);
+  padding: 0 0 0 px-to-rem(40);
 }
 
 @mixin list-ordered {
-  padding: 0 0 0 convert-torem(40);
+  padding: 0 0 0 px-to-rem(40);
   counter-reset: section;
 }
 

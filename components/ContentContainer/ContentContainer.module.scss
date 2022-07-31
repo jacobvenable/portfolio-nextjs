@@ -3,18 +3,18 @@
 .contentContainer {
   width: $container-mo;
   margin: 0 auto;
-  padding: 0 convert-torem(20);
+  padding: 0 px-to-rem(20);
   max-width: $container-mo;
 
   @media #{$mq-tablet} {
-    max-width: convert-torem($container-sm);
+    max-width: px-to-rem($container-sm);
   }
 
   @media #{$mq-medium} {
-    max-width: convert-torem($container-md);
+    max-width: px-to-rem($container-md);
   }
 
   @media #{$mq-large} {
-    max-width: convert-torem($container-lg);
+    max-width: px-to-rem($container-lg);
   }
 }

@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding-bottom: convert-toremmo(60);
+  padding-bottom: px-to-remmo(60);
 
   @media #{$mq-tablet-min} {
     padding-bottom: 0;

@@ -10,7 +10,7 @@ dl {
 
 @mixin description-term {
   display: block;
-  margin: convert-torem(15) 0 0 0;
+  margin: px-to-rem(15) 0 0 0;
   text-transform: uppercase;
   font-weight: 300;
   line-height: 1.2em;
@@ -27,13 +27,13 @@ dt {
 
 @mixin description-definition {
   display: block;
-  margin: 0 0 0 convert-torem(30);
+  margin: 0 0 0 px-to-rem(30);
   padding: 0;
   font-size: 0.95em;
   font-style: italic;
 
   @media #{$mq-large} {
-    margin: 0 0 0 convert-torem(35);
+    margin: 0 0 0 px-to-rem(35);
   }
 }
 

@@ -9,15 +9,15 @@
   overflow: hidden;
 
   @media #{$mq-tablet} {
-    padding: convert-torem(20) 0;
+    padding: px-to-rem(20) 0;
   }
 
   @media #{$mq-medium} {
-    padding: convert-torem(45) 0;
+    padding: px-to-rem(45) 0;
   }
 
   @media #{$mq-large} {
-    padding: convert-torem(45) 0;
+    padding: px-to-rem(45) 0;
   }
 
   // psuedo element used to as half "V"
@@ -33,7 +33,7 @@
       position: absolute;
       bottom: 100%;
       width: 200%;
-      height: convert-torem(50);
+      height: px-to-rem(50);
       border-top: solid 3px $color-yellow-light;
       border-bottom: solid 3px $color-yellow-light;
       transform: rotate(68deg);
@@ -53,7 +53,7 @@
 .containerInner {
   flex: 1 1 100%;
   margin: 0;
-  font-size: convert-torem(22);
+  font-size: px-to-rem(22);
   line-height: 1.7;
 
   &::before {
@@ -89,7 +89,7 @@
 }
 
 .button {
-  margin: 0 0 convert-torem(20);
+  margin: 0 0 px-to-rem(20);
 
   @media #{$mq-tablet-min} {
     margin: 0;

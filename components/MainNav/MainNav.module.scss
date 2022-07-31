@@ -15,18 +15,18 @@
   background: none;
   text-transform: uppercase;
   font-family: $font-montserrat;
-  font-size: convert-torem(20);
+  font-size: px-to-rem(20);
   font-weight: 300;
   line-height: 1em;
 
   &.open {
-    max-height: convert-toremmo(100);
+    max-height: px-to-remmo(100);
   }
 
   @media #{$mq-tablet-min} {
     position: relative;
     float: left;
-    margin: 0 0 0 convert-torem(7);
+    margin: 0 0 0 px-to-rem(7);
     max-height: none;
   }
 }
@@ -47,9 +47,9 @@
     justify-content: center;
     align-items: center;
     width: 12vw;
-    max-width: convert-toremmo(60);
+    max-width: px-to-remmo(60);
     height: 12vw;
-    max-height: convert-toremmo(60);
+    max-height: px-to-remmo(60);
     border: none;
     padding: 0;
     background-color: $color-yellow-light;
@@ -78,8 +78,8 @@
 .icon {
   display: block;
   transition: transform 0.2s ease-out;
-  margin-bottom: convert-toremmo(7);
-  font-size: convert-toremmo(30);
+  margin-bottom: px-to-remmo(7);
+  font-size: px-to-remmo(30);
   color: $color-yellow-light;
 
   @media #{$mq-tablet-min} {
@@ -91,9 +91,9 @@
   display: block;
   color: inherit;
   width: 8vw;
-  max-width: convert-toremmo(40);
+  max-width: px-to-remmo(40);
   height: 8vw;
-  max-height: convert-toremmo(40);
+  max-height: px-to-remmo(40);
 }
 
 .list {
@@ -120,7 +120,7 @@
 
   &,
   &:nth-of-type(2) {
-    padding: convert-torem(7) convert-torem(5);
+    padding: px-to-rem(7) px-to-rem(5);
   }
 
   &::before {
@@ -132,7 +132,7 @@
   }
 
   @media #{$mq-tablet-min} {
-    padding: 0 0 0 convert-torem(14);
+    padding: 0 0 0 px-to-rem(14);
 
     &::before {
       content: "/";
@@ -141,8 +141,8 @@
       left: 0;
       display: inline-block;
       background: none;
-      padding: convert-torem(5) 0 0;
-      font-size: convert-torem(28);
+      padding: px-to-rem(5) 0 0;
+      font-size: px-to-rem(28);
     }
 
     &:nth-of-type(2) {
@@ -164,8 +164,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: convert-toremmo(10) convert-torem(5);
-  font-size: convert-toremmo(16);
+  padding: px-to-remmo(10) px-to-rem(5);
+  font-size: px-to-remmo(16);
 
   &::before,
   &::after {
@@ -185,7 +185,7 @@
     text-decoration: none;
 
     .icon {
-      transform: translate(0, convert-torem(-5));
+      transform: translate(0, px-to-rem(-5));
     }
   }
 
@@ -195,7 +195,7 @@
 
   @media #{$mq-tablet-min} {
     display: inline-block;
-    padding: convert-torem(5) convert-torem(18);
+    padding: px-to-rem(5) px-to-rem(18);
     position: relative;
     font-size: 1em;
 
@@ -205,20 +205,20 @@
       position: absolute;
       top: 0.9em;
       display: block;
-      height: convert-torem(2);
+      height: px-to-rem(2);
       background-color: $color-yellow-light;
     }
 
     &:link,
     &:visited {
       &::before {
-        left: convert-torem(5);
+        left: px-to-rem(5);
         width: 0;
         transition: width 0.25s;
       }
 
       &::after {
-        right: convert-torem(5);
+        right: px-to-rem(5);
         width: 0;
         transition: width 0.25s;
       }
@@ -231,14 +231,14 @@
       text-decoration: none;
 
       &::before {
-        left: convert-torem(5);
-        width: convert-torem(8);
+        left: px-to-rem(5);
+        width: px-to-rem(8);
         transition: width 0.25s;
       }
 
       &::after {
-        right: convert-torem(5);
-        width: convert-torem(8);
+        right: px-to-rem(5);
+        width: px-to-rem(8);
         transition: width 0.25s;
       }
     }
@@ -252,13 +252,13 @@
       color: $color-yellow-light;
 
       &::before {
-        left: convert-torem(5);
-        width: convert-torem(8);
+        left: px-to-rem(5);
+        width: px-to-rem(8);
       }
 
       &::after {
-        right: convert-torem(5);
-        width: convert-torem(8);
+        right: px-to-rem(5);
+        width: px-to-rem(8);
       }
 
       &:link,
@@ -266,13 +266,13 @@
         color: $color-yellow-light;
 
         &::before {
-          left: convert-torem(5);
-          width: convert-torem(8);
+          left: px-to-rem(5);
+          width: px-to-rem(8);
         }
 
         &::after {
-          right: convert-torem(5);
-          width: convert-torem(8);
+          right: px-to-rem(5);
+          width: px-to-rem(8);
         }
       }
 
