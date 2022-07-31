@@ -1,4 +1,4 @@
-@function convert-toem($i) {
+@function px-to-em($i) {
   @return $i / $font-size-px * 1em;
 }
 
