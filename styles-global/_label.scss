@@ -1,11 +1,12 @@
-@mixin label{
-	display:block;
-	margin:0 0 convert-toRem(10);
-	font-family:$font-opensans;
-	font-size:convert-toRem(18);
-	font-weight:400;
-	color:$color-yellow-light;
+@mixin label {
+  display: block;
+  margin: 0 0 convert-torem(10);
+  font-family: $font-opensans;
+  font-size: convert-torem(18);
+  font-weight: 400;
+  color: $color-yellow-light;
 }
-label{
-	@include label;
+
+label {
+  @include label;
 }

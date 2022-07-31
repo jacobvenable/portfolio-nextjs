@@ -1,18 +1,21 @@
-@mixin quote{
-	display:inline;
-	color:$color-yellow-light;
-	font-size:1em;
-	line-height:1.6em;
-	font-style:italic;
-	&::before{
-		content:open-quote;
-		color:inherit;
-	}
-	&::after{
-		content:close-quote;
-		color:inherit;
-	}
+@mixin quote {
+  display: inline;
+  color: $color-yellow-light;
+  font-size: 1em;
+  line-height: 1.6em;
+  font-style: italic;
+
+  &::before {
+    content: open-quote;
+    color: inherit;
+  }
+
+  &::after {
+    content: close-quote;
+    color: inherit;
+  }
 }
-q{
-	@include quote;
+
+q {
+  @include quote;
 }

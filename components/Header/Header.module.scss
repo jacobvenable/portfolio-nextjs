@@ -1,81 +1,89 @@
-@import "../../theme/_index.scss";
+@import "../../theme/_index";
 
-.containerOuter{
-	position:sticky;
-	top:0;
-	z-index:10;
-	display:block;
-	overflow:hidden;
-	width:100%;
-	background:$color-background;
-	padding:convert-toRem(15) 0;
-	@media #{$mq-mobile}{
-		position:static;
-		padding:convert-toRemMo(15) 0;
+.containerOuter {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  background: $color-background;
+  padding: convert-torem(15) 0;
+
+  @media #{$mq-mobile} {
+    position: static;
+    padding: convert-toremmo(15) 0;
   }
 }
 
 .containerInner {
-  display:block;
-  display:flex;
-  flex-direction:row;
-  flex-wrap:nowrap;
-  justify-content:flex-start;
-  align-items:center;
+  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .linkLogo {
-  display:flex;
-  flex-direction:row;
-  justify-content:flex-start;
-  align-items:stretch;
-  flex:0 0 auto;
-  &:link,&:visited,&:hover,&:active{
-    text-decoration:none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex: 0 0 auto;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: none;
   }
 }
 
 .heading {
-  flex:1 0 auto;
-  transition:max-width 0.1s ease-out, padding-right 0.1s ease-out;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:flex-start;
-  max-width:100%;
-  margin:0;
-  padding:0 convert-toRem(22) 0 convert-toRem(15);
-  border-right:solid 2px $color-yellow-dark;
-  text-decoration:none;
-  white-space:nowrap;
-	@media #{$mq-mobile}{
-		border-right:none;
+  flex: 1 0 auto;
+  transition: max-width 0.1s ease-out, padding-right 0.1s ease-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 convert-torem(22) 0 convert-torem(15);
+  border-right: solid 2px $color-yellow-dark;
+  text-decoration: none;
+  white-space: nowrap;
+
+  @media #{$mq-mobile} {
+    border-right: none;
   }
 }
 
 .name {
-  flex:0 0 auto;
-  display:block;
-  font-family:$font-montserrat;
-  font-size:convert-toRem(22);
-  font-weight:400;
-  line-height:1.2em;
-  color:$color-yellow-dark;
-	@media #{$mq-mobile}{
-    font-size:convert-toRem(26);
+  flex: 0 0 auto;
+  display: block;
+  font-family: $font-montserrat;
+  font-size: convert-torem(22);
+  font-weight: 400;
+  line-height: 1.2em;
+  color: $color-yellow-dark;
+
+  @media #{$mq-mobile} {
+    font-size: convert-torem(26);
   }
 }
 
-.title{
-  flex:0 0 auto;
-  display:block;
-  font-family:$font-montserrat;
-  font-size:convert-toRem(14);
-  font-weight:300;
-  line-height:1.2em;
-  color:$color-white-off;
-	@media #{$mq-mobile}{
-		font-size:convert-toRem(18);
-	}
+.title {
+  flex: 0 0 auto;
+  display: block;
+  font-family: $font-montserrat;
+  font-size: convert-torem(14);
+  font-weight: 300;
+  line-height: 1.2em;
+  color: $color-white-off;
+
+  @media #{$mq-mobile} {
+    font-size: convert-torem(18);
+  }
 }

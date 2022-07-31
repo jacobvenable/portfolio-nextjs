@@ -1,35 +1,42 @@
-@mixin descriptionList{
-	display:block;
-	margin:0.25em 0;
-	padding:0;
+@mixin descriptionList {
+  display: block;
+  margin: 0.25em 0;
+  padding: 0;
 }
-dl{
-	@include descriptionList;
+
+dl {
+  @include descriptionList;
 }
-@mixin descriptionTerm{
-	display:block;
-	margin:convert-toRem(15) 0 0 0;
-	text-transform:uppercase;
-	font-weight:300;
-	line-height:1.2em;
-	color:$color-yellow-light;
-	&:first-child{
-		margin:0;
-	}
+
+@mixin descriptionTerm {
+  display: block;
+  margin: convert-torem(15) 0 0 0;
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 1.2em;
+  color: $color-yellow-light;
+
+  &:first-child {
+    margin: 0;
+  }
 }
-dt{
-	@include descriptionTerm;
+
+dt {
+  @include descriptionTerm;
 }
-@mixin descriptionDefinition{
-	display:block;
-	margin:0 0 0 convert-toRem(30);
-	padding:0;
-	font-size:0.95em;
-	font-style:italic;
-	@media #{$mq-large}{
-		margin:0 0 0 convert-toRem(35);
-	}
+
+@mixin descriptionDefinition {
+  display: block;
+  margin: 0 0 0 convert-torem(30);
+  padding: 0;
+  font-size: 0.95em;
+  font-style: italic;
+
+  @media #{$mq-large} {
+    margin: 0 0 0 convert-torem(35);
+  }
 }
-dd{
-	@include descriptionDefinition;
+
+dd {
+  @include descriptionDefinition;
 }

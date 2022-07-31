@@ -1,123 +1,147 @@
-@mixin heading{
-	display:flex;
-	flex-direction:row;
-	justify-content:flex-start;
-	align-items:center;
+@mixin heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
-@mixin heading-1{
-	@include heading;
-	margin:convert-toRem(50) 0 convert-toRem(20);
-	padding:0;
-	font-family:$font-montserrat;
-	font-size:convert-toRem(86);
-	line-height:convert-toRem(96);
-	font-weight:normal;
-	color:$color-yellow-dark;
-	@media #{$mq-large}{
-		margin:convert-toRem(59) 0 convert-toRem(23);
-		font-size:convert-toRem(101);
-		line-height:convert-toRem(112);
-	}
-	@media #{$mq-mobile}{
-		margin:convert-toRemMo(30) 0 convert-toRemMo(35);
-		font-size:convert-toRemMo(41);
-		line-height:convert-toRemMo(46);
-		font-weight:700;
-	}
+
+@mixin heading-1 {
+  @include heading;
+
+  margin: convert-torem(50) 0 convert-torem(20);
+  padding: 0;
+  font-family: $font-montserrat;
+  font-size: convert-torem(86);
+  line-height: convert-torem(96);
+  font-weight: normal;
+  color: $color-yellow-dark;
+
+  @media #{$mq-large} {
+    margin: convert-torem(59) 0 convert-torem(23);
+    font-size: convert-torem(101);
+    line-height: convert-torem(112);
+  }
+
+  @media #{$mq-mobile} {
+    margin: convert-toremmo(30) 0 convert-toremmo(35);
+    font-size: convert-toremmo(41);
+    line-height: convert-toremmo(46);
+    font-weight: 700;
+  }
 }
-@mixin heading-2{
-	@include heading;
-	margin:convert-toRem(30) 0 convert-toRem(15);
-	padding:0;
-	font-family:$font-montserrat;
-	font-size:convert-toRem(44);
-	line-height:convert-toRem(50);
-	font-weight:700;
-	color:$color-blue-light;
-	@media #{$mq-large}{
-		font-size:convert-toRem(52);
-		line-height:convert-toRem(59);
-	}
-	@media #{$mq-mobile}{
-		font-size:convert-toRemMo(34);
-		line-height:convert-toRemMo(40);
-	}
+
+@mixin heading-2 {
+  @include heading;
+
+  margin: convert-torem(30) 0 convert-torem(15);
+  padding: 0;
+  font-family: $font-montserrat;
+  font-size: convert-torem(44);
+  line-height: convert-torem(50);
+  font-weight: 700;
+  color: $color-blue-light;
+
+  @media #{$mq-large} {
+    font-size: convert-torem(52);
+    line-height: convert-torem(59);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: convert-toremmo(34);
+    line-height: convert-toremmo(40);
+  }
 }
-@mixin heading-3{
-	@include heading;
-	margin:convert-toRem(25) 0 convert-toRem(10);
-	padding:0 0 convert-toRem(5);
-	font-family:$font-montserrat;
-	font-size:convert-toRem(28);
-	line-height:convert-toRem(34);
-	font-weight:400;
-	color:$color-white-off;
-	@media #{$mq-large}{
-		font-size:convert-toRem(32);
-		line-height:convert-toRem(40);
-	}
-	@media #{$mq-mobile}{
-		font-size:convert-toRemMo(20);
-		line-height:convert-toRemMo(26);
-		margin:convert-toRem(20) 0 convert-toRem(8);
-	}
+
+@mixin heading-3 {
+  @include heading;
+
+  margin: convert-torem(25) 0 convert-torem(10);
+  padding: 0 0 convert-torem(5);
+  font-family: $font-montserrat;
+  font-size: convert-torem(28);
+  line-height: convert-torem(34);
+  font-weight: 400;
+  color: $color-white-off;
+
+  @media #{$mq-large} {
+    font-size: convert-torem(32);
+    line-height: convert-torem(40);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: convert-toremmo(20);
+    line-height: convert-toremmo(26);
+    margin: convert-torem(20) 0 convert-torem(8);
+  }
 }
-@mixin heading-4{
-	@include heading;
-	margin:convert-toRem(22) 0 convert-toRem(10);
-	padding:0;
-	font-family:$font-montserrat;
-	font-size:convert-toRem(27);
-	line-height:convert-toRem(31);
-	font-weight:700;
-	color:$color-yellow-light;
-	@media #{$mq-large}{
-		font-size:convert-toRem(27);
-		line-height:convert-toRem(31);
-	}
-	@media #{$mq-mobile}{
-		font-size:convert-toRemMo(19);
-		line-height:convert-toRemMo(22);
-		margin:convert-toRem(20) 0 convert-toRem(8);
-	}
+
+@mixin heading-4 {
+  @include heading;
+
+  margin: convert-torem(22) 0 convert-torem(10);
+  padding: 0;
+  font-family: $font-montserrat;
+  font-size: convert-torem(27);
+  line-height: convert-torem(31);
+  font-weight: 700;
+  color: $color-yellow-light;
+
+  @media #{$mq-large} {
+    font-size: convert-torem(27);
+    line-height: convert-torem(31);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: convert-toremmo(19);
+    line-height: convert-toremmo(22);
+    margin: convert-torem(20) 0 convert-torem(8);
+  }
 }
-@mixin heading-5{
-	@include heading;
-	margin:convert-toRem(20) 0 convert-toRem(8);
-	padding:0;
-	font-family:$font-opensans;
-	font-size:convert-toRem(22);
-	line-height:convert-toRem(24);
-	font-weight:400;
-	color:$color-yellow-light;
-	text-transform:uppercase;
-	@media #{$mq-large}{
-		font-size:convert-toRem(22);
-		line-height:convert-toRem(24);
-	}
-	@media #{$mq-mobile}{
-		font-size:convert-toRemMo(17);
-		line-height:convert-toRemMo(20);
-		margin:convert-toRem(20) 0 convert-toRem(8);
-	}
+
+@mixin heading-5 {
+  @include heading;
+
+  margin: convert-torem(20) 0 convert-torem(8);
+  padding: 0;
+  font-family: $font-opensans;
+  font-size: convert-torem(22);
+  line-height: convert-torem(24);
+  font-weight: 400;
+  color: $color-yellow-light;
+  text-transform: uppercase;
+
+  @media #{$mq-large} {
+    font-size: convert-torem(22);
+    line-height: convert-torem(24);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: convert-toremmo(17);
+    line-height: convert-toremmo(20);
+    margin: convert-torem(20) 0 convert-torem(8);
+  }
 }
-@mixin heading-6{
-	@include heading;
-	margin:convert-toRem(20) 0 convert-toRem(8);
-	padding:0;
-	font-family:$font-opensans;
-	font-size:convert-toRem(17);
-	line-height:convert-toRem(20);
-	font-weight:400;
-	color:$color-yellow-light;
-	text-transform:uppercase;
-	@media #{$mq-large}{
-		font-size:convert-toRem(17);
-		line-height:convert-toRem(20);
-	}
-	@media #{$mq-mobile}{
-		font-size:convert-toRemMo(14);
-		line-height:convert-toRemMo(17);
-		margin:convert-toRem(20) 0 convert-toRem(8);
-	}
+
+@mixin heading-6 {
+  @include heading;
+
+  margin: convert-torem(20) 0 convert-torem(8);
+  padding: 0;
+  font-family: $font-opensans;
+  font-size: convert-torem(17);
+  line-height: convert-torem(20);
+  font-weight: 400;
+  color: $color-yellow-light;
+  text-transform: uppercase;
+
+  @media #{$mq-large} {
+    font-size: convert-torem(17);
+    line-height: convert-torem(20);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: convert-toremmo(14);
+    line-height: convert-toremmo(17);
+    margin: convert-torem(20) 0 convert-torem(8);
+  }
 }

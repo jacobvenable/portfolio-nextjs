@@ -1,86 +1,98 @@
-@import "../../theme/_index.scss";
+@import "../../theme/_index";
 
-.containerOuter{
-	position:relative;
-	display:flex;
-	flex-direction:row;
-	justify-content:flex-start;
-	align-items:center;
-	overflow:hidden;
-	@media #{$mq-tablet}{
-		padding:convert-toRem(20) 0;
-	}
-	@media #{$mq-medium}{
-		padding:convert-toRem(45) 0;
-	}
-	@media #{$mq-large}{
-		padding:convert-toRem(45) 0;
-	}
+.containerOuter {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+
+  @media #{$mq-tablet} {
+    padding: convert-torem(20) 0;
+  }
+
+  @media #{$mq-medium} {
+    padding: convert-torem(45) 0;
+  }
+
+  @media #{$mq-large} {
+    padding: convert-torem(45) 0;
+  }
 
   // psuedo element used to as half "V"
-	&::after{
-		display:none;
-	}
-	@media #{$mq-tablet-min}{
-    &::after{
-      content:'';
+  &::after {
+    display: none;
+  }
+
+  @media #{$mq-tablet-min} {
+    &::after {
+      content: "";
       display: block;
-      left:67%;
-      position:absolute;
-      bottom:100%;
-      width:200%;
-      height:convert-toRem(50);
-      border-top:solid 3px $color-yellow-light;
-      border-bottom:solid 3px $color-yellow-light;
-      transform:rotate(68deg);
-      transform-origin:bottom left;
-      transition:transform 0.2s ease-in;
+      left: 67%;
+      position: absolute;
+      bottom: 100%;
+      width: 200%;
+      height: convert-torem(50);
+      border-top: solid 3px $color-yellow-light;
+      border-bottom: solid 3px $color-yellow-light;
+      transform: rotate(68deg);
+      transform-origin: bottom left;
+      transition: transform 0.2s ease-in;
     }
   }
-	@media #{$mq-medium-min}{
-    &::after{
-      left:50%;
-      transform:rotate(55deg);
+
+  @media #{$mq-medium-min} {
+    &::after {
+      left: 50%;
+      transform: rotate(55deg);
     }
   }
 }
 
 .containerInner {
-  flex:1 1 100%;
-  margin:0;
-  font-size:convert-toRem(22);
-  line-height:1.7;
-  &::before{
-    content:'';
-    display:none;
-    float:right;
-    width:50%;
-    padding-bottom:32%;
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: convert-torem(22);
+  line-height: 1.7;
+
+  &::before {
+    content: "";
+    display: none;
+    float: right;
+    width: 50%;
+    padding-bottom: 32%;
   }
-	@media #{$mq-tablet}{
-    flex-grow:0;
-    flex-basis:70%;
-	}
-	@media #{$mq-medium-min}{
-    &::before{
-      display:block;
-      padding-bottom:37%;
-      shape-outside:polygon(5% 0,57% 100%,100% 100%,100% 0);
+
+  @media #{$mq-tablet} {
+    flex-grow: 0;
+    flex-basis: 70%;
+  }
+
+  @media #{$mq-medium-min} {
+    &::before {
+      display: block;
+      padding-bottom: 37%;
+      shape-outside: polygon(5% 0, 57% 100%, 100% 100%, 100% 0);
     }
   }
-	@media #{$mq-large}{
-    &::before{
-      padding-bottom:32%;
+
+  @media #{$mq-large} {
+    &::before {
+      padding-bottom: 32%;
     }
-	}
-  :global{
-    .heading-2{
-			margin-top:0;
+  }
+
+  :global {
+    .heading-2 {
+      margin-top: 0;
     }
-    .button{
-      margin:0 0 convert-toRem(20);
-      @media #{$mq-tablet-min}{
-        margin:0;
+
+    .button {
+      margin: 0 0 convert-torem(20);
+
+      @media #{$mq-tablet-min} {
+        margin: 0;
       }
     }
   }

@@ -1,21 +1,21 @@
-@import "../../theme/_index.scss";
+@import "../../theme/_index";
 
-.contentContainer{
-	max-width:convert-toRem(751);
-	width:$container-mo;
-	margin:0 auto;
-	padding:0 convert-toRem(20);
-	max-width:$container-mo;
-	@media #{$mq-tablet}
-	{
-		max-width:convert-toRem($container-sm);
-	}
-	@media #{$mq-medium}
-	{
-		max-width:convert-toRem($container-md);
-	}
-	@media #{$mq-large}
-	{
-		max-width:convert-toRem($container-lg);
-	}
+.contentContainer {
+  max-width: convert-torem(751);
+  width: $container-mo;
+  margin: 0 auto;
+  padding: 0 convert-torem(20);
+  max-width: $container-mo;
+
+  @media #{$mq-tablet} {
+    max-width: convert-torem($container-sm);
+  }
+
+  @media #{$mq-medium} {
+    max-width: convert-torem($container-md);
+  }
+
+  @media #{$mq-large} {
+    max-width: convert-torem($container-lg);
+  }
 }
