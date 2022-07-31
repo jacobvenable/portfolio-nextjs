@@ -1,4 +1,5 @@
 body{
+	margin: 0;
 	padding-bottom:convert-toRemMo(60);
 	@media #{$mq-tablet-min}{
 		padding-bottom:0;
