@@ -1,8 +1,11 @@
-@function convert-toEm($i) {
-  @return $i/$font-size-px*1em; }
+@function convert-toem($i) {
+  @return $i / $font-size-px * 1em;
+}
 
-@function convert-toRem($i) {
-  @return $i/$font-size-px*1rem; }
+@function convert-torem($i) {
+  @return $i / $font-size-px * 1rem;
+}
 
-@function convert-toRemMo($i) {
-  @return $i/$font-size-px-mo*1rem; }
+@function convert-toremmo($i) {
+  @return $i / $font-size-px-mo * 1rem;
+}

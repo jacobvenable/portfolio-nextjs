@@ -18,7 +18,7 @@
   counter-reset: section;
 }
 
-@mixin listItem-base {
+@mixin list-item-base {
   position: relative;
   padding: 0;
   font-size: 1em;
@@ -30,8 +30,8 @@
   }
 }
 
-@mixin listItem-unordered {
-  @include listItem-base;
+@mixin list-item-unordered {
+  @include list-item-base;
 
   margin: 0.6em 0;
 
@@ -46,8 +46,8 @@
   }
 }
 
-@mixin listItem-ordered {
-  @include listItem-base;
+@mixin list-item-ordered {
+  @include list-item-base;
 
   margin: 0.25em 0;
   counter-increment: item;
@@ -67,7 +67,7 @@ ul {
   @include list-unordered;
 
   li {
-    @include listItem-unordered;
+    @include list-item-unordered;
   }
 }
 
@@ -76,6 +76,6 @@ ol {
   @include list-unordered;
 
   li {
-    @include listItem-ordered;
+    @include list-item-ordered;
   }
 }

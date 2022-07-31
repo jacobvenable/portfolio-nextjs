@@ -1,4 +1,4 @@
-@import "../../theme/_index";
+@import "../../theme";
 
 .containerOuter {
   position: sticky;
@@ -19,8 +19,7 @@
 .containerInner {
   display: block;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
 }

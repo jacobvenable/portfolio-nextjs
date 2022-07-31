@@ -1,14 +1,14 @@
-@mixin descriptionList {
+@mixin description-list {
   display: block;
   margin: 0.25em 0;
   padding: 0;
 }
 
 dl {
-  @include descriptionList;
+  @include description-list;
 }
 
-@mixin descriptionTerm {
+@mixin description-term {
   display: block;
   margin: convert-torem(15) 0 0 0;
   text-transform: uppercase;
@@ -22,10 +22,10 @@ dl {
 }
 
 dt {
-  @include descriptionTerm;
+  @include description-term;
 }
 
-@mixin descriptionDefinition {
+@mixin description-definition {
   display: block;
   margin: 0 0 0 convert-torem(30);
   padding: 0;
@@ -38,5 +38,5 @@ dt {
 }
 
 dd {
-  @include descriptionDefinition;
+  @include description-definition;
 }

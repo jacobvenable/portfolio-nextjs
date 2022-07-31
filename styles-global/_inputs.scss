@@ -37,5 +37,5 @@ textarea {
   @include textarea;
 
   min-width: 100%;
-  min-height: convert-torem(($font-size-px*1.2) *5);
+  min-height: convert-torem(($font-size-px * 1.2) * 5);
 }

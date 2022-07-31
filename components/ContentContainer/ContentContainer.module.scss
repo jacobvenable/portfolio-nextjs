@@ -1,7 +1,6 @@
-@import "../../theme/_index";
+@import "../../theme";
 
 .contentContainer {
-  max-width: convert-torem(751);
   width: $container-mo;
   margin: 0 auto;
   padding: 0 convert-torem(20);

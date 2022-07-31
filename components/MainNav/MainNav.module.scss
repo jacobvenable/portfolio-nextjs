@@ -1,4 +1,4 @@
-@import "../../theme/_index";
+@import "../../theme";
 
 .container {
   color: $color-white-off;
@@ -103,8 +103,7 @@
 
   @media #{$mq-mobile} {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: stretch;
     width: 100%;
@@ -114,9 +113,7 @@
 }
 
 .item {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
+  flex: 1 0 auto;
   position: relative;
   display: inline-block;
   margin: 0;
@@ -137,15 +134,6 @@
   @media #{$mq-tablet-min} {
     padding: 0 0 0 convert-torem(14);
 
-    &:nth-of-type(2) {
-      padding: 0;
-
-      &::before {
-        display: none;
-        content: "";
-      }
-    }
-
     &::before {
       content: "/";
       position: absolute;
@@ -155,6 +143,15 @@
       background: none;
       padding: convert-torem(5) 0 0;
       font-size: convert-torem(28);
+    }
+
+    &:nth-of-type(2) {
+      padding: 0;
+
+      &::before {
+        display: none;
+        content: "";
+      }
     }
 
     &.homeItem {

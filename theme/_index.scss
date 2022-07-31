@@ -1,9 +1,9 @@
 // variables
-@import "_color";
-@import "_container";
-@import "_font";
-@import "_mediaquery";
-@import "_utils";
+@import "./color";
+@import "./container";
+@import "./font";
+@import "./mediaquery";
+@import "./utils";
 
 // mixins for elements
-@import "_heading";
+@import "./heading";
