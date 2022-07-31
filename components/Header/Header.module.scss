@@ -12,7 +12,7 @@
 
   @media #{$mq-mobile} {
     position: static;
-    padding: px-to-remmo(15) 0;
+    padding: px-to-rem-mobile(15) 0;
   }
 }
 

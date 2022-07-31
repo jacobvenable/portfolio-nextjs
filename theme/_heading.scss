@@ -23,9 +23,9 @@
   }
 
   @media #{$mq-mobile} {
-    margin: px-to-remmo(30) 0 px-to-remmo(35);
-    font-size: px-to-remmo(41);
-    line-height: px-to-remmo(46);
+    margin: px-to-rem-mobile(30) 0 px-to-rem-mobile(35);
+    font-size: px-to-rem-mobile(41);
+    line-height: px-to-rem-mobile(46);
     font-weight: 700;
   }
 }
@@ -47,8 +47,8 @@
   }
 
   @media #{$mq-mobile} {
-    font-size: px-to-remmo(34);
-    line-height: px-to-remmo(40);
+    font-size: px-to-rem-mobile(34);
+    line-height: px-to-rem-mobile(40);
   }
 }
 
@@ -69,8 +69,8 @@
   }
 
   @media #{$mq-mobile} {
-    font-size: px-to-remmo(20);
-    line-height: px-to-remmo(26);
+    font-size: px-to-rem-mobile(20);
+    line-height: px-to-rem-mobile(26);
     margin: px-to-rem(20) 0 px-to-rem(8);
   }
 }
@@ -92,8 +92,8 @@
   }
 
   @media #{$mq-mobile} {
-    font-size: px-to-remmo(19);
-    line-height: px-to-remmo(22);
+    font-size: px-to-rem-mobile(19);
+    line-height: px-to-rem-mobile(22);
     margin: px-to-rem(20) 0 px-to-rem(8);
   }
 }
@@ -116,8 +116,8 @@
   }
 
   @media #{$mq-mobile} {
-    font-size: px-to-remmo(17);
-    line-height: px-to-remmo(20);
+    font-size: px-to-rem-mobile(17);
+    line-height: px-to-rem-mobile(20);
     margin: px-to-rem(20) 0 px-to-rem(8);
   }
 }
@@ -140,8 +140,8 @@
   }
 
   @media #{$mq-mobile} {
-    font-size: px-to-remmo(14);
-    line-height: px-to-remmo(17);
+    font-size: px-to-rem-mobile(14);
+    line-height: px-to-rem-mobile(17);
     margin: px-to-rem(20) 0 px-to-rem(8);
   }
 }

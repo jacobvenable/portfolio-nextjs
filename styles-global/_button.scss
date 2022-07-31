@@ -80,8 +80,8 @@
   }
 
   @media #{$mq-tablet-max} {
-    padding: px-to-remmo(12) px-to-remmo(45);
-    font-size: px-to-remmo(20);
+    padding: px-to-rem-mobile(12) px-to-rem-mobile(45);
+    font-size: px-to-rem-mobile(20);
   }
 
   @media #{$mq-mobile} {

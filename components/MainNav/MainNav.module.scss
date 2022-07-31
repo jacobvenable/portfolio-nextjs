@@ -20,7 +20,7 @@
   line-height: 1em;
 
   &.open {
-    max-height: px-to-remmo(100);
+    max-height: px-to-rem-mobile(100);
   }
 
   @media #{$mq-tablet-min} {
@@ -47,9 +47,9 @@
     justify-content: center;
     align-items: center;
     width: 12vw;
-    max-width: px-to-remmo(60);
+    max-width: px-to-rem-mobile(60);
     height: 12vw;
-    max-height: px-to-remmo(60);
+    max-height: px-to-rem-mobile(60);
     border: none;
     padding: 0;
     background-color: $color-yellow-light;
@@ -78,8 +78,8 @@
 .icon {
   display: block;
   transition: transform 0.2s ease-out;
-  margin-bottom: px-to-remmo(7);
-  font-size: px-to-remmo(30);
+  margin-bottom: px-to-rem-mobile(7);
+  font-size: px-to-rem-mobile(30);
   color: $color-yellow-light;
 
   @media #{$mq-tablet-min} {
@@ -91,9 +91,9 @@
   display: block;
   color: inherit;
   width: 8vw;
-  max-width: px-to-remmo(40);
+  max-width: px-to-rem-mobile(40);
   height: 8vw;
-  max-height: px-to-remmo(40);
+  max-height: px-to-rem-mobile(40);
 }
 
 .list {
@@ -164,8 +164,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: px-to-remmo(10) px-to-rem(5);
-  font-size: px-to-remmo(16);
+  padding: px-to-rem-mobile(10) px-to-rem(5);
+  font-size: px-to-rem-mobile(16);
 
   &::before,
   &::after {

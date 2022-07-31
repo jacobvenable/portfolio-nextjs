@@ -6,6 +6,6 @@
   @return $i / $font-size-px * 1rem;
 }
 
-@function px-to-remmo($i) {
+@function px-to-rem-mobile($i) {
   @return $i / $font-size-px-mo * 1rem;
 }
