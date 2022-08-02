@@ -100,7 +100,7 @@ const IndexPage = () => (
         Colorado. I have been working remotely for Purdue&apos;s Office of
         Marketing and Media, which is based in Indiana, since August 2017.
       </p>
-      <button className="accordion__button" role="heading" aria-level="3">
+      <button className="accordion__button" role="heading" aria-level={3}>
         What exactly is it that you do?{" "}
         {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
       </button>
