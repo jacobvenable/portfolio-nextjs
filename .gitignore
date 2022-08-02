@@ -1,6 +1,9 @@
-# Dependency files/directories
+# dependency files/directories
 node_modules
 yarn-error.log
+
+# custom cache directory
+.cache
 
 # NextJS directories
 .next
