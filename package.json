@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint:ts": "tsc --noEmit",
-    "lint:scss": "stylelint  \"**/*.scss\" --fix",
-    "prepare": "husky install"
+    "lint:ts": "next lint --fix",
+    "lint:style": "stylelint  \"**/*.scss\" --fix",
+    "prepare": "husky install",
+    "typecheck": "yarn tsc --noEmit"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",

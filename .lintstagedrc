@@ -1,4 +1,0 @@
-{
-  "*.(ts|tsx)": "lint:ts",
-  "*.scss": "lint:scss"
-}
