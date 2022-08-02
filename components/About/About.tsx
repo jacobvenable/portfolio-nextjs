@@ -1,7 +1,6 @@
 import Link from "components/Link";
 
 import styles from "./About.module.scss";
-console.log("styles: ", styles);
 
 const About = () => (
   <div className={styles.containerOuter}>
