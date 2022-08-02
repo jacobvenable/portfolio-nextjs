@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import logoSvg from "images/logo.svg";
 import styles from "./Logo.module.scss";
+import logoSvg from "images/logo.svg";
 
 const Logo: React.FC = () => {
   return (

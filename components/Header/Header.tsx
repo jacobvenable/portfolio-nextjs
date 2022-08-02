@@ -1,7 +1,6 @@
-import Link from "components/Link";
-
 import styles from "./Header.module.scss";
 import ContentContainer from "components/ContentContainer";
+import Link from "components/Link";
 import Logo from "components/Logo";
 import MainNav from "components/MainNav";
 

@@ -1,6 +1,6 @@
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
-import { ReactNode, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { ReactNode, useEffect, useState } from "react";
 
 export interface LinkProps extends NextLinkProps {
   activeClassName?: string;

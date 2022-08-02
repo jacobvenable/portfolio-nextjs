@@ -1,8 +1,8 @@
-import Link, { LinkProps } from "components/Link";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./MainNav.module.scss";
+import Link, { LinkProps } from "components/Link";
 
 interface Props extends LinkProps {
   children: React.ReactNode;

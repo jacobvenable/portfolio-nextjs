@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faEnvelope,
@@ -8,10 +6,12 @@ import {
   faTimes,
   faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
-import ContentContainer from "components/ContentContainer";
-import MainNavItem from "./MainNavItem";
 import styles from "./MainNav.module.scss";
+import MainNavItem from "./MainNavItem";
+import ContentContainer from "components/ContentContainer";
 
 const MainNav: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
