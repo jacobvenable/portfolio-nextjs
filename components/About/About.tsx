@@ -1,5 +1,6 @@
 import styles from "./About.module.scss";
 import Link from "components/Link";
+import Stack from "components/Stack";
 
 const About = () => (
   <div className={styles.containerOuter}>
@@ -15,24 +16,20 @@ const About = () => (
         Currently, I&apos;m a senior front-end web developer at Purdue
         University&apos;s Office of Marketing and Media. Boiler Up!
       </p>
-      <div className="container__row">
-        <div className="container__column">
-          <Link
-            className={`button button--yellow-light ${styles.button}`}
-            href="/work"
-          >
-            View my Work
-          </Link>
-        </div>
-        <div className="container__column">
-          <Link
-            className={`button button--blue-dark-reverse ${styles.button}`}
-            href="/contact"
-          >
-            Contact Me
-          </Link>
-        </div>
-      </div>
+      <Stack>
+        <Link
+          className={`button button--yellow-light ${styles.button}`}
+          href="/work"
+        >
+          View my Work
+        </Link>
+        <Link
+          className={`button button--blue-dark-reverse ${styles.button}`}
+          href="/contact"
+        >
+          Contact Me
+        </Link>
+      </Stack>
     </div>
   </div>
 );
