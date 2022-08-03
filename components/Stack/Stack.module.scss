@@ -1,0 +1,28 @@
+@import "../../theme";
+
+$gutter: 15;
+
+.stack {
+  margin: 0 px-to-rem(-$gutter);
+
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+
+  &--padded {
+    margin: 0 px-to-rem(-$gutter * 2);
+  }
+}
+
+.item {
+  float: left;
+  padding-left: px-to-rem($gutter);
+  padding-right: px-to-rem($gutter);
+
+  &--padded {
+    padding-left: px-to-rem($gutter * 2);
+    padding-right: px-to-rem($gutter * 2);
+  }
+}
