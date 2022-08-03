@@ -1,4 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import About from "components/About";
+import ContentContainer from "components/ContentContainer";
 
 const IndexPage = () => (
   // <Layout>
@@ -6,7 +9,7 @@ const IndexPage = () => (
   // 		title="Home"
   // 		description="The portfolio of Jacob Venable, a senior front-end developer at Purdue University."
   // 	/>
-  <div className="container">
+  <ContentContainer>
     <About />
     <div className="accordion">
       {/* <Disclosure classButtonToggle="accordion__button--single-hidden" classButtonBlur="accordion__button--single-removed" classContent="accordion__content" classContentToggle="accordion__content--visible"> */}
@@ -211,7 +214,7 @@ const IndexPage = () => (
       {/* </Accordions> */}
       {/* </Disclosure> */}
     </div>
-  </div>
+  </ContentContainer>
   // </Layout>
 );
 
