@@ -17,7 +17,7 @@ const MainNavItem: React.FC<Props> = ({ children, icon, isHome, ...props }) => (
       className={styles.link}
       {...props}
     >
-      <FontAwesomeIcon icon={icon} className={styles.icon} />
+      <FontAwesomeIcon className={styles.icon} icon={icon} />
       {children}
     </Link>
   </li>

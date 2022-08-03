@@ -7,7 +7,7 @@ const Logo: React.FC = () => {
   return (
     <div className={styles.outerContainer}>
       <div className={styles.innerContainer}>
-        <Image src={logoSvg} alt="logo" className={styles.logo} />
+        <Image alt="logo" className={styles.logo} src={logoSvg} />
       </div>
     </div>
   );

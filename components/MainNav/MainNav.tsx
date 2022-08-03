@@ -18,18 +18,18 @@ const MainNav: React.FC = () => {
 
   return (
     <nav
-      role="navigation"
       className={`
           ${styles.container}
           ${isMobileNavOpen ? ` ${styles.open}` : ""}
       `}
+      role="navigation"
     >
       <ContentContainer className={styles.mobileToggler}>
         <button onClick={() => setIsMobileNavOpen((o) => !o)}>
           <FontAwesomeIcon
+            className={styles.togglerIcon}
             fixedWidth
             icon={isMobileNavOpen ? faTimes : faBars}
-            className={styles.togglerIcon}
           />
           <span className="sr-only">
             {isMobileNavOpen ? "close navigation" : "open navigation"}

@@ -31,5 +31,11 @@ module.exports = {
         "newlines-between": "always",
       },
     ],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        ignoreCase: true,
+      },
+    ],
   },
 };

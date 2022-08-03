@@ -18,16 +18,16 @@ const About = () => (
       <div className="container__row">
         <div className="container__column">
           <Link
-            href="/work"
             className={`button button--yellow-light ${styles.button}`}
+            href="/work"
           >
             View my Work
           </Link>
         </div>
         <div className="container__column">
           <Link
-            href="/contact"
             className={`button button--blue-dark-reverse ${styles.button}`}
+            href="/contact"
           >
             Contact Me
           </Link>

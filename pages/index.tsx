@@ -91,7 +91,7 @@ const IndexPage = () => (
       </div>
       <h2>FAQ</h2>
       {/* <Accordions classButtonToggle="accordion__button--open" classContent="accordion__content" classContentToggle="accordion__content--visible"> */}
-      <button className="accordion__button" role="heading" aria-level={3}>
+      <button aria-level={3} className="accordion__button" role="heading">
         Where are you based?{" "}
         {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
       </button>
@@ -100,7 +100,7 @@ const IndexPage = () => (
         Colorado. I have been working remotely for Purdue&apos;s Office of
         Marketing and Media, which is based in Indiana, since August 2017.
       </p>
-      <button className="accordion__button" role="heading" aria-level={3}>
+      <button aria-level={3} className="accordion__button" role="heading">
         What exactly is it that you do?{" "}
         {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
       </button>
@@ -149,7 +149,7 @@ const IndexPage = () => (
           system
         </li>
       </ul>
-      <button className="accordion__button" role="heading" aria-level={3}>
+      <button aria-level={3} className="accordion__button" role="heading">
         How did you get into web development?{" "}
         {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
       </button>
@@ -171,7 +171,7 @@ const IndexPage = () => (
         Long story short, I fell in love with web development, switched to the
         CGT program, and the rest is history.
       </p>
-      <button className="accordion__button" role="heading" aria-level={3}>
+      <button aria-level={3} className="accordion__button" role="heading">
         What do you love about front-end development?{" "}
         {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
       </button>
@@ -191,7 +191,7 @@ const IndexPage = () => (
         while also having a <mark>visually-rewarding</mark> product as the
         end-result.
       </p>
-      <button className="accordion__button" role="heading" aria-level={3}>
+      <button aria-level={3} className="accordion__button" role="heading">
         How do you take your coffee?{" "}
         {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
       </button>
@@ -199,7 +199,7 @@ const IndexPage = () => (
         Black&hellip; but sometimes I need to splurge on a dessert-in-a-cup
         mocha.
       </p>
-      <button className="accordion__button" role="heading" aria-level={3}>
+      <button aria-level={3} className="accordion__button" role="heading">
         Would you rather fight a horse-sized duck or a hundred duck-sized
         horses?{" "}
         {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
