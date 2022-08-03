@@ -1,17 +1,17 @@
 @import "../../theme";
 
 .outerContainer {
+  align-items: center;
+  border: none;
   display: block;
   display: flex;
+  flex: 0 0 auto;
   flex-flow: row nowrap;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  flex: 0 0 auto;
-  transition: max-width 0.1s ease-out;
   position: relative;
+  transition: max-width 0.1s ease-out;
   width: px-to-rem(60);
-  border: none;
 
   &:link,
   &:visited {
@@ -28,31 +28,31 @@
   }
 
   &::after {
-    content: "";
-    position: absolute;
-    z-index: 3;
-    top: 0;
-    right: 0;
     bottom: 0;
+    content: "";
     left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
   }
 }
 
 .innerContainer {
-  position: relative;
-  z-index: 2;
   display: block;
-  width: 100%;
   height: 1px;
   padding-bottom: 52 / 60 * 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
 }
 
 .logo {
+  display: block;
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  z-index: 2;
-  display: block;
   width: 100%;
-  height: 100%;
+  z-index: 2;
 }

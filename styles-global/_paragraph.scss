@@ -1,12 +1,12 @@
 @mixin paragraph {
-  overflow: hidden;
+  color: inherit;
+  font-family: inherit;
   font-size: 1em;
+  font-weight: inherit;
   line-height: 1.72em;
   margin: 0 0 px-to-rem(26) 0;
+  overflow: hidden;
   padding: 0;
-  font-family: inherit;
-  color: inherit;
-  font-weight: inherit;
 
   @media #{$mq-mobile} {
     line-height: 1.833em;

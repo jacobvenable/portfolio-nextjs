@@ -1,45 +1,45 @@
 @mixin heading {
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
 }
 
 @mixin heading-1 {
   @include heading;
 
-  margin: px-to-rem(50) 0 px-to-rem(20);
-  padding: 0;
+  color: $color-yellow-dark;
   font-family: $font-montserrat;
   font-size: px-to-rem(86);
-  line-height: px-to-rem(96);
   font-weight: normal;
-  color: $color-yellow-dark;
+  line-height: px-to-rem(96);
+  margin: px-to-rem(50) 0 px-to-rem(20);
+  padding: 0;
 
   @media #{$mq-large} {
-    margin: px-to-rem(59) 0 px-to-rem(23);
     font-size: px-to-rem(101);
     line-height: px-to-rem(112);
+    margin: px-to-rem(59) 0 px-to-rem(23);
   }
 
   @media #{$mq-mobile} {
-    margin: px-to-rem-mobile(30) 0 px-to-rem-mobile(35);
     font-size: px-to-rem-mobile(41);
-    line-height: px-to-rem-mobile(46);
     font-weight: 700;
+    line-height: px-to-rem-mobile(46);
+    margin: px-to-rem-mobile(30) 0 px-to-rem-mobile(35);
   }
 }
 
 @mixin heading-2 {
   @include heading;
 
-  margin: px-to-rem(30) 0 px-to-rem(15);
-  padding: 0;
+  color: $color-blue-light;
   font-family: $font-montserrat;
   font-size: px-to-rem(44);
-  line-height: px-to-rem(50);
   font-weight: 700;
-  color: $color-blue-light;
+  line-height: px-to-rem(50);
+  margin: px-to-rem(30) 0 px-to-rem(15);
+  padding: 0;
 
   @media #{$mq-large} {
     font-size: px-to-rem(52);
@@ -55,13 +55,13 @@
 @mixin heading-3 {
   @include heading;
 
-  margin: px-to-rem(25) 0 px-to-rem(10);
-  padding: 0 0 px-to-rem(5);
+  color: $color-white-off;
   font-family: $font-montserrat;
   font-size: px-to-rem(28);
-  line-height: px-to-rem(34);
   font-weight: 400;
-  color: $color-white-off;
+  line-height: px-to-rem(34);
+  margin: px-to-rem(25) 0 px-to-rem(10);
+  padding: 0 0 px-to-rem(5);
 
   @media #{$mq-large} {
     font-size: px-to-rem(32);
@@ -78,13 +78,13 @@
 @mixin heading-4 {
   @include heading;
 
-  margin: px-to-rem(22) 0 px-to-rem(10);
-  padding: 0;
+  color: $color-yellow-light;
   font-family: $font-montserrat;
   font-size: px-to-rem(27);
-  line-height: px-to-rem(31);
   font-weight: 700;
-  color: $color-yellow-light;
+  line-height: px-to-rem(31);
+  margin: px-to-rem(22) 0 px-to-rem(10);
+  padding: 0;
 
   @media #{$mq-large} {
     font-size: px-to-rem(27);
@@ -101,13 +101,13 @@
 @mixin heading-5 {
   @include heading;
 
-  margin: px-to-rem(20) 0 px-to-rem(8);
-  padding: 0;
+  color: $color-yellow-light;
   font-family: $font-opensans;
   font-size: px-to-rem(22);
-  line-height: px-to-rem(24);
   font-weight: 400;
-  color: $color-yellow-light;
+  line-height: px-to-rem(24);
+  margin: px-to-rem(20) 0 px-to-rem(8);
+  padding: 0;
   text-transform: uppercase;
 
   @media #{$mq-large} {
@@ -125,13 +125,13 @@
 @mixin heading-6 {
   @include heading;
 
-  margin: px-to-rem(20) 0 px-to-rem(8);
-  padding: 0;
+  color: $color-yellow-light;
   font-family: $font-opensans;
   font-size: px-to-rem(17);
-  line-height: px-to-rem(20);
   font-weight: 400;
-  color: $color-yellow-light;
+  line-height: px-to-rem(20);
+  margin: px-to-rem(20) 0 px-to-rem(8);
+  padding: 0;
   text-transform: uppercase;
 
   @media #{$mq-large} {

@@ -1,10 +1,10 @@
 @mixin label {
+  color: $color-yellow-light;
   display: block;
-  margin: 0 0 px-to-rem(10);
   font-family: $font-opensans;
   font-size: px-to-rem(18);
   font-weight: 400;
-  color: $color-yellow-light;
+  margin: 0 0 px-to-rem(10);
 }
 
 label {

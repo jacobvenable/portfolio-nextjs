@@ -1,64 +1,64 @@
 @mixin button-base {
-  position: relative;
-  display: inline-block;
+  background: none;
   border-style: solid;
   border-width: 1px;
-  background: none;
-  padding: px-to-rem(11) px-to-rem(30);
-  text-decoration: none;
-  transition: unset;
+  display: inline-block;
   font-family: $font-montserrat;
   font-size: px-to-rem(20);
   font-weight: 400;
+  padding: px-to-rem(11) px-to-rem(30);
+  position: relative;
+  text-decoration: none;
+  transition: unset;
 
   &::before,
   &::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 30%;
-    bottom: 0;
-    left: 30%;
-    display: block;
-    opacity: 0;
     background-color: $color-background;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 30%;
+    opacity: 0;
+    position: absolute;
+    right: 30%;
+    top: 0;
     transition: unset;
+    z-index: -1;
   }
 
   &::after {
-    z-index: -2;
-    right: 0;
-    left: 0;
-    display: block;
-    opacity: 0;
     background-color: $color-white-off;
+    display: block;
+    left: 0;
+    opacity: 0;
+    right: 0;
+    z-index: -2;
   }
 
   &:link,
   &:visited {
+    background: none;
     border-style: solid;
     border-width: 1px;
-    background: none;
     text-decoration: none;
   }
 
   &:hover,
   &:active,
   &:focus {
-    cursor: pointer;
-    outline: none;
+    background: none;
     border-style: solid;
     border-width: 1px;
-    background: none;
     color: $color-background;
+    cursor: pointer;
+    outline: none;
     text-decoration: none;
     transition: color 0.15s ease-in-out;
 
     &::before {
+      left: 0;
       opacity: 1;
       right: 0;
-      left: 0;
       transition: all 0.15s ease-in-out;
     }
   }
@@ -68,20 +68,20 @@
     opacity: 0.5;
 
     &::before {
+      left: 0;
       opacity: 1;
       right: 0;
-      left: 0;
     }
   }
 
   @media #{$mq-large} {
-    padding: px-to-rem(12) px-to-rem(35);
     font-size: px-to-rem(23);
+    padding: px-to-rem(12) px-to-rem(35);
   }
 
   @media #{$mq-tablet-max} {
-    padding: px-to-rem-mobile(12) px-to-rem-mobile(45);
     font-size: px-to-rem-mobile(20);
+    padding: px-to-rem-mobile(12) px-to-rem-mobile(45);
   }
 
   @media #{$mq-mobile} {

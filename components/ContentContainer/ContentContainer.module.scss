@@ -1,10 +1,10 @@
 @import "../../theme";
 
 .contentContainer {
-  width: $container-mo;
   margin: 0 auto;
-  padding: 0 px-to-rem(20);
   max-width: $container-mo;
+  padding: 0 px-to-rem(20);
+  width: $container-mo;
 
   @media #{$mq-tablet} {
     max-width: px-to-rem($container-sm);

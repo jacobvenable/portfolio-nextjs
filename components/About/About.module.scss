@@ -1,12 +1,12 @@
 @import "../../theme";
 
 .containerOuter {
-  position: relative;
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
   overflow: hidden;
+  position: relative;
 
   @media #{$mq-tablet} {
     padding: px-to-rem(20) 0;
@@ -27,18 +27,18 @@
 
   @media #{$mq-tablet-min} {
     &::after {
+      border-bottom: solid 3px $color-yellow-light;
+      border-top: solid 3px $color-yellow-light;
+      bottom: 100%;
       content: "";
       display: block;
+      height: px-to-rem(50);
       left: 67%;
       position: absolute;
-      bottom: 100%;
-      width: 200%;
-      height: px-to-rem(50);
-      border-top: solid 3px $color-yellow-light;
-      border-bottom: solid 3px $color-yellow-light;
       transform: rotate(68deg);
       transform-origin: bottom left;
       transition: transform 0.2s ease-in;
+      width: 200%;
     }
   }
 
@@ -52,21 +52,21 @@
 
 .containerInner {
   flex: 1 1 100%;
-  margin: 0;
   font-size: px-to-rem(22);
   line-height: 1.7;
+  margin: 0;
 
   &::before {
     content: "";
     display: none;
     float: right;
-    width: 50%;
     padding-bottom: 32%;
+    width: 50%;
   }
 
   @media #{$mq-tablet} {
-    flex-grow: 0;
     flex-basis: 70%;
+    flex-grow: 0;
   }
 
   @media #{$mq-medium-min} {

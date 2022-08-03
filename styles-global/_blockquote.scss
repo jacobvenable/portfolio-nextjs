@@ -1,12 +1,12 @@
 @mixin blockquote {
-  position: relative;
-  display: block;
-  margin: 0 0 px-to-rem(26) 0;
   border-left: solid px-to-rem(5) $color-yellow-light;
-  padding: 0 0 0 px-to-rem(10);
+  color: $color-yellow-light;
+  display: block;
   font-size: 1em;
   line-height: 1.72em;
-  color: $color-yellow-light;
+  margin: 0 0 px-to-rem(26) 0;
+  padding: 0 0 0 px-to-rem(10);
+  position: relative;
 
   @media #{$mq-large} {
     margin: 0 0 px-to-rem(30) 0;
