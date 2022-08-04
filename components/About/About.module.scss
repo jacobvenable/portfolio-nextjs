@@ -20,12 +20,8 @@
     padding: px-to-rem(45) 0;
   }
 
-  // psuedo element used to as half "V"
-  &::after {
-    display: none;
-  }
-
   @media #{$mq-tablet-min} {
+    // psuedo element used to as half "V"
     &::after {
       border-bottom: solid 3px $color-yellow-light;
       border-top: solid 3px $color-yellow-light;
