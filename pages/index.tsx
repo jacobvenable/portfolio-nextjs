@@ -1,3 +1,9 @@
+import {
+  faArrowDown,
+  faArrowRight,
+  faBriefcase,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import About from "components/About";
@@ -15,13 +21,13 @@ const IndexPage = () => (
       {/* <Disclosure classButtonToggle="accordion__button--single-hidden" classButtonBlur="accordion__button--single-removed" classContent="accordion__content" classContentToggle="accordion__content--visible"> */}
       <button className="accordion__button accordion__button--single">
         Learn More About Me
-        {/* <FontAwesomeIcon icon={faArrowAltDown} className="accordion__icon" /> */}
+        <FontAwesomeIcon className="accordion__icon" icon={faArrowDown} />
       </button>
       <h2>About Me</h2>
       <div className="overview">
         <div className="overview__section">
           <h3>
-            {/* <FontAwesomeIcon icon={faBriefcase} className="heading__icon" />{" "} */}
+            <FontAwesomeIcon className="heading__icon" icon={faBriefcase} />{" "}
             Work Experience
           </h3>
           <h4 className="heading--6">Senior Software Engineer</h4>
@@ -96,7 +102,7 @@ const IndexPage = () => (
       {/* <Accordions classButtonToggle="accordion__button--open" classContent="accordion__content" classContentToggle="accordion__content--visible"> */}
       <button aria-level={3} className="accordion__button" role="heading">
         Where are you based?{" "}
-        {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
+        <FontAwesomeIcon className="accordion__icon" icon={faStar} />
       </button>
       <p>
         I currently live within driving distance of Boulder and Denver,
@@ -105,7 +111,7 @@ const IndexPage = () => (
       </p>
       <button aria-level={3} className="accordion__button" role="heading">
         What exactly is it that you do?{" "}
-        {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
+        <FontAwesomeIcon className="accordion__icon" icon={faArrowRight} />
       </button>
       <p>
         In my current role as a senior front-end developer for Purdue Marketing
@@ -154,7 +160,7 @@ const IndexPage = () => (
       </ul>
       <button aria-level={3} className="accordion__button" role="heading">
         How did you get into web development?{" "}
-        {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
+        <FontAwesomeIcon className="accordion__icon" icon={faArrowRight} />
       </button>
       <p>
         Since my first programming class in high school, I&apos;ve known that
@@ -176,7 +182,7 @@ const IndexPage = () => (
       </p>
       <button aria-level={3} className="accordion__button" role="heading">
         What do you love about front-end development?{" "}
-        {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
+        <FontAwesomeIcon className="accordion__icon" icon={faArrowRight} />
       </button>
       <p>
         During my time at Purdue, I was exposed to and practiced various
@@ -196,7 +202,7 @@ const IndexPage = () => (
       </p>
       <button aria-level={3} className="accordion__button" role="heading">
         How do you take your coffee?{" "}
-        {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
+        <FontAwesomeIcon className="accordion__icon" icon={faArrowRight} />
       </button>
       <p>
         Black&hellip; but sometimes I need to splurge on a dessert-in-a-cup
@@ -205,7 +211,7 @@ const IndexPage = () => (
       <button aria-level={3} className="accordion__button" role="heading">
         Would you rather fight a horse-sized duck or a hundred duck-sized
         horses?{" "}
-        {/* <FontAwesomeIcon icon={faArrowAltRight} className="accordion__icon" /> */}
+        <FontAwesomeIcon className="accordion__icon" icon={faArrowRight} />
       </button>
       <p>
         I would definitely fight a horse-sized duck. Battling a hundred of
