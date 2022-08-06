@@ -11,7 +11,7 @@ $gutter: 15;
     display: block;
   }
 
-  &--padded {
+  &.padded {
     margin: 0 px-to-rem(-$gutter * 2);
   }
 }
@@ -21,7 +21,7 @@ $gutter: 15;
   padding-left: px-to-rem($gutter);
   padding-right: px-to-rem($gutter);
 
-  &--padded {
+  &.padded {
     padding-left: px-to-rem($gutter * 2);
     padding-right: px-to-rem($gutter * 2);
   }
