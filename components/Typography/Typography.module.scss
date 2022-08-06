@@ -1,0 +1,174 @@
+@import "../../theme";
+
+@mixin heading {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+@mixin heading-1 {
+  @include heading;
+
+  color: $color-yellow-dark;
+  font-family: $font-montserrat;
+  font-size: px-to-rem(86);
+  font-weight: normal;
+  line-height: px-to-rem(96);
+  margin: px-to-rem(50) 0 px-to-rem(20);
+  padding: 0;
+
+  @media #{$mq-large} {
+    font-size: px-to-rem(101);
+    line-height: px-to-rem(112);
+    margin: px-to-rem(59) 0 px-to-rem(23);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: px-to-rem-mobile(41);
+    font-weight: 700;
+    line-height: px-to-rem-mobile(46);
+    margin: px-to-rem-mobile(30) 0 px-to-rem-mobile(35);
+  }
+}
+
+.h2 {
+  @include heading;
+
+  color: $color-blue-light;
+  font-family: $font-montserrat;
+  font-size: px-to-rem(44);
+  font-weight: 700;
+  line-height: px-to-rem(50);
+  margin: px-to-rem(30) 0 px-to-rem(15);
+  padding: 0;
+
+  @media #{$mq-large} {
+    font-size: px-to-rem(52);
+    line-height: px-to-rem(59);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: px-to-rem-mobile(34);
+    line-height: px-to-rem-mobile(40);
+  }
+}
+
+.h3 {
+  @include heading;
+
+  color: $color-white-off;
+  font-family: $font-montserrat;
+  font-size: px-to-rem(28);
+  font-weight: 400;
+  line-height: px-to-rem(34);
+  margin: px-to-rem(25) 0 px-to-rem(10);
+  padding: 0 0 px-to-rem(5);
+
+  @media #{$mq-large} {
+    font-size: px-to-rem(32);
+    line-height: px-to-rem(40);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: px-to-rem-mobile(20);
+    line-height: px-to-rem-mobile(26);
+    margin: px-to-rem(20) 0 px-to-rem(8);
+  }
+}
+
+.h4 {
+  @include heading;
+
+  color: $color-yellow-light;
+  font-family: $font-montserrat;
+  font-size: px-to-rem(27);
+  font-weight: 700;
+  line-height: px-to-rem(31);
+  margin: px-to-rem(22) 0 px-to-rem(10);
+  padding: 0;
+
+  @media #{$mq-large} {
+    font-size: px-to-rem(27);
+    line-height: px-to-rem(31);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: px-to-rem-mobile(19);
+    line-height: px-to-rem-mobile(22);
+    margin: px-to-rem(20) 0 px-to-rem(8);
+  }
+}
+
+.h5 {
+  @include heading;
+
+  color: $color-yellow-light;
+  font-family: $font-opensans;
+  font-size: px-to-rem(22);
+  font-weight: 400;
+  line-height: px-to-rem(24);
+  margin: px-to-rem(20) 0 px-to-rem(8);
+  padding: 0;
+  text-transform: uppercase;
+
+  @media #{$mq-large} {
+    font-size: px-to-rem(22);
+    line-height: px-to-rem(24);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: px-to-rem-mobile(17);
+    line-height: px-to-rem-mobile(20);
+    margin: px-to-rem(20) 0 px-to-rem(8);
+  }
+}
+
+.h6 {
+  @include heading;
+
+  color: $color-yellow-light;
+  font-family: $font-opensans;
+  font-size: px-to-rem(17);
+  font-weight: 400;
+  line-height: px-to-rem(20);
+  margin: px-to-rem(20) 0 px-to-rem(8);
+  padding: 0;
+  text-transform: uppercase;
+
+  @media #{$mq-large} {
+    font-size: px-to-rem(17);
+    line-height: px-to-rem(20);
+  }
+
+  @media #{$mq-mobile} {
+    font-size: px-to-rem-mobile(14);
+    line-height: px-to-rem-mobile(17);
+    margin: px-to-rem(20) 0 px-to-rem(8);
+  }
+}
+
+.p {
+  color: inherit;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: inherit;
+  line-height: 1.833em;
+  margin: 0 0 convert-torem(26) 0;
+  overflow: hidden;
+  padding: 0;
+
+  @media #{$mq-tablet-min} {
+    line-height: 1.72em;
+  }
+}
+
+// used for visually hiding content still accessible to screen readers
+.sr-only {
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  width: 1px;
+}
