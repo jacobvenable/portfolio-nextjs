@@ -17,9 +17,11 @@ function Typography<ExtendedProps>({
   variant = "p",
   ...props
 }: TypographyProps<ExtendedProps>) {
-  const className = `${styles[variant]} ${customClassName}`;
+  const comp = component || variant;
+  const variantClassName = comp !== variant ? styles[variant] : "";
+  const className = `${variantClassName} ${customClassName}`;
   return React.createElement(
-    component || variant,
+    comp,
     {
       className,
       ...props,

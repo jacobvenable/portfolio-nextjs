@@ -1,3 +1,10 @@
+$font-size-em: 1.1875em;
+$font-size-px: 19;
+$font-size-em-mo: 1.125em;
+$font-size-px-mo: 18;
+$font-montserrat: "Montserrat",sans-serif;
+$font-opensans: "Open Sans",sans-serif;
+
 @mixin heading {
   align-items: center;
   display: flex;
@@ -143,5 +150,20 @@
     font-size: px-to-rem-mobile(14);
     line-height: px-to-rem-mobile(17);
     margin: px-to-rem(20) 0 px-to-rem(8);
+  }
+}
+
+@mixin paragraph {
+  color: inherit;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: inherit;
+  line-height: 1.72em;
+  margin: 0 0 px-to-rem(26) 0;
+  overflow: hidden;
+  padding: 0;
+
+  @media #{$mq-mobile} {
+    line-height: 1.833em;
   }
 }
