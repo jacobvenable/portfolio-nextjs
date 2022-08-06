@@ -22,13 +22,13 @@
     "tsBuildInfoFile": "./.cache/ts/.tsbuildinfo",
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx"
   ],
   "exclude": [
+    "next-env.d.ts",
     "node_modules"
   ]
 }
