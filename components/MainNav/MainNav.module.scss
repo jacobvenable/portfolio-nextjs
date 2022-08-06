@@ -97,18 +97,22 @@
 }
 
 .list {
+  align-items: stretch;
+  background-color: #000;
+  border-top: solid 1px $color-white-off;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  width: 100%;
 
-  @media #{$mq-mobile} {
-    align-items: stretch;
-    background-color: #000;
-    border-top: solid 1px $color-white-off;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    width: 100%;
+  @media #{$mq-tablet-min} {
+    background: none;
+    border-top: none;
+    justify-content: flex-start;
+    width: auto;
   }
 }
 
@@ -132,6 +136,7 @@
   }
 
   @media #{$mq-tablet-min} {
+    flex: 0 0 auto;
     padding: 0 0 0 px-to-rem(14);
 
     &::before {
@@ -248,7 +253,7 @@
     }
 
     &.currentLink {
-      border-bottom: solid 1px $color-yellow-light;
+      border-bottom: none;
       color: $color-yellow-light;
 
       &::before {
