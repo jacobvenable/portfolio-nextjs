@@ -1,4 +1,6 @@
-@mixin button-base {
+@import "../../theme";
+
+.button {
   background: none;
   border-style: solid;
   border-width: 1px;
@@ -13,7 +15,6 @@
 
   &::before,
   &::after {
-    background-color: $color-background;
     bottom: 0;
     content: "";
     display: block;
@@ -27,7 +28,6 @@
   }
 
   &::after {
-    background-color: $color-white-off;
     display: block;
     left: 0;
     opacity: 0;
@@ -49,7 +49,6 @@
     background: none;
     border-style: solid;
     border-width: 1px;
-    color: $color-background;
     cursor: pointer;
     outline: none;
     text-decoration: none;
@@ -91,30 +90,84 @@
   }
 }
 
-@mixin button {
-  @include button-base;
+@mixin button-color($color, $color-accessible-foreground) {
+  &.hollow {
+    border-color: $color;
+    color: $color;
 
-  border-color: $color-white-off;
-  color: $color-white-off;
+    &::before,
+    &::after {
+      background-color: $color-background;
+    }
 
-  &:link,
-  &:visited {
-    border-color: $color-white-off;
-    color: $color-white-off;
+    &:link,
+    &:visited {
+      border-color: $color;
+      color: $color;
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &[disabled] {
+      border-color: $color;
+      color: $color-accessible-foreground;
+
+      &::before {
+        background-color: $color;
+      }
+    }
   }
 
-  &:hover,
-  &:active,
-  &:focus {
-    border-color: $color-white-off;
-    color: $color-background;
+  &.solid {
+    border-color: $color;
+    color: $color-accessible-foreground;
 
-    &::before {
-      background-color: $color-white-off;
+    &::before,
+    &::after {
+      background-color: $color;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+
+    &:link,
+    &:visited {
+      border-color: $color;
+      color: $color-accessible-foreground;
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &[disabled] {
+      border-color: $color;
+      color: $color-accessible-foreground;
+
+      &::before {
+        background-color: $color-background;
+      }
     }
   }
 }
 
-button {
-  @include button;
+.blue-dark {
+  @include button-color($color-blue-dark, $color-white-off);
+}
+
+.blue-light {
+  @include button-color($color-blue-light, $color-background);
+}
+
+.white {
+  @include button-color($color-white-off, $color-background);
+}
+
+.yellow-light {
+  @include button-color($color-yellow-light, $color-background);
+}
+
+.yellow-dark {
+  @include button-color($color-yellow-dark, $color-background);
 }
