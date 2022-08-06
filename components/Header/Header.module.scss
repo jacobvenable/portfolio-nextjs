@@ -4,15 +4,15 @@
   background: $color-background;
   display: block;
   overflow: hidden;
-  padding: px-to-rem(15) 0;
-  position: sticky;
+  padding: px-to-rem-mobile(15) 0;
+  position: static;
   top: 0;
   width: 100%;
   z-index: 10;
 
-  @media #{$mq-mobile} {
-    padding: px-to-rem-mobile(15) 0;
-    position: static;
+  @media #{$mq-tablet-min} {
+    padding: px-to-rem(15) 0;
+    position: sticky;
   }
 }
 
@@ -41,7 +41,7 @@
 
 .heading {
   align-items: flex-start;
-  border-right: solid 2px $color-yellow-dark;
+  border-right: none;
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
@@ -54,8 +54,8 @@
   transition: max-width 0.1s ease-out, padding-right 0.1s ease-out;
   white-space: nowrap;
 
-  @media #{$mq-mobile} {
-    border-right: none;
+  @media #{$mq-tablet-min} {
+    border-right: solid 2px $color-yellow-dark;
   }
 }
 
@@ -64,12 +64,12 @@
   display: block;
   flex: 0 0 auto;
   font-family: $font-montserrat;
-  font-size: px-to-rem(22);
+  font-size: px-to-rem(26);
   font-weight: 400;
   line-height: 1.2em;
 
-  @media #{$mq-mobile} {
-    font-size: px-to-rem(26);
+  @media #{$mq-tablet-min} {
+    font-size: px-to-rem(22);
   }
 }
 
@@ -78,11 +78,11 @@
   display: block;
   flex: 0 0 auto;
   font-family: $font-montserrat;
-  font-size: px-to-rem(14);
+  font-size: px-to-rem(18);
   font-weight: 300;
   line-height: 1.2em;
 
-  @media #{$mq-mobile} {
-    font-size: px-to-rem(18);
+  @media #{$mq-tablet-min} {
+    font-size: px-to-rem(14);
   }
 }
