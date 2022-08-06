@@ -10,24 +10,26 @@ interface OgImage {
 interface Props {
   children?: React.ReactNode;
   description: string;
+  mergeTitle?: boolean;
   ogImage?: OgImage;
-  title?: string;
+  title: string;
 }
 
-const BASE_TITLE = "Jacob Venable: Front-End Developer";
+export const BASE_TITLE = "Jacob Venable: Front-End Developer";
 const OG_IMAGE_ALT_DEFAULT = "Jacob Venable logo";
 
 const Head: React.FC<Props> = ({
   children,
   description,
+  mergeTitle = true,
   ogImage,
-  title: passedTitle,
+  title,
 }) => {
-  const title = passedTitle ? `${passedTitle} - ${BASE_TITLE}` : BASE_TITLE;
+  const mergedTitle = mergeTitle ? `${title} - ${BASE_TITLE}` : title;
 
   return (
     <NextHead>
-      <title>{title}</title>
+      <title>{mergedTitle}</title>
       <meta
         content={description}
         name="description"
