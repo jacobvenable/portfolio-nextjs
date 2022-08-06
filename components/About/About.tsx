@@ -1,5 +1,6 @@
 import styles from "./About.module.scss";
-import Link from "components/Link";
+import Button from "components/Button";
+import Link, { LinkProps } from "components/Link";
 import Stack from "components/Stack";
 
 const About = () => (
@@ -17,18 +18,17 @@ const About = () => (
         University&apos;s Office of Marketing and Media. Boiler Up!
       </p>
       <Stack>
-        <Link
-          className={`button button--yellow-light ${styles.button}`}
-          href="/work"
-        >
+        <Button<LinkProps> color="yellow-light" component={Link} href="/work">
           View my Work
-        </Link>
-        <Link
-          className={`button button--blue-dark-reverse ${styles.button}`}
+        </Button>
+        <Button<LinkProps>
+          color="blue-dark"
+          component={Link}
           href="/contact"
+          variant="solid"
         >
           Contact Me
-        </Link>
+        </Button>
       </Stack>
     </div>
   </div>
