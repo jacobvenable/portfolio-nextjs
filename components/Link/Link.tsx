@@ -34,7 +34,12 @@ const Link: React.FC<LinkProps> = ({
 
   return (
     <NextLink {...props}>
-      <a className={combinedClassNames}>{children}</a>
+      <a
+        aria-current={isActive ? "page" : undefined}
+        className={combinedClassNames}
+      >
+        {children}
+      </a>
     </NextLink>
   );
 };
