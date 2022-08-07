@@ -13,6 +13,10 @@
   text-decoration: none;
   transition: unset;
 
+  &.ghost {
+    padding: 0;
+  }
+
   &::before,
   &::after {
     bottom: 0;
@@ -76,11 +80,19 @@
   @media #{$mq-large} {
     font-size: px-to-rem(23);
     padding: px-to-rem(12) px-to-rem(35);
+
+    &.ghost {
+      padding: 0;
+    }
   }
 
   @media #{$mq-tablet-max} {
     font-size: px-to-rem-mobile(20);
     padding: px-to-rem-mobile(12) px-to-rem-mobile(45);
+
+    &.ghost {
+      padding: 0;
+    }
   }
 
   @media #{$mq-mobile} {
@@ -116,6 +128,30 @@
       &::before {
         background-color: $color;
       }
+    }
+  }
+
+  &.ghost {
+    border: none;
+    color: $color;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &:link,
+    &:visited {
+      border: none;
+      color: $color;
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &[disabled] {
+      border: none;
+      color: $color;
     }
   }
 

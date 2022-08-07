@@ -2,19 +2,20 @@ import React from "react";
 
 import styles from "./Button.module.scss";
 
-type ButtonProps<P> = React.Attributes &
-  P & {
-    children: React.ReactNode;
-    className?: string;
-    color?:
-      | "white"
-      | "yellow-dark"
-      | "yellow-light"
-      | "blue-dark"
-      | "blue-light";
-    component?: string | React.FC;
-    variant?: "solid" | "hollow";
-  };
+export type ButtonProps<P = React.HTMLProps<HTMLButtonElement>> =
+  React.Attributes &
+    P & {
+      children: React.ReactNode;
+      className?: string;
+      color?:
+        | "blue-dark"
+        | "blue-light"
+        | "white"
+        | "yellow-dark"
+        | "yellow-light";
+      component?: string | React.FC;
+      variant?: "hollow" | "ghost" | "solid";
+    };
 
 function Button<ExtendedProps>({
   children,
