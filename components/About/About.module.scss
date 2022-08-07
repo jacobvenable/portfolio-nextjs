@@ -27,7 +27,7 @@
   }
 
   @media #{$mq-tablet} {
-    padding: px-to-rem(20) 0;
+    padding-top: px-to-rem(20);
   }
 
   @media #{$mq-medium-min} {
@@ -38,27 +38,19 @@
   }
 
   @media #{$mq-medium} {
-    padding: px-to-rem(45) 0;
+    padding-top: px-to-rem(45);
   }
 
   @media #{$mq-large} {
-    padding: px-to-rem(45) 0;
+    padding-top: px-to-rem(45);
   }
 }
 
 .containerInner {
-  flex: 1 1 100%;
+  flex: 0 1 100%;
   font-size: px-to-rem(22);
   line-height: 1.7;
   margin: 0;
-
-  &::before {
-    content: "";
-    display: none;
-    float: right;
-    padding-bottom: 32%;
-    width: 50%;
-  }
 
   @media #{$mq-tablet} {
     flex-basis: 70%;
@@ -66,17 +58,7 @@
   }
 
   @media #{$mq-medium-min} {
-    &::before {
-      display: block;
-      padding-bottom: 37%;
-      shape-outside: polygon(5% 0, 57% 100%, 100% 100%, 100% 0);
-    }
-  }
-
-  @media #{$mq-large} {
-    &::before {
-      padding-bottom: 32%;
-    }
+    flex-basis: 50%;
   }
 
   .heading {
