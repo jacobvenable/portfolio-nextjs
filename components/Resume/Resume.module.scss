@@ -1,0 +1,9 @@
+@import "../../theme";
+
+.column {
+  flex-basis: 100%;
+
+  @media #{$mq-tablet-min} {
+    flex-basis: 50%;
+  }
+}
