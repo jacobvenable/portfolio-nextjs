@@ -24,6 +24,14 @@
   @include heading-6;
 }
 
+.icon {
+  color: $color-yellow-dark;
+  display: inline-block;
+  flex: 0 1 auto;
+  font-size: 0.6em;
+  margin-right: px-to-rem(10);
+}
+
 .p {
   @include paragraph;
 }
