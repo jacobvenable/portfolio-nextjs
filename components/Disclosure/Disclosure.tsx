@@ -11,7 +11,7 @@ import Button, { ButtonProps } from "components/Button";
 interface DisclosureProps {
   buttonProps: ButtonProps;
   children: React.ReactNode;
-  id: string;
+  idPrefix: string;
   isOpen?: boolean;
   onClose?: () => void;
   onOpen?: () => void;
@@ -21,7 +21,7 @@ const noop = () => undefined;
 const Disclosure: React.FC<DisclosureProps> = ({
   buttonProps,
   children,
-  id,
+  idPrefix,
   onClose = noop,
   onOpen = noop,
   isOpen: externalIsOpen,
@@ -45,7 +45,7 @@ const Disclosure: React.FC<DisclosureProps> = ({
     [buttonProps, onClose, onOpen]
   );
 
-  const contentId = `${id}-content`;
+  const contentId = `${idPrefix}-content`;
 
   return (
     <>
