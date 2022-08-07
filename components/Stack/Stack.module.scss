@@ -1,28 +1,42 @@
 @import "../../theme";
 
-$gutter: 15;
+$gap: px-to-rem(15);
+$gap-padded: $gap * 2;
 
 .stack {
-  margin: 0 px-to-rem(-$gutter);
+  display: flex;
+  flex-wrap: wrap;
 
-  &::after {
-    clear: both;
-    content: "";
-    display: block;
+  &.horizontal {
+    flex-direction: row;
+    margin: 0 ($gap * -1 / 2);
+
+    &.padded {
+      margin: 0 ($gap-padded * -1 / 2);
+    }
   }
 
-  &.padded {
-    margin: 0 px-to-rem(-$gutter * 2);
+  &.vertical {
+    flex-direction: column;
   }
 }
 
 .item {
-  float: left;
-  padding-left: px-to-rem($gutter);
-  padding-right: px-to-rem($gutter);
+  flex: 0 1 auto;
 
-  &.padded {
-    padding-left: px-to-rem($gutter * 2);
-    padding-right: px-to-rem($gutter * 2);
+  &.horizontal {
+    padding: 0 ($gap / 2);
+
+    &.padded {
+      padding: 0 $gap-padded / 2;
+    }
+  }
+
+  &.vertical {
+    padding: ($gap / 2) 0;
+
+    &.padded {
+      padding: ($gap-padded / 2) 0;
+    }
   }
 }
