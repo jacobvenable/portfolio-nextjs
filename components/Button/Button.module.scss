@@ -77,6 +77,10 @@
     }
   }
 
+  .icon {
+    margin-left: px-to-rem(10);
+  }
+
   @media #{$mq-large} {
     font-size: px-to-rem(23);
     padding: px-to-rem(12) px-to-rem(35);

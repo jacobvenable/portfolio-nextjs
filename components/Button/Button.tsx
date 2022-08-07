@@ -1,4 +1,8 @@
-import React from "react";
+import {
+  FontAwesomeIcon,
+  FontAwesomeIconProps,
+} from "@fortawesome/react-fontawesome";
+import React, { useMemo } from "react";
 
 import styles from "./Button.module.scss";
 
@@ -14,6 +18,7 @@ export type ButtonProps<P = React.HTMLProps<HTMLButtonElement>> =
         | "yellow-dark"
         | "yellow-light";
       component?: string | React.FC;
+      iconProps?: FontAwesomeIconProps;
       variant?: "hollow" | "ghost" | "solid";
     };
 
@@ -22,17 +27,31 @@ function Button<ExtendedProps>({
   color = "white",
   className: customClassName = "",
   component = "button",
+  iconProps,
   variant = "hollow",
   ...props
 }: ButtonProps<ExtendedProps>) {
   const className = `${styles.button} ${styles[color]} ${styles[variant]} ${customClassName}`;
+
+  const childrenWithIcon = useMemo(
+    () => (
+      <>
+        {children}
+        {iconProps && (
+          <FontAwesomeIcon {...iconProps} className={styles.icon} />
+        )}
+      </>
+    ),
+    [children, iconProps]
+  );
+
   return React.createElement(
     component,
     {
       className,
       ...props,
     },
-    children
+    childrenWithIcon
   );
 }
 
