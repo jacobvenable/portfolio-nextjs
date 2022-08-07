@@ -66,6 +66,11 @@
     }
   }
 
+  &:focus {
+    outline: px-to-rem(2) dashed;
+    outline-offset: px-to-rem(4);
+  }
+
   &[disabled] {
     cursor: default;
     opacity: 0.5;
@@ -107,6 +112,10 @@
 }
 
 @mixin button-color($color, $color-accessible-foreground) {
+  &:focus {
+    outline-color: $color-yellow-light;
+  }
+
   &.hollow {
     border-color: $color;
     color: $color;
