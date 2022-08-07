@@ -58,22 +58,22 @@
 
   color: $color-white-off;
   font-family: $font-montserrat;
-  font-size: px-to-rem(28);
+  font-size: px-to-rem-mobile(20);
   font-weight: 400;
-  line-height: px-to-rem(34);
-  margin: px-to-rem(25) 0 px-to-rem(10);
+  line-height: px-to-rem-mobile(26);
+  margin: px-to-rem(20) 0 px-to-rem(8);
   padding: 0 0 px-to-rem(5);
+
+  @media #{$mq-tablet-min} {
+    font-size: px-to-rem(28);
+    line-height: px-to-rem(34);
+    margin: px-to-rem(25) 0 px-to-rem(10);
+  }
 
   @media #{$mq-large} {
     font-size: px-to-rem(32);
     line-height: px-to-rem(40);
     margin: px-to-rem(25) 0 px-to-rem(10);
-  }
-
-  @media #{$mq-tablet-min} {
-    font-size: px-to-rem-mobile(20);
-    line-height: px-to-rem-mobile(26);
-    margin: px-to-rem(20) 0 px-to-rem(8);
   }
 }
 
