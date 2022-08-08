@@ -1,3 +1,5 @@
+import classnames from "classnames";
+
 import styles from "./Stack.module.scss";
 
 interface Props {
@@ -15,10 +17,17 @@ const Stack: React.FC<Props> = ({
 }) => {
   const paddedClassName = padded ? styles.padded : "";
   return (
-    <div className={`${styles.stack} ${styles[direction]} ${paddedClassName}`}>
+    <div
+      className={classnames(styles.stack, styles[direction], paddedClassName)}
+    >
       {children.map((child, index) => (
         <div
-          className={`${styles.item} ${styles[direction]} ${paddedClassName} ${itemClassName}`}
+          className={classnames(
+            styles.item,
+            styles[direction],
+            paddedClassName,
+            itemClassName
+          )}
           key={index}
           {...itemProps}
         >
