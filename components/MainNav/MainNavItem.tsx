@@ -8,11 +8,15 @@ import Link, { LinkProps } from "components/Link";
 interface Props extends LinkProps {
   children: React.ReactNode;
   icon: IconProp;
-  isHome?: boolean;
 }
 
-const MainNavItem: React.FC<Props> = ({ children, icon, isHome, ...props }) => (
-  <li className={classnames(styles.item, { [styles.homeItem]: isHome })}>
+const MainNavItem: React.FC<Props> = ({
+  children,
+  className,
+  icon,
+  ...props
+}) => (
+  <li className={classnames(styles.item, className)}>
     <Link
       activeClassName={styles.currentLink}
       className={styles.link}

@@ -38,7 +38,7 @@ const MainNav: React.FC = () => {
         </button>
       </ContentContainer>
       <ul className={styles.list}>
-        <MainNavItem href="/" icon={faHome} isHome={true}>
+        <MainNavItem className={styles.homeItem} href="/" icon={faHome}>
           Home
         </MainNavItem>
         <MainNavItem href="/skills" icon={faUserAlt}>
