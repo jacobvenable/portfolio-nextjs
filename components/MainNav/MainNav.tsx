@@ -12,6 +12,7 @@ import { useState } from "react";
 import styles from "./MainNav.module.scss";
 import MainNavItem from "./MainNavItem";
 import ContentContainer from "components/ContentContainer";
+import Typography from "components/Typography";
 
 const MainNav: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -31,9 +32,9 @@ const MainNav: React.FC = () => {
             fixedWidth
             icon={isMobileNavOpen ? faTimes : faBars}
           />
-          <span className="sr-only">
+          <Typography variant="sr-only">
             {isMobileNavOpen ? "close navigation" : "open navigation"}
-          </span>
+          </Typography>
         </button>
       </ContentContainer>
       <ul className={styles.list}>
