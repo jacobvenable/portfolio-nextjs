@@ -1,5 +1,6 @@
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classnames from "classnames";
 
 import styles from "./MainNav.module.scss";
 import Link, { LinkProps } from "components/Link";
@@ -11,7 +12,7 @@ interface Props extends LinkProps {
 }
 
 const MainNavItem: React.FC<Props> = ({ children, icon, isHome, ...props }) => (
-  <li className={`${styles.item}${isHome ? ` ${styles.homeItem}` : ""}`}>
+  <li className={classnames(styles.item, { [styles.homeItem]: isHome })}>
     <Link
       activeClassName={styles.currentLink}
       className={styles.link}
