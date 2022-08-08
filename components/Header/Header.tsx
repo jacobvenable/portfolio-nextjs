@@ -3,6 +3,7 @@ import ContentContainer from "components/ContentContainer";
 import Link from "components/Link";
 import Logo from "components/Logo";
 import MainNav from "components/MainNav";
+import Typography from "components/Typography";
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
           <Logo />
           <div className={styles.heading}>
             <span className={styles.name}>Jacob Venable </span>
-            <span className="sr-only">&#8212;</span>
+            <Typography variant="sr-only">&#8212;</Typography>
             <span className={styles.title}>Front-End Web Developer</span>
           </div>
         </Link>

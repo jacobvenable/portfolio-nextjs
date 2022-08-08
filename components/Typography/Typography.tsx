@@ -2,6 +2,7 @@ import {
   FontAwesomeIcon,
   FontAwesomeIconProps,
 } from "@fortawesome/react-fontawesome";
+import classnames from "classnames";
 import React, { useMemo } from "react";
 
 import styles from "./Typography.module.scss";
@@ -18,19 +19,19 @@ type TypographyProps<P> = React.Attributes &
 function Typography<ExtendedProps>({
   children,
   className: customClassName = "",
-  component,
+  component = "p",
   iconProps,
   variant = "p",
   ...props
 }: TypographyProps<ExtendedProps>) {
-  const comp = component || variant;
-  const variantClassName = comp !== variant ? styles[variant] : "";
-  const className = `${variantClassName} ${customClassName}`;
   const childrenWithIcon = useMemo(
     () => (
       <>
         {iconProps && (
-          <FontAwesomeIcon {...iconProps} className={styles.icon} />
+          <FontAwesomeIcon
+            {...iconProps}
+            className={classnames(styles.icon, iconProps?.className)}
+          />
         )}
         {children}
       </>
@@ -38,9 +39,14 @@ function Typography<ExtendedProps>({
     [children, iconProps]
   );
   return React.createElement(
-    comp,
+    component,
     {
-      className,
+      className: classnames(
+        {
+          [styles[variant]]: component !== variant,
+        },
+        customClassName
+      ),
       ...props,
     },
     childrenWithIcon
