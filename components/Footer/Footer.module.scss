@@ -1,0 +1,24 @@
+@import "../../theme";
+
+.footer {
+  display: block;
+  margin: px-to-rem(45) 0 0;
+  padding: px-to-rem(30) 0;
+}
+
+.text {
+  display: block;
+  font-size: px-to-rem(12);
+  margin: 0 auto;
+  text-align: center;
+
+  &::before,
+  &::after {
+    background: $color-yellow-light;
+    content: "";
+    display: inline-block;
+    height: px-to-rem(1);
+    margin: 0 px-to-rem(5) 0.25em;
+    width: px-to-rem(10);
+  }
+}

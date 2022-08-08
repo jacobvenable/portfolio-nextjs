@@ -1,3 +1,4 @@
+import Footer from "components/Footer";
 import Header from "components/Header";
 import SkipToMain from "components/SkipToMain";
 
@@ -11,6 +12,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <SkipToMain mainId={mainId} />
       <Header />
       <main id={mainId}>{children}</main>
+      <Footer />
     </>
   );
 };
