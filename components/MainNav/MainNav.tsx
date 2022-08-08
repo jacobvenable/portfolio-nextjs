@@ -7,6 +7,7 @@ import {
   faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classnames from "classnames";
 import { useState } from "react";
 
 import styles from "./MainNav.module.scss";
@@ -19,10 +20,9 @@ const MainNav: React.FC = () => {
 
   return (
     <nav
-      className={`
-          ${styles.container}
-          ${isMobileNavOpen ? ` ${styles.open}` : ""}
-      `}
+      className={classnames(styles.container, {
+        [styles.open]: isMobileNavOpen,
+      })}
       role="navigation"
     >
       <ContentContainer className={styles.mobileToggler}>
