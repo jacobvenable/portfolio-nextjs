@@ -27,22 +27,18 @@
   }
 
   @media #{$mq-tablet} {
+    padding-bottom: px-to-rem(10);
     padding-top: px-to-rem(20);
   }
 
   @media #{$mq-medium-min} {
+    padding-bottom: px-to-rem(22.5);
+    padding-top: px-to-rem(45);
+
     &::after {
       left: 50%;
       transform: rotate(55deg);
     }
-  }
-
-  @media #{$mq-medium} {
-    padding-top: px-to-rem(45);
-  }
-
-  @media #{$mq-large} {
-    padding-top: px-to-rem(45);
   }
 }
 
