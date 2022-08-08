@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import {
   useEffect,
   MouseEvent as RMouseEvent,
@@ -55,7 +56,12 @@ const Disclosure: React.FC<DisclosureProps> = ({
         onClick={handleOnClick}
         {...buttonProps}
       />
-      <div className={`${!isOpen ? styles.hidden : ""}`} id={contentId}>
+      <div
+        className={classnames({
+          [styles.hidden]: !isOpen,
+        })}
+        id={contentId}
+      >
         {children}
       </div>
     </>
