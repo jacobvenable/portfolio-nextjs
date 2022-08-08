@@ -1,13 +1,18 @@
 import Header from "components/Header";
+import SkipToMain from "components/SkipToMain";
 
 interface Props {
   children: React.ReactNode;
 }
-const Layout: React.FC<Props> = ({ children }) => (
-  <>
-    <Header />
-    <main id="main">{children}</main>
-  </>
-);
+const Layout: React.FC<Props> = ({ children }) => {
+  const mainId = "main";
+  return (
+    <>
+      <SkipToMain mainId={mainId} />
+      <Header />
+      <main id={mainId}>{children}</main>
+    </>
+  );
+};
 
 export default Layout;

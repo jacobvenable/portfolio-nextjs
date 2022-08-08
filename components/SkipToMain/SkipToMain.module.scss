@@ -1,0 +1,26 @@
+@import "../../theme";
+
+.link {
+  background-color: $color-background;
+  border: solid 1px $color-white-off;
+  display: inline-block;
+  font-size: px-to-rem(20);
+  left: -10rem;
+  padding: px-to-rem(10) px-to-rem(20);
+  position: absolute;
+  top: -4rem;
+  z-index: 11;
+
+  &:focus {
+    left: 0;
+    top: 0;
+  }
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $color-yellow-light;
+    text-decoration: none;
+  }
+}
