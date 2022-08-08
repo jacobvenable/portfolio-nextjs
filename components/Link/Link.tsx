@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
@@ -29,14 +30,13 @@ const Link: React.FC<LinkProps> = ({
     }
   }, [asPath, isReady, props.href]);
 
-  const combinedClassNames =
-    isActive && activeClassName ? `${className} ${activeClassName}` : className;
-
   return (
     <NextLink {...props}>
       <a
         aria-current={isActive ? "page" : undefined}
-        className={combinedClassNames}
+        className={classnames(className, {
+          [activeClassName]: isActive && activeClassName,
+        })}
       >
         {children}
       </a>
