@@ -25,11 +25,9 @@ const Head: React.FC<Props> = ({
   ogImage,
   title,
 }) => {
-  const mergedTitle = mergeTitle ? `${title} - ${BASE_TITLE}` : title;
-
   return (
     <NextHead>
-      <title>{mergedTitle}</title>
+      <title>{mergeTitle ? `${title} - ${BASE_TITLE}` : title}</title>
       <meta
         content={description}
         name="description"
