@@ -1,16 +1,70 @@
 import classnames from "classnames";
 import {
-  useEffect,
+  createContext,
   MouseEvent as RMouseEvent,
   useCallback,
+  useContext,
+  useEffect,
+  useMemo,
   useState,
 } from "react";
 
 import styles from "./Disclosure.module.scss";
 import Button, { ButtonProps } from "components/Button";
 
+const noop = () => undefined;
+interface DisclosureContextValue {
+  contentId: string;
+  isOpen: boolean;
+  setIsOpen: (boolean) => void;
+}
+const DisclosureContext = createContext<DisclosureContextValue>({
+  contentId: "disclosureContentId",
+  isOpen: false,
+  setIsOpen: noop,
+});
+
+export const DisclosureButton: React.FC<ButtonProps> = (props) => {
+  const { contentId, isOpen, setIsOpen } = useContext(DisclosureContext);
+
+  const handleOnClick = useCallback(
+    (e: RMouseEvent<HTMLButtonElement, MouseEvent>) => {
+      props.onClick && props.onClick(e);
+      setIsOpen((o) => !o);
+    },
+    [props, setIsOpen]
+  );
+
+  return (
+    <Button
+      aria-controls={contentId}
+      aria-expanded={isOpen}
+      onClick={handleOnClick}
+      {...props}
+    />
+  );
+};
+
+export const DisclosureContent: React.FC<React.HTMLProps<HTMLDivElement>> = ({
+  children,
+  ...props
+}) => {
+  const { contentId, isOpen } = useContext(DisclosureContext);
+
+  return (
+    <div
+      className={classnames({
+        [styles.hidden]: !isOpen,
+      })}
+      id={contentId}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
+
 interface DisclosureProps {
-  buttonProps: ButtonProps;
   children: React.ReactNode;
   idPrefix: string;
   isOpen?: boolean;
@@ -18,54 +72,43 @@ interface DisclosureProps {
   onOpen?: () => void;
 }
 
-const noop = () => undefined;
-const Disclosure: React.FC<DisclosureProps> = ({
-  buttonProps,
+export const Disclosure: React.FC<DisclosureProps> = ({
   children,
   idPrefix,
+  isOpen: externalIsOpen,
   onClose = noop,
   onOpen = noop,
-  isOpen: externalIsOpen,
 }) => {
   const [internalIsOpen, setInternalIsOpen] = useState(externalIsOpen ?? false);
   const isOpen = externalIsOpen ?? internalIsOpen;
 
   useEffect(() => {
-    setInternalIsOpen(externalIsOpen);
+    if (externalIsOpen !== undefined) {
+      setInternalIsOpen(externalIsOpen);
+    }
   }, [externalIsOpen, setInternalIsOpen]);
 
-  const handleOnClick = useCallback(
-    (e: RMouseEvent<HTMLButtonElement, MouseEvent>) => {
-      buttonProps.onClick && buttonProps.onClick(e);
-      setInternalIsOpen((o) => {
-        const open = !o;
-        open ? onOpen() : onClose();
-        return open;
-      });
+  const setIsOpen = useCallback(
+    (toggle: (boolean) => boolean) => {
+      const newIsOpen = toggle(isOpen);
+      newIsOpen ? onOpen() : onClose();
+      setInternalIsOpen(newIsOpen);
     },
-    [buttonProps, onClose, onOpen]
+    [isOpen, onClose, onOpen]
   );
 
-  const contentId = `${idPrefix}-content`;
+  const contextValue = useMemo<DisclosureContextValue>(
+    () => ({
+      contentId: `${idPrefix}-content`,
+      isOpen: internalIsOpen,
+      setIsOpen,
+    }),
+    [idPrefix, internalIsOpen, setIsOpen]
+  );
 
   return (
-    <>
-      <Button
-        aria-controls={contentId}
-        aria-expanded={isOpen}
-        onClick={handleOnClick}
-        {...buttonProps}
-      />
-      <div
-        className={classnames({
-          [styles.hidden]: !isOpen,
-        })}
-        id={contentId}
-      >
-        {children}
-      </div>
-    </>
+    <DisclosureContext.Provider value={contextValue}>
+      {children}
+    </DisclosureContext.Provider>
   );
 };
-
-export default Disclosure;
