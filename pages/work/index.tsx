@@ -1,5 +1,3 @@
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
-
 import Faq from "components/Faq";
 
 const WorkPage = () => {
