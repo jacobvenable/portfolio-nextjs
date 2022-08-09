@@ -1,9 +1,10 @@
 import classnames from "classnames";
+import { Children } from "react";
 
 import styles from "./Stack.module.scss";
 
 interface Props {
-  children: React.ReactNode[];
+  children: React.ReactNode;
   direction?: "horizontal" | "vertical";
   itemProps?: React.HTMLProps<HTMLDivElement>;
   padded?: boolean;
@@ -20,7 +21,7 @@ const Stack: React.FC<Props> = ({
     <div
       className={classnames(styles.stack, styles[direction], paddedClassName)}
     >
-      {children.map((child, index) => (
+      {Children.map(children, (child, index) => (
         <div
           className={classnames(
             styles.item,
