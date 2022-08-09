@@ -1,9 +1,9 @@
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import classnames from "classnames";
 import React, {
   Children,
   createContext,
   MouseEvent as RMouseEvent,
-  // FocusEvent as RFocusEvent,
   useCallback,
   useContext,
   useMemo,
@@ -41,13 +41,14 @@ interface AccordionButtonProps
   index: number;
 }
 const AccordionButton: React.FC<AccordionButtonProps> = ({
+  iconProps,
   index,
   onClick,
-  // onFocus,
   ...props
 }) => {
   const { activeIndex, idPrefix, setActiveIndex } =
     useContext(AccordionContext);
+  const isOpen = activeIndex === index;
 
   const handleOnToggle = useCallback(() => {
     setActiveIndex((i) => (i === index ? undefined : index));
@@ -61,23 +62,19 @@ const AccordionButton: React.FC<AccordionButtonProps> = ({
     [handleOnToggle, onClick]
   );
 
-  // const handleOnFocus = useCallback(
-  //   (e: RFocusEvent<HTMLButtonElement, Element>) => {
-  //     onFocus && onFocus(e);
-  //     handleOnToggle();
-  //   },
-  //   [handleOnToggle, onFocus]
-  // );
-
   return (
     <Button
       aria-controls={getContentId(idPrefix, index)}
-      aria-expanded={activeIndex === index}
+      aria-expanded={isOpen}
       color="yellow-light"
+      iconProps={{
+        icon: faChevronUp,
+        transform: { rotate: isOpen ? 180 : 0 },
+        ...iconProps,
+      }}
       id={getButtonId(idPrefix, index)}
       onClick={handleOnClick}
       variant="ghost"
-      // onFocus={handleOnFocus}
       {...props}
     />
   );
