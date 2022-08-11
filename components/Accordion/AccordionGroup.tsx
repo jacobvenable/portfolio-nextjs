@@ -5,30 +5,27 @@ import { AccordionContent, ExtendedAccordionContent } from "./AccordionContent";
 import AccordionContext, { AccordionContextValue } from "./AccordionContext";
 import Stack from "components/Stack";
 
-let numButton = 0;
-let numContent = 0;
-
 const recursiveMapAccordionGroupChildren = (
   children: React.ReactNode,
-  idPrefix: string
+  idPrefix: string,
+  startingIndex = 0
 ): React.ReactNode => {
+  let numGroups = startingIndex;
   return Children.map<React.ReactNode, React.ReactNode>(children, (child) => {
     if (typeof child === "object" && "type" in child) {
       if (child.type === AccordionButton) {
-        const index = numButton;
-        numButton++;
         return (
           <ExtendedAccordionButton
-            aria-controls={`${idPrefix}-content-${index}`}
-            id={`${idPrefix}-button-${index}`}
-            index={index}
+            aria-controls={`${idPrefix}-content-${numGroups}`}
+            id={`${idPrefix}-button-${numGroups}`}
+            index={numGroups}
             {...child.props}
           />
         );
       }
       if (child.type === AccordionContent) {
-        const index = numContent;
-        numContent++;
+        const index = numGroups;
+        numGroups++;
         return (
           <ExtendedAccordionContent
             id={`${idPrefix}-content-${index}`}
@@ -37,7 +34,7 @@ const recursiveMapAccordionGroupChildren = (
           />
         );
       }
-      return recursiveMapAccordionGroupChildren(child, idPrefix);
+      return recursiveMapAccordionGroupChildren(child, idPrefix, numGroups);
     }
     return child;
   });
