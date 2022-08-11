@@ -45,7 +45,7 @@ const MainNav: React.FC = () => {
           Skills
         </MainNavItem>
         <MainNavItem href="/work" icon={faFolderOpen}>
-          Work
+          My Work
         </MainNavItem>
         <MainNavItem href="/contact" icon={faEnvelope}>
           Contact
