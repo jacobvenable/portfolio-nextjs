@@ -1,0 +1,19 @@
+@import "../../theme/";
+
+.list {
+  list-style-type: none;
+  margin: px-to-rem(15) px-to-rem(-5) 0;
+  padding: 0;
+  width: auto;
+}
+
+.item {
+  background: $color-blue-dark;
+  display: inline-block;
+  margin: px-to-rem(5);
+  padding: px-to-rem(3) px-to-rem(7);
+
+  &::before {
+    display: none;
+  }
+}

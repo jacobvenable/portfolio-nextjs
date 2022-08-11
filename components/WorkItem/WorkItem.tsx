@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./WorkItem.module.scss";
 import Button from "components/Button";
 import Link, { LinkProps } from "components/Link";
+import Tags from "components/Tags";
 import Typography from "components/Typography";
 
 export interface WorkItemDefinition {
@@ -64,13 +65,11 @@ const WorkItem: React.FC<WorkItemProps> = ({
         })}
       >
         {tech.length > 0 && (
-          <ul className="tags">
+          <Tags.List>
             {tech.map((tag) => (
-              <li className="tags__tag" key={tag}>
-                {tag}
-              </li>
+              <Tags.Item key={tag}>{tag}</Tags.Item>
             ))}
-          </ul>
+          </Tags.List>
         )}
       </div>
       <div
