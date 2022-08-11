@@ -5,45 +5,42 @@ import { AccordionContent, ExtendedAccordionContent } from "./AccordionContent";
 import AccordionContext, { AccordionContextValue } from "./AccordionContext";
 import Stack from "components/Stack";
 
+let numButton = 0;
+let numContent = 0;
+
 const recursiveMapAccordionGroupChildren = (
   children: React.ReactNode,
   idPrefix: string
 ): React.ReactNode => {
-  let numButton = 0;
-  let numContent = 0;
-
-  return Children.map<React.ReactNode, React.ReactNode>(
-    children,
-    (child, prefix) => {
-      if (typeof child === "object" && "type" in child) {
-        if (child.type === AccordionButton) {
-          const index = numButton;
-          numButton++;
-          return (
-            <ExtendedAccordionButton
-              aria-controls={`${prefix}-content-${index}`}
-              id={`${prefix}-button-${index}`}
-              index={index}
-              {...child.props}
-            />
-          );
-        }
-        if (child.type === AccordionContent) {
-          const index = numContent;
-          numContent++;
-          return (
-            <ExtendedAccordionContent
-              id={`${prefix}-content-${index}`}
-              index={index}
-              {...child.props}
-            />
-          );
-        }
-        return recursiveMapAccordionGroupChildren(child, idPrefix);
+  return Children.map<React.ReactNode, React.ReactNode>(children, (child) => {
+    if (typeof child === "object" && "type" in child) {
+      if (child.type === AccordionButton) {
+        const index = numButton;
+        numButton++;
+        return (
+          <ExtendedAccordionButton
+            aria-controls={`${idPrefix}-content-${index}`}
+            id={`${idPrefix}-button-${index}`}
+            index={index}
+            {...child.props}
+          />
+        );
       }
-      return child;
+      if (child.type === AccordionContent) {
+        const index = numContent;
+        numContent++;
+        return (
+          <ExtendedAccordionContent
+            id={`${idPrefix}-content-${index}`}
+            index={index}
+            {...child.props}
+          />
+        );
+      }
+      return recursiveMapAccordionGroupChildren(child, idPrefix);
     }
-  );
+    return child;
+  });
 };
 
 interface AccordionGroupProps {
