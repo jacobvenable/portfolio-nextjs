@@ -1,18 +1,18 @@
 import classnames from "classnames";
+import ImageData from "images/.png";
 import Image from "next/image";
 
 import styles from "./WorkItem.module.scss";
 import Button from "components/Button";
 import Link, { LinkProps } from "components/Link";
 import Typography from "components/Typography";
-import { StaticImageData } from "images";
 
 export interface WorkItemDefinition {
   blurb: string;
   roles: string[];
   route: string;
   tech: string[];
-  thumb: StaticImageData;
+  thumb: typeof ImageData;
   title: string;
 }
 

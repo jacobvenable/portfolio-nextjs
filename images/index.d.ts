@@ -5,7 +5,7 @@
   need updated to support inline SVGs.
 */
 
-export type StaticImageData = {
+type StaticImageData = {
   src: string;
   height: number;
   width: number;
