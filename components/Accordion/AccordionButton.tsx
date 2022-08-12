@@ -1,10 +1,12 @@
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import classNames from "classnames";
 import React, {
   MouseEvent as RMouseEvent,
   useCallback,
   useContext,
 } from "react";
 
+import styles from "./Accordion.module.scss";
 import AccordionContext from "./AccordionContext";
 import Button, { ButtonProps } from "components/Button";
 
@@ -17,6 +19,7 @@ export const AccordionButton: React.FC<Omit<AccordionButtonProps, "index">> =
   Button;
 
 export const ExtendedAccordionButton: React.FC<AccordionButtonProps> = ({
+  className,
   iconProps,
   index,
   onClick,
@@ -36,6 +39,7 @@ export const ExtendedAccordionButton: React.FC<AccordionButtonProps> = ({
   return (
     <AccordionButton
       aria-expanded={isOpen}
+      className={classNames(styles.button, className)}
       color="yellow-light"
       iconProps={{
         icon: faChevronUp,
