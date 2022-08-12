@@ -1,13 +1,15 @@
 import ContentContainer from "components/ContentContainer";
 import Typography from "components/Typography";
 import type { WorkItemDefinition } from "components/WorkItem";
-import Thumb from "images/portfolio_purdueConferences-thumb.png";
+import Thumb from "images/portfolio_pccr40thAnniversary-thumb.png";
 
 export const definition: WorkItemDefinition = {
-  title: "Purdue Conferences",
-  roles: ["Front-End Development", "CMS Implementation"],
-  blurb: "the main landing site for Purdue Conferences",
-  route: "/work/purdue-conferences",
+  title: "PCCR Anniversary Celebration",
+  roles: ["Front-End Development"],
+  blurb:
+    "a site celebrating the 40th anniversary of the Purdue Center for Cancer Research",
+  route: "/work/pccr-40th-anniversary",
+  thumb: Thumb,
   tech: [
     "GulpJS",
     "HTML5",
@@ -19,20 +21,17 @@ export const definition: WorkItemDefinition = {
     "BEM",
     "ITCSS",
     "vanilla JS",
-    "lazy loading",
     "Browserify",
     "Watchify",
-    "Handlebars",
   ],
-  thumb: Thumb,
 };
 
-const PurdueConferencesPage = () => {
+const PccrAnniversaryPage = () => {
   return (
     <ContentContainer>
-      <Typography variant="h1">Purdue Conferences</Typography>
+      <Typography variant="h1">PCCR 40th Anniversary Site</Typography>
     </ContentContainer>
   );
 };
 
-export default PurdueConferencesPage;
+export default PccrAnniversaryPage;

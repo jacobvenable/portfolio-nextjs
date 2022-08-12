@@ -1,10 +1,12 @@
+import ContentContainer from "components/ContentContainer";
+import Typography from "components/Typography";
 import type { WorkItemDefinition } from "components/WorkItem";
 import Thumb from "images/portfolio_gatsby-thumb.png";
 
 export const definition: WorkItemDefinition = {
-  title: "Personal Portfolio",
+  title: "Personal Portfolio (Previous)",
   roles: ["Front-End Development"],
-  blurb: "my personal portfolio site (the one you're looking at now)",
+  blurb: "a previous version of my personal portfolio site",
   route: "/work/portfolio-gatsby",
   thumb: Thumb,
   tech: [
@@ -21,6 +23,12 @@ export const definition: WorkItemDefinition = {
   ],
 };
 
-const PortfolioGatsby = () => null;
+const PortfolioGatsbyPage = () => {
+  return (
+    <ContentContainer>
+      <Typography variant="h1">Personal Portfolio (Past)</Typography>
+    </ContentContainer>
+  );
+};
 
-export default PortfolioGatsby;
+export default PortfolioGatsbyPage;

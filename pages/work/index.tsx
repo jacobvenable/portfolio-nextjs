@@ -1,11 +1,24 @@
+import { definition as BoilerLifeDefinition } from "./boiler-life";
+import { definition as Life360Definition } from "./life-360";
+import { definition as PccrDefinition } from "./pccr-40th-anniversary";
 import { definition as PortfolioGatsbyDefinition } from "./portfolio-gatsby";
 import { definition as PurdueConferencesDefinition } from "./purdue-conferences";
+import { definition as PurdueHomePageDefinition } from "./purdue-home-page";
+import { definition as PurdueTemplatesDefinition } from "./purdue-templates";
 import ContentContainer from "components/ContentContainer";
 import Head from "components/Head";
 import TriangleMask from "components/TriangleMask";
-import WorkItem from "components/WorkItem";
+import WorkItem, { WorkItemDefinition } from "components/WorkItem";
 
-const workItems = [PortfolioGatsbyDefinition, PurdueConferencesDefinition];
+const workItemDefintions: WorkItemDefinition[] = [
+  PortfolioGatsbyDefinition,
+  PurdueConferencesDefinition,
+  PurdueHomePageDefinition,
+  PccrDefinition,
+  PurdueTemplatesDefinition,
+  Life360Definition,
+  BoilerLifeDefinition,
+];
 
 const WorkPage = () => {
   return (
@@ -15,7 +28,7 @@ const WorkPage = () => {
         title="My Work"
       />
       <h1>My Work</h1>
-      {workItems.map((workItem, index) => (
+      {workItemDefintions.map((workItem, index) => (
         <WorkItem
           key={workItem.title}
           reverse={index % 2 !== 0}
