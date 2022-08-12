@@ -1,9 +1,11 @@
 import { definition as PortfolioGatsbyDefinition } from "./portfolio-gatsby";
+import { definition as PurdueConferencesDefinition } from "./purdue-conferences";
 import ContentContainer from "components/ContentContainer";
 import Head from "components/Head";
+import TriangleMask from "components/TriangleMask";
 import WorkItem from "components/WorkItem";
 
-const workItems = [PortfolioGatsbyDefinition];
+const workItems = [PortfolioGatsbyDefinition, PurdueConferencesDefinition];
 
 const WorkPage = () => {
   return (
@@ -13,9 +15,14 @@ const WorkPage = () => {
         title="My Work"
       />
       <h1>My Work</h1>
-      {workItems.map((workItem) => (
-        <WorkItem key={workItem.title} {...workItem} />
+      {workItems.map((workItem, index) => (
+        <WorkItem
+          key={workItem.title}
+          reverse={index % 2 !== 0}
+          {...workItem}
+        />
       ))}
+      <TriangleMask />
     </ContentContainer>
   );
 };

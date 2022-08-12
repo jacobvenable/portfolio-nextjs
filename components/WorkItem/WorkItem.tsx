@@ -46,11 +46,7 @@ const WorkItem: React.FC<WorkItemProps> = ({
         <Typography component="h3" variant="sr-only">
           My Role:
         </Typography>
-        {roles.map((role) => (
-          <Typography className={styles.role} key={role}>
-            {role}
-          </Typography>
-        ))}
+        <Typography className={styles.role}>{roles.join(", ")}</Typography>
       </div>
       <div
         className={classnames(styles.thumb, {
