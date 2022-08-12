@@ -1,10 +1,12 @@
 @import "../../theme";
 
 .button {
+  align-items: center;
   background: none;
   border-style: solid;
   border-width: 1px;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: row;
   font-family: $font-montserrat;
   font-size: px-to-rem(20);
   font-weight: 400;
@@ -83,7 +85,7 @@
   }
 
   .icon {
-    margin-left: px-to-rem(10);
+    padding-left: px-to-rem(10);
   }
 
   @media #{$mq-large} {
