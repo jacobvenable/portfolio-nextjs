@@ -9,7 +9,7 @@ type StaticImageData = {
   src: string;
   height: number;
   width: number;
-  placeholder?: string;
+  placeholder?: "blur" | "empty";
 };
 
 declare module "*.jpg" {
