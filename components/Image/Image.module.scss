@@ -1,0 +1,42 @@
+@import "../../theme";
+
+.figure {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: px-to-rem(45) auto;
+}
+
+.figureCaption {
+  align-self: flex-end;
+  color: $color-yellow-light;
+  flex: 0 1 auto;
+  font-size: px-to-rem(14);
+  margin: px-to-rem(20) 0 0;
+  padding: px-to-rem(15) 0;
+  position: relative;
+
+  &::before,
+  &::after {
+    background-color: $color-yellow-light;
+    content: "";
+    display: block;
+    height: px-to-rem(1);
+    left: -15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    left: 25%;
+    top: initial;
+  }
+}
+
+.image {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
