@@ -1,12 +1,10 @@
 import classnames from "classnames";
-import ImageData from "images/.png";
-import NextImage from "next/image";
+import NextImage, { ImageProps as NextImageProps } from "next/image";
 import { useMemo } from "react";
 
 import styles from "./Image.module.scss";
 
-type ImageDataProps = typeof ImageData;
-interface ImageProps extends ImageDataProps {
+interface ImageProps extends NextImageProps {
   alt?: string;
   caption?: string;
   classname?: string;
