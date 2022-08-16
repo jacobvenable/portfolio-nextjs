@@ -23,20 +23,16 @@ $gap-padded: $gap * 2;
 
 @mixin grid-item-sizes {
   &-100 {
-    width: 100%;
-
-    // flex-basis: 100%;
+    flex-basis: 100%;
   }
 
   &-50 {
-    width: 50%;
-
-    // flex-basis: 50%;
+    flex-basis: 50%;
   }
 }
 
 .item {
-  flex: 1 1 auto;
+  flex: 1 1;
 
   &.horizontal {
     padding: 0 ($gap / 2);
@@ -54,14 +50,8 @@ $gap-padded: $gap * 2;
     }
   }
 
-  @media #{$mq-large} {
-    &.large {
-      @include grid-item-sizes;
-    }
-  }
-
-  @media #{$mq-medium-min} {
-    &.medium {
+  @media #{$mq-mobile} {
+    &.mobile {
       @include grid-item-sizes;
     }
   }
@@ -72,8 +62,14 @@ $gap-padded: $gap * 2;
     }
   }
 
-  @media #{$mq-mobile} {
-    &.mobile {
+  @media #{$mq-medium-min} {
+    &.medium {
+      @include grid-item-sizes;
+    }
+  }
+
+  @media #{$mq-large} {
+    &.large {
       @include grid-item-sizes;
     }
   }

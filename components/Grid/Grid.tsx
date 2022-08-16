@@ -52,22 +52,28 @@ interface GridItemProps {
 }
 const GridItem: React.FC<GridItemProps> = ({
   children,
-  large = 100,
-  medium = 100,
-  tablet = 100,
-  mobile = 100,
+  large,
+  medium,
+  tablet,
+  mobile,
 }) => {
   const { direction, padded } = useContext(GridContext);
+
+  const sizeMobile = mobile || 100;
+  const sizeTablet = tablet || sizeMobile;
+  const sizeMedium = medium || sizeTablet;
+  const sizeLarge = large || sizeMedium;
+
   return (
     <div
       className={classnames(
         styles.item,
         styles[direction],
         { [styles.padded]: padded },
-        styles[`large-${large}`],
-        styles[`medium-${medium}`],
-        styles[`tablet-${tablet}`],
-        styles[`mobile-${mobile}`]
+        styles[`mobile-${sizeMobile}`],
+        styles[`tablet-${sizeTablet}`],
+        styles[`medium-${sizeMedium}`],
+        styles[`large-${sizeLarge}`]
       )}
     >
       {children}
