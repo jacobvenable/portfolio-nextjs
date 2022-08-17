@@ -2,24 +2,17 @@ import classnames from "classnames";
 import { createContext, useContext, useMemo } from "react";
 
 import styles from "./Grid.module.scss";
+import { StackProps } from "components/Stack";
 
-interface GridContext {
-  direction?: "horizontal" | "vertical";
-  padded?: boolean;
-}
+type GridContainerProps = Omit<StackProps, "itemProps">;
+type GridContext = Omit<GridContainerProps, "children">;
 const GridContext = createContext<GridContext>({});
 
-interface GridContainerProps {
-  children: React.ReactNode;
-  direction?: "horizontal" | "vertical";
-  padded?: boolean;
-}
 const GridContainer: React.FC<GridContainerProps> = ({
   children,
   direction = "horizontal",
   padded,
 }) => {
-  const paddedClassName = padded ? styles.padded : "";
   const gridContextValue = useMemo(
     () => ({
       direction,
@@ -30,7 +23,9 @@ const GridContainer: React.FC<GridContainerProps> = ({
   return (
     <GridContext.Provider value={gridContextValue}>
       <div
-        className={classnames(styles.stack, styles[direction], paddedClassName)}
+        className={classnames(styles.stack, styles[direction], {
+          [styles.padded]: padded,
+        })}
       >
         {children}
       </div>
