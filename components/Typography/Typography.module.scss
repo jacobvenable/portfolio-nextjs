@@ -45,3 +45,19 @@
   top: auto;
   width: 1px;
 }
+
+.underline {
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    background-color: $color-yellow-light;
+    bottom: 0;
+    content: "";
+    height: px-to-rem(2);
+    left: 0;
+    max-width: 50%;
+    position: absolute;
+    width: px-to-rem(110);
+  }
+}
