@@ -46,6 +46,24 @@
   width: 1px;
 }
 
+.tagline {
+  border-bottom: solid 1px $color-yellow-light;
+  border-top: solid 1px $color-yellow-light;
+  color: $color-yellow-light;
+  display: block;
+  font-size: px-to-rem(22);
+  font-weight: 300;
+  line-height: px-to-rem(32);
+  margin: 1em 0;
+  padding: px-to-rem(15) 0;
+
+  @media #{$mq-tablet-min} {
+    font-size: px-to-rem(26);
+    line-height: px-to-rem(38);
+    padding: px-to-rem(20) 0;
+  }
+}
+
 .underline {
   display: inline-block;
   position: relative;

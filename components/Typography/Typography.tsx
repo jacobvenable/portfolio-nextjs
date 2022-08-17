@@ -8,7 +8,7 @@ import React, { useMemo } from "react";
 import styles from "./Typography.module.scss";
 
 type ElementVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
-type CustomVariant = "sr-only";
+type CustomVariant = "sr-only" | "tagline";
 type TypographyProps<P> = React.Attributes &
   P & {
     children: React.ReactNode;
@@ -25,6 +25,7 @@ type TypographyProps<P> = React.Attributes &
  */
 const VARIANT_COMPONENT_MAP: Record<CustomVariant, string> = {
   "sr-only": "span",
+  tagline: "p",
 };
 
 function Typography<ExtendedProps>({
