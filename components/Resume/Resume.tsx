@@ -4,16 +4,15 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./Resume.module.scss";
-import Stack from "components/Stack";
+import Grid from "components/Grid";
 import Typography from "components/Typography";
 
 const Resume = () => {
   return (
     <>
       <h2>About Me</h2>
-      <Stack direction="horizontal" itemProps={{ className: styles.column }}>
-        <>
+      <Grid.Container direction="horizontal">
+        <Grid.Item medium={50} mobile={100}>
           <Typography iconProps={{ icon: faBriefcase }} variant="h3">
             Work Experience
           </Typography>
@@ -59,8 +58,8 @@ const Resume = () => {
             <li>January 2013 - November 2013</li>
             <li>Various Client Work</li>
           </ul>
-        </>
-        <>
+        </Grid.Item>
+        <Grid.Item mobile={100} tablet={50}>
           <Typography iconProps={{ icon: faGraduationCap }} variant="h3">
             Education
           </Typography>
@@ -93,8 +92,8 @@ const Resume = () => {
               soaking in the views of the Rocky Mountains.
             </li>
           </ul>
-        </>
-      </Stack>
+        </Grid.Item>
+      </Grid.Container>
     </>
   );
 };
