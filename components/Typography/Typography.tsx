@@ -47,10 +47,16 @@ function Typography<ExtendedProps>({
             className={classnames(styles.icon, iconProps?.className)}
           />
         )}
-        {children}
+        <span
+          className={classnames({
+            [styles.underline]: underline,
+          })}
+        >
+          {children}
+        </span>
       </>
     ),
-    [children, iconProps]
+    [children, iconProps, underline]
   );
   return React.createElement(
     comp,
@@ -58,9 +64,6 @@ function Typography<ExtendedProps>({
       className: classnames(
         {
           [styles[variant]]: component !== variant,
-        },
-        {
-          [styles.underline]: underline,
         },
         customClassName
       ),

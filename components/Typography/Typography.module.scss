@@ -52,7 +52,7 @@
 
   &::after {
     background-color: $color-yellow-light;
-    bottom: 0;
+    bottom: px-to-rem(-2);
     content: "";
     height: px-to-rem(2);
     left: 0;
