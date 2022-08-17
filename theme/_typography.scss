@@ -11,22 +11,21 @@
 
   color: $color-yellow-dark;
   font-family: $font-montserrat;
-  font-size: px-to-rem(86);
-  font-weight: normal;
-  line-height: px-to-rem(96);
-  margin: px-to-rem(50) 0 px-to-rem(20);
+  font-size: px-to-rem-mobile(41);
+  font-weight: 700;
+  line-height: px-to-rem-mobile(46);
+  margin: px-to-rem-mobile(30) 0 px-to-rem-mobile(35);
   padding: 0;
 
   @media #{$mq-tablet-min} {
-    font-size: px-to-rem-mobile(41);
-    font-weight: 700;
-    line-height: px-to-rem-mobile(46);
-    margin: px-to-rem-mobile(30) 0 px-to-rem-mobile(35);
+    font-size: px-to-rem(86);
+    font-weight: normal;
+    line-height: px-to-rem(96);
+    margin: px-to-rem(50) 0 px-to-rem(20);
   }
 
   @media #{$mq-large} {
     font-size: px-to-rem(101);
-    font-weight: normal;
     line-height: px-to-rem(112);
     margin: px-to-rem(59) 0 px-to-rem(23);
   }
