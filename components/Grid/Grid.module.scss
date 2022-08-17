@@ -1,25 +1,5 @@
+@use "../Stack/Stack.module.scss";
 @import "../../theme";
-
-$gap: px-to-rem(15);
-$gap-padded: $gap * 2;
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-
-  &.horizontal {
-    flex-direction: row;
-    margin: 0 ($gap * -1 / 2);
-
-    &.padded {
-      margin: 0 ($gap-padded * -1 / 2);
-    }
-  }
-
-  &.vertical {
-    flex-direction: column;
-  }
-}
 
 @mixin grid-item-sizes {
   &-100 {
@@ -33,22 +13,6 @@ $gap-padded: $gap * 2;
 
 .item {
   flex: 1 1;
-
-  &.horizontal {
-    padding: 0 ($gap / 2);
-
-    &.padded {
-      padding: 0 $gap-padded / 2;
-    }
-  }
-
-  &.vertical {
-    padding: ($gap / 2) 0;
-
-    &.padded {
-      padding: ($gap-padded / 2) 0;
-    }
-  }
 
   @media #{$mq-mobile} {
     &.mobile {

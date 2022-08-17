@@ -30,11 +30,7 @@ const GridContainer: React.FC<GridContainerProps> = ({
   return (
     <GridContext.Provider value={gridContextValue}>
       <div
-        className={classnames(
-          styles.container,
-          styles[direction],
-          paddedClassName
-        )}
+        className={classnames(styles.stack, styles[direction], paddedClassName)}
       >
         {children}
       </div>
