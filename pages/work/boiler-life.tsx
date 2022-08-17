@@ -2,11 +2,13 @@ import { faClipboardList, faToolbox } from "@fortawesome/free-solid-svg-icons";
 
 import ContentContainer from "components/ContentContainer";
 import Grid from "components/Grid";
+import Head from "components/Head";
 import Image from "components/Image";
 import Typography from "components/Typography";
 import type { WorkItemDefinition } from "components/WorkItem";
 import ContentPageScreenshot from "images/boilerLife_content-desktop.png";
 import HomePageScreenshot from "images/boilerLife_home-desktop.png";
+import OgImage from "images/boilerLife_ogImage.png";
 import Thumb from "images/portfolio_boilerLife-thumb.jpg";
 
 export const definition: WorkItemDefinition = {
@@ -30,6 +32,14 @@ export const definition: WorkItemDefinition = {
 const BoilerLifePage = () => {
   return (
     <ContentContainer>
+      <Head
+        description="A social media marketing campaign with a custom-designed micro-site, developed by Jacob Venable, showcasing stories of Purdue students, groups, and alumni."
+        ogImage={{
+          alt: "screenshot of the Boiler Life site",
+          src: OgImage.src,
+        }}
+        title="Boiler Life"
+      />
       <Typography variant="h1">Boiler Life</Typography>
       <Typography variant="tagline">
         the campaign featuring Boilermakers that move the world forward
