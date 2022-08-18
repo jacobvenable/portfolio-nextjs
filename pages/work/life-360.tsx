@@ -52,6 +52,7 @@ const Life360Page = () => {
         color="blue-dark"
         component={Link}
         href="https://www.purdue.edu/hhs/life360/"
+        variant="solid"
       >
         View Live Site
       </Button>
