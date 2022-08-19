@@ -1,5 +1,7 @@
 import { faClipboardList, faToolbox } from "@fortawesome/free-solid-svg-icons";
 
+import CodeSectionCssNext from "code-sections/css-next.mdx";
+import CodeSectionScssVs from "code-sections/scss-vs.mdx";
 import Button from "components/Button";
 import ContentContainer from "components/ContentContainer";
 import Grid from "components/Grid";
@@ -173,21 +175,13 @@ const Life360Page = () => {
           pixel value, to rems in order to allow the user to resize them via the
           browser.
         </Typography>
-        {/* <CodeSection language="css" code={
-					data.markdown.edges.find((edge) => {
-						return edge.node.fileAbsolutePath.includes('css-cssnext');
-					}).node.html
-				}/> */}
+        <CodeSectionCssNext />
         <Typography>
           Setting something as simple as converting the font-size is quite wordy
           in cssnext. In contrast, SCSS allows me to create a function that I
           can name in a friendlier manner.
         </Typography>
-        {/* <CodeSection language="scss" code={
-					data.markdown.edges.find((edge) => {
-						return edge.node.fileAbsolutePath.includes('scss-vs');
-					}).node.html
-				}/> */}
+        <CodeSectionScssVs />
         <Typography>
           While I could have used a mixture of SCSS and cssnext, I believe that
           it would have defeated the purpose of using cssnext in the first
