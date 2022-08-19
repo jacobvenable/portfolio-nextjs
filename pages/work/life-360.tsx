@@ -1,15 +1,13 @@
-import { faClipboardList, faToolbox } from "@fortawesome/free-solid-svg-icons";
-
 import CodeSectionCssNext from "code-sections/css-next.mdx";
 import CodeSectionScssVs from "code-sections/scss-vs.mdx";
 import Button from "components/Button";
 import ContentContainer from "components/ContentContainer";
-import Grid from "components/Grid";
 import Head from "components/Head";
 import Image from "components/Image";
 import Link, { LinkProps } from "components/Link";
 import Typography from "components/Typography";
 import type { WorkItemDefinition } from "components/WorkItem";
+import WorkOverview from "components/WorkOverview";
 import HomeCoverImage from "images/life360_home-cover-desktop.png";
 import HomeFeaturedImage from "images/life360_home-featured-desktop.png";
 import HomeHighlightsImage from "images/life360_home-highlights-desktop.png";
@@ -58,53 +56,22 @@ const Life360Page = () => {
       >
         View Live Site
       </Button>
-      <section aria-labelledby="overview">
-        <Typography id="overview" variant="h2">
-          Overview
-        </Typography>
-        <Grid.Container>
-          <Grid.Item medium={50} mobile={100}>
-            <Typography iconProps={{ icon: faToolbox }} variant="h3">
-              Tech
-            </Typography>
-            <dl>
-              <dt>Task Runner</dt>
-              <dd>Gulp.js</dd>
-              <dt>CSS</dt>
-              <dd>structured with BEM and processed by PostCSS-cssnext</dd>
-              <dt>JS</dt>
-              <dd>vanilla JS linted by JSHint and minified via UglifyJS</dd>
-              <dt>CMS</dt>
-              <dd>
-                UI built & data stored in Cascade Server and compiled via Apache
-                Velocity
-              </dd>
-            </dl>
-          </Grid.Item>
-          <Grid.Item medium={50} mobile={100}>
-            <Typography iconProps={{ icon: faClipboardList }} variant="h3">
-              Responsibilities
-            </Typography>
-            <ul>
-              <li className="overview__item">
-                review design for accessibility issues
-              </li>
-              <li className="overview__item">
-                use Git and GitHub for version control and tracking progress
-              </li>
-              <li className="overview__item">
-                develop reusable components and templates based on design
-              </li>
-              <li className="overview__item">
-                test for browser inconsistencies
-              </li>
-              <li className="overview__item">
-                implement the site within the CMS
-              </li>
-            </ul>
-          </Grid.Item>
-        </Grid.Container>
-      </section>
+
+      <WorkOverview
+        responsibilities={[
+          "review design for accessibility issues",
+          "use Git and GitHub for version control and tracking progress",
+          "develop reusable components and templates based on design",
+          "test for browser inconsistencies",
+          "implement all content management within CMS",
+        ]}
+        tech={{
+          "Task Runner": "Gulp.js",
+          CSS: "structured with BEM and processed by PostCSS-cssnext",
+          JS: "vanilla JS linted by JSHint and minified via UglifyJS",
+          CMS: "UI built & data stored in Cascade Server and compiled via Apache Velocity",
+        }}
+      />
       <Image
         alt=""
         caption='the main "cover" story of the home page'

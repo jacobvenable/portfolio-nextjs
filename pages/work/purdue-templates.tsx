@@ -1,15 +1,14 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faClipboardList, faToolbox } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Button from "components/Button";
 import ContentContainer from "components/ContentContainer";
-import Grid from "components/Grid";
 import Head from "components/Head";
 import Image from "components/Image";
 import Link, { LinkProps } from "components/Link";
 import Typography from "components/Typography";
 import type { WorkItemDefinition } from "components/WorkItem";
+import WorkOverview from "components/WorkOverview";
 import Thumb from "images/portfolio_purdueTemplates-thumb.png";
 import ImageAudienceDesktop from "images/purdueTemplates_audience-desktop.png";
 import ImageEvents from "images/purdueTemplates_events.png";
@@ -59,61 +58,23 @@ const PurdueTemplatesPage = () => {
         <span className="sr-only">View GitHub Repository</span>
         <FontAwesomeIcon icon={faGithub} />
       </Button>
-
-      <section aria-labelledby="overview">
-        <Typography id="overview" variant="h2">
-          Overview
-        </Typography>
-        <Grid.Container>
-          <Grid.Item medium={50} mobile={100}>
-            <Typography iconProps={{ icon: faToolbox }} variant="h3">
-              Tech
-            </Typography>
-            <dl>
-              <dt>Task Runner</dt>
-              <dd>Gulp.js</dd>
-              <dt>CSS</dt>
-              <dd>
-                new components structured with BEM and written/compiled in SCSS
-              </dd>
-              <dt>JS</dt>
-              <dd>Bootstrap V3 and dependencies (JQuery)</dd>
-              <dt>Back-End</dt>
-              <dd>PHP 5.1.6 and 5.4.16</dd>
-              <dt>CMS</dt>
-              <dd>
-                UI built & data stored in Cascade Server and compiled via Apache
-                Velocity
-              </dd>
-            </dl>
-          </Grid.Item>
-          <Grid.Item medium={50} mobile={100}>
-            <Typography iconProps={{ icon: faClipboardList }} variant="h3">
-              Responsibilities
-            </Typography>
-            <ul>
-              <li className="overview__item">
-                review design for accessibility issues
-              </li>
-              <li className="overview__item">
-                use Git and GitHub for version control and tracking progress
-              </li>
-              <li className="overview__item">
-                ensure conformance to Level A and AA of WCAG 2.0
-              </li>
-              <li className="overview__item">
-                test for browser inconsistencies
-              </li>
-              <li className="overview__item">
-                implement all content management within Cascade Server
-              </li>
-              <li className="overview__item">
-                handle issues and feature requests
-              </li>
-            </ul>
-          </Grid.Item>
-        </Grid.Container>
-      </section>
+      <WorkOverview
+        responsibilities={[
+          "review design for accessibility issues",
+          "use Git and GitHub for version control and tracking progress",
+          "ensure conformance to Level A and AA of WCAG 2.0",
+          "test for browser inconsistencies",
+          "implement all content management within Cascade Server",
+          "handle issues and feature requests",
+        ]}
+        tech={{
+          "Task Runner": "Gulp.js",
+          CSS: "new components structured with BEM and written/compiled in SCSS",
+          JS: "Bootstrap V3 and dependencies (JQuery)",
+          "Back-End": "PHP 5.1.6 and 5.4.16",
+          CMS: "UI built & data stored in Cascade Server and compiled via Apache Velocity",
+        }}
+      />
       <Image
         alt=""
         caption="example of a page using the current audience template"
