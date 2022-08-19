@@ -8,7 +8,12 @@ module.exports = {
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "next/core-web-vitals",
   ],
-  ignorePatterns: [".eslintrc.js", ".lintstagedrc.js", "next-env.d.ts"],
+  ignorePatterns: [
+    ".eslintrc.js",
+    ".lintstagedrc.js",
+    "next.config.mjs",
+    "next-env.d.ts",
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     tsconfigRootDir: __dirname,

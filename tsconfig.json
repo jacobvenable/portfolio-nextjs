@@ -28,6 +28,7 @@
     "**/*.jsx"
   ],
   "exclude": [
+    "next.config.mjs",
     "next-env.d.ts",
     "node_modules"
   ]
