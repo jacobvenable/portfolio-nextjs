@@ -15,7 +15,7 @@ const Image: React.FC<ImageProps> = ({
   caption,
   classname,
   height,
-  placeholder,
+  placeholder = "blur",
   src,
   width,
 }) => {
