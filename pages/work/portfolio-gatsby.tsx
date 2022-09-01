@@ -13,6 +13,7 @@ import CodeSectionGraphql3 from "code-sections/js-graphql-3.mdx";
 import CodeSectionJsVideo from "code-sections/js-video-1.mdx";
 import Button from "components/Button";
 import ContentContainer from "components/ContentContainer";
+import Head from "components/Head";
 import Link, { LinkProps } from "components/Link";
 import Typography from "components/Typography";
 import type { WorkItemDefinition } from "components/WorkItem";
@@ -42,6 +43,10 @@ export const definition: WorkItemDefinition = {
 const PortfolioGatsbyPage = () => {
   return (
     <ContentContainer>
+      <Head
+        description="An overview of my previous personal portfolio site built via GatsbyJS."
+        title="Personal Portfolio (Previous)"
+      />
       <Typography variant="h1">Personal Portfolio (Previous)</Typography>
       <Typography variant="tagline">
         a previous version of my personal portfolio site built via GatsbyJS
