@@ -55,7 +55,7 @@ const PurdueTemplatesPage = () => {
         href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015"
         variant="hollow"
       >
-        <span className="sr-only">View GitHub Repository</span>
+        <Typography variant="sr-only">View GitHub Repository</Typography>
         <FontAwesomeIcon icon={faGithub} />
       </Button>
       <WorkOverview
