@@ -33,7 +33,7 @@ const GridContainer: React.FC<GridContainerProps> = ({
   );
 };
 
-type columnSize = 50 | 100;
+type columnSize = 35 | 50 | 65 | 100;
 interface GridItemProps {
   children: React.ReactNode;
   large?: columnSize;
