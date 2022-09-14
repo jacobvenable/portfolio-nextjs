@@ -2,6 +2,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Button from "components/Button";
+import ContactForm from "components/ContactForm";
 import ContentContainer from "components/ContentContainer";
 import Grid from "components/Grid";
 import Link, { LinkProps } from "components/Link";
@@ -12,7 +13,7 @@ const ContactPage = () => {
   return (
     <ContentContainer>
       <Typography variant="h1">Want to talk?</Typography>
-      <Grid.Container>
+      <Grid.Container padded>
         <Grid.Item medium={35}>
           <Typography>
             Have an idea for a project, or want to discuss a new opportunity?
@@ -50,7 +51,7 @@ const ContactPage = () => {
           </Stack>
         </Grid.Item>
         <Grid.Item medium={65}>
-          <></>
+          <ContactForm />
         </Grid.Item>
       </Grid.Container>
     </ContentContainer>
