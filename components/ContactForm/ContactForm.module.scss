@@ -1,0 +1,61 @@
+@import "../../theme";
+
+.form {
+  @media #{$mq-tablet-min} {
+    @supports (display: grid) {
+      display: grid;
+      grid-gap: px-to-rem(45) px-to-rem(30);
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto auto auto auto;
+    }
+  }
+}
+
+.input {
+  margin: px-to-rem(45) 0 px-to-rem(15);
+  position: relative;
+  transition: opacity 0.2s ease-in;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &.disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  @media #{$mq-tablet-min} {
+    margin-top: 0;
+
+    & + & {
+      margin-top: px-to-rem(45);
+    }
+
+    @supports (display: grid) {
+      &,
+      & + & {
+        margin: 0;
+      }
+
+      &.detail {
+        grid-column: auto / span 1;
+        grid-row: 1 / span 1;
+      }
+
+      &.message {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 1;
+      }
+
+      &.recaptcha {
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 1;
+      }
+    }
+  }
+}
+
+.button {
+  justify-self: start;
+}
