@@ -34,9 +34,12 @@ const Link: React.FC<LinkProps> = ({
     <NextLink {...props}>
       <a
         aria-current={isActive ? "page" : undefined}
-        className={classnames(className, {
-          [activeClassName]: isActive && activeClassName,
-        })}
+        className={classnames(
+          className,
+          activeClassName && {
+            [activeClassName]: isActive,
+          }
+        )}
       >
         {children}
       </a>

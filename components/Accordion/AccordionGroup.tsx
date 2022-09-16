@@ -12,7 +12,7 @@ const recursiveMapAccordionGroupChildren = (
 ): React.ReactNode => {
   let numGroups = startingIndex;
   return Children.map<React.ReactNode, React.ReactNode>(children, (child) => {
-    if (typeof child === "object" && "type" in child) {
+    if (child && typeof child === "object" && "type" in child) {
       if (child.type === AccordionButton) {
         return (
           <ExtendedAccordionButton

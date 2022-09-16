@@ -2,51 +2,43 @@ import classNames from "classnames";
 import React from "react";
 
 import styles from "./Input.module.scss";
-import Typography from "components/Typography";
 
 interface BaseInputProps {
   error?: string;
   label: string;
-  required?: boolean;
+  name: string;
 }
 
-interface TextInputProps
-  extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
+type InputElementProps = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>;
+interface TextInputProps extends InputElementProps {
   type?: "email" | "text";
 }
-
-interface TextareaInputProps
-  extends React.DetailedHTMLProps<
-    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-    HTMLTextAreaElement
-  > {
+type TextAreaElementProps = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+>;
+interface TextAreaInputProps extends TextAreaElementProps {
   type: "textarea";
 }
 
-type InputProps = BaseInputProps & (TextInputProps | TextareaInputProps);
+type InputProps = BaseInputProps & (TextInputProps | TextAreaInputProps);
 
-const Input: React.FC<InputProps> = ({
-  className,
-  error = "",
-  label,
-  name,
-  required,
-  type = "text",
-}) => {
+const Input = React.forwardRef<
+  HTMLInputElement | HTMLTextAreaElement,
+  InputProps
+>(function Input(
+  { className, error = "", label, name, type = "text", ...props },
+  ref
+) {
   const tooltipId = `${name}-tooltip`;
 
   return (
     <div className={classNames([className, styles.container])}>
       <label className={styles.label} htmlFor={name}>
         {label}
-        {required && (
-          <Typography component="span" variant="sr-only">
-            (required)
-          </Typography>
-        )}
       </label>
       {type === "textarea" ? (
         <textarea
@@ -54,6 +46,9 @@ const Input: React.FC<InputProps> = ({
           className={styles.textarea}
           id={name}
           name={name}
+          ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
+          type={type}
+          {...(props as TextAreaElementProps)}
         />
       ) : (
         <input
@@ -61,7 +56,9 @@ const Input: React.FC<InputProps> = ({
           className={styles.input}
           id={name}
           name={name}
+          ref={ref as React.ForwardedRef<HTMLInputElement>}
           type={type}
+          {...(props as InputElementProps)}
         />
       )}
       <p
@@ -77,6 +74,6 @@ const Input: React.FC<InputProps> = ({
       </p>
     </div>
   );
-};
+});
 
 export default Input;

@@ -5,8 +5,10 @@ import styles from "./Grid.module.scss";
 import { StackProps } from "components/Stack";
 
 type GridContainerProps = Omit<StackProps, "itemProps">;
-type GridContext = Omit<GridContainerProps, "children">;
-const GridContext = createContext<GridContext>({});
+type GridContext = Omit<GridContainerProps, "children" | "direction"> & {
+  direction: Exclude<StackProps["direction"], undefined>;
+};
+const GridContext = createContext<GridContext>({ direction: "horizontal" });
 
 const GridContainer: React.FC<GridContainerProps> = ({
   children,
