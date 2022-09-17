@@ -5,6 +5,7 @@ import Button from "components/Button";
 import ContactForm from "components/ContactForm";
 import ContentContainer from "components/ContentContainer";
 import Grid from "components/Grid";
+import Head from "components/Head";
 import Link, { LinkProps } from "components/Link";
 import Stack from "components/Stack";
 import Typography from "components/Typography";
@@ -12,6 +13,10 @@ import Typography from "components/Typography";
 const ContactPage = () => {
   return (
     <ContentContainer>
+      <Head
+        description="Different ways to get in touch with Jacob Venable including a form and social media."
+        title="Contact"
+      />
       <Typography variant="h1">Want to talk?</Typography>
       <Grid.Container padded>
         <Grid.Item medium={35}>
