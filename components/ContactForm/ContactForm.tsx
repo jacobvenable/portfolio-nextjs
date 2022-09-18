@@ -1,12 +1,16 @@
+import { faPaperPlane, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { ajvResolver } from "@hookform/resolvers/ajv";
 import type { JSONSchemaType } from "ajv";
+import axios from "axios";
 import classNames from "classnames";
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import styles from "./ContactForm.module.scss";
 import Button from "components/Button";
 import Input from "components/Input";
+
+const NETLIFY_FORM_NAME = "contact";
 
 interface ContactFormData {
   email: string;
@@ -43,6 +47,8 @@ const schema: JSONSchemaType<ContactFormData> = {
 };
 
 const ContactForm: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
   const {
     formState: { errors },
     handleSubmit: hookFormHandleSubmit,
@@ -52,52 +58,95 @@ const ContactForm: React.FC = () => {
   });
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
-      void hookFormHandleSubmit((data: ContactFormData) => {
-        console.log(data);
+      void hookFormHandleSubmit(async (data: ContactFormData) => {
+        setIsSubmitting(true);
+        try {
+          await axios.post("/", data, {
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          });
+          setSubmitMessage(
+            "Thanks! Your message has been dispatched with two droids to the planet's surface."
+          );
+        } catch {
+          setSubmitMessage(
+            "Whoops. Looks like some wires got crossed and I didn't receive your message. Maybe try again?"
+          );
+        } finally {
+          setIsSubmitting(false);
+        }
       })(e);
     },
     [hookFormHandleSubmit]
   );
 
   return (
-    <form
-      action="/contact"
-      className={styles.form}
-      data-netlify="true"
-      data-netlify-honeypot="sweet-honey"
-      data-netlify-recaptcha="true"
-      method="post"
-      name="contact"
-      onSubmit={handleSubmit}
-    >
-      <Input
-        className={classNames([styles.input, styles.detail])}
-        error={errors.name?.message}
-        label="What is your name?"
-        required={true}
-        type="text"
-        {...register("name")}
-      />
-      <Input
-        className={classNames([styles.input, styles.detail])}
-        error={errors.email?.message}
-        label="What is your email?"
-        required={true}
-        type="email"
-        {...register("email")}
-      />
-      <Input
-        className={classNames([styles.input, styles.message])}
-        error={errors.message?.message}
-        label="What would you like to talk about?"
-        required={true}
-        type="textarea"
-        {...register("message")}
-      />
-      <Button className={styles.button} color="yellow-light" type="submit">
-        Send
-      </Button>
-    </form>
+    <>
+      <form
+        action="/contact"
+        className={styles.form}
+        data-netlify="true"
+        method="POST"
+        name="contact"
+        onSubmit={handleSubmit}
+      >
+        {/* 
+        hidden form input required for Netlify forms
+        see: https://docs.netlify.com/forms/setup/#work-with-javascript-rendered-forms
+      */}
+        <input
+          name={NETLIFY_FORM_NAME}
+          type="hidden"
+          value="the-name-of-the-html-form"
+        />
+        <Input
+          className={classNames([styles.input, styles.detail])}
+          disabled={isSubmitting}
+          error={errors.name?.message}
+          label="What is your name?"
+          required={true}
+          type="text"
+          {...register("name")}
+        />
+        <Input
+          className={classNames([styles.input, styles.detail])}
+          disabled={isSubmitting}
+          error={errors.email?.message}
+          label="What is your email?"
+          required={true}
+          type="email"
+          {...register("email")}
+        />
+        <Input
+          className={classNames([styles.input, styles.message])}
+          disabled={isSubmitting}
+          error={errors.message?.message}
+          label="What would you like to talk about?"
+          required={true}
+          type="textarea"
+          {...register("message")}
+        />
+        <Button
+          className={styles.button}
+          color="yellow-light"
+          disabled={isSubmitting}
+          iconProps={{
+            icon: isSubmitting ? faSpinner : faPaperPlane,
+            spin: isSubmitting,
+          }}
+          type="submit"
+        >
+          Send
+        </Button>
+      </form>
+      <p
+        aria-hidden={!submitMessage}
+        className={classNames(styles.submitMessage, {
+          [styles.visible]: !!submitMessage,
+        })}
+      >
+        {submitMessage}
+      </p>
+    </>
   );
 };
 

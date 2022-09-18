@@ -4,6 +4,11 @@
   position: relative;
 }
 
+.disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
 .label {
   color: $color-yellow-light;
   display: block;

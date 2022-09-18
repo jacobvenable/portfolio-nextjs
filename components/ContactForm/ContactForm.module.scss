@@ -59,3 +59,21 @@
 .button {
   justify-self: start;
 }
+
+.submitMessage {
+  clear: both;
+  color: $color-yellow-light;
+  display: block;
+  font-size: px-to-rem(16);
+  line-height: 1.2;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  padding: px-to-rem(30) 0;
+
+  &.visible {
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-name: shrink-grow;
+  }
+}

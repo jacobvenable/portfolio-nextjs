@@ -4,6 +4,7 @@ import React from "react";
 import styles from "./Input.module.scss";
 
 interface BaseInputProps {
+  disabled?: boolean;
   error?: string;
   label: string;
   name: string;
@@ -30,13 +31,19 @@ const Input = React.forwardRef<
   HTMLInputElement | HTMLTextAreaElement,
   InputProps
 >(function Input(
-  { className, error = "", label, name, type = "text", ...props },
+  { className, disabled, error = "", label, name, type = "text", ...props },
   ref
 ) {
   const tooltipId = `${name}-tooltip`;
 
   return (
-    <div className={classNames([className, styles.container])}>
+    <div
+      className={classNames([
+        className,
+        styles.container,
+        { [styles.disabled]: disabled },
+      ])}
+    >
       <label className={styles.label} htmlFor={name}>
         {label}
       </label>
@@ -44,6 +51,7 @@ const Input = React.forwardRef<
         <textarea
           aria-describedby={error ? tooltipId : undefined}
           className={styles.textarea}
+          disabled={disabled}
           id={name}
           name={name}
           ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
@@ -54,6 +62,7 @@ const Input = React.forwardRef<
         <input
           aria-describedby={error ? tooltipId : undefined}
           className={styles.input}
+          disabled={disabled}
           id={name}
           name={name}
           ref={ref as React.ForwardedRef<HTMLInputElement>}
