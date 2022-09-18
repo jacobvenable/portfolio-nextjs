@@ -61,9 +61,13 @@ const ContactForm: React.FC = () => {
       void hookFormHandleSubmit(async (data: ContactFormData) => {
         setIsSubmitting(true);
         try {
-          await axios.post("/", data, {
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          });
+          await axios.post(
+            "/",
+            { ...data, "form-name": NETLIFY_FORM_NAME },
+            {
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            }
+          );
           setSubmitMessage(
             "Thanks! Your message has been dispatched with two droids to the planet's surface."
           );
@@ -86,18 +90,9 @@ const ContactForm: React.FC = () => {
         className={styles.form}
         data-netlify="true"
         method="POST"
-        name="contact"
+        name={NETLIFY_FORM_NAME}
         onSubmit={handleSubmit}
       >
-        {/* 
-        hidden form input required for Netlify forms
-        see: https://docs.netlify.com/forms/setup/#work-with-javascript-rendered-forms
-      */}
-        <input
-          name={NETLIFY_FORM_NAME}
-          type="hidden"
-          value="the-name-of-the-html-form"
-        />
         <Input
           className={classNames([styles.input, styles.detail])}
           disabled={isSubmitting}
