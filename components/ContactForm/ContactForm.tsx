@@ -62,7 +62,7 @@ const ContactForm: React.FC = () => {
         setIsSubmitting(true);
         try {
           await axios.post(
-            "/",
+            "/contact",
             { ...data, "form-name": NETLIFY_FORM_NAME },
             {
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
