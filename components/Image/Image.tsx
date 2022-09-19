@@ -7,13 +7,13 @@ import styles from "./Image.module.scss";
 interface ImageProps extends NextImageProps {
   alt?: string;
   caption?: string;
-  classname?: string;
+  className?: string;
 }
 
 const Image: React.FC<ImageProps> = ({
   alt = "",
   caption,
-  classname,
+  className,
   height,
   placeholder = "blur",
   src,
@@ -23,14 +23,14 @@ const Image: React.FC<ImageProps> = ({
     () => (
       <NextImage
         alt={alt}
-        className={classnames(styles.image, classname)}
+        className={classnames(styles.image, className)}
         height={height}
         placeholder={placeholder}
         src={src}
         width={width}
       />
     ),
-    [alt, classname, height, placeholder, src, width]
+    [alt, className, height, placeholder, src, width]
   );
 
   if (caption) {

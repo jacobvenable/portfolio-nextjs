@@ -1,9 +1,9 @@
 import classnames from "classnames";
 import ImageData from "images/.png";
-import Image from "next/image";
 
 import styles from "./WorkItem.module.scss";
 import Button from "components/Button";
+import Image from "components/Image";
 import Link, { LinkProps } from "components/Link";
 import Tags from "components/Tags";
 import Typography from "components/Typography";
