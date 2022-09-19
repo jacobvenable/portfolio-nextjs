@@ -93,6 +93,8 @@ const ContactForm: React.FC = () => {
         name={NETLIFY_FORM_NAME}
         onSubmit={handleSubmit}
       >
+        {/* hidden form name input required for Netlify forms */}
+        <input name="form-name" type="hidden" value={NETLIFY_FORM_NAME} />
         <Input
           className={classNames([styles.input, styles.detail])}
           disabled={isSubmitting}
