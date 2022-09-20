@@ -58,12 +58,20 @@ const ContactForm: React.FC = () => {
   });
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
-      void hookFormHandleSubmit(async (data: ContactFormData) => {
+      void hookFormHandleSubmit(async (formData: ContactFormData) => {
         setIsSubmitting(true);
+        const data = { ...formData, "form-name": NETLIFY_FORM_NAME };
         try {
           await axios.post(
             "/contact",
-            { ...data, "form-name": NETLIFY_FORM_NAME },
+            Object.keys(data)
+              .map(
+                (key) =>
+                  encodeURIComponent(key) +
+                  "=" +
+                  encodeURIComponent(data[key] as keyof ContactFormData)
+              )
+              .join("&"),
             {
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
             }
@@ -93,8 +101,6 @@ const ContactForm: React.FC = () => {
         name={NETLIFY_FORM_NAME}
         onSubmit={handleSubmit}
       >
-        {/* hidden form name input required for Netlify forms */}
-        <input name="form-name" type="hidden" value={NETLIFY_FORM_NAME} />
         <Input
           className={classNames([styles.input, styles.detail])}
           disabled={isSubmitting}
