@@ -66,10 +66,11 @@ const ContactForm: React.FC = () => {
     (e: React.FormEvent<HTMLFormElement>) => {
       void hookFormHandleSubmit(async (formData: ContactFormData) => {
         setIsSubmitting(true);
+        console.log("formData: ", formData);
         const data = {
           ...formData,
           "form-name": NETLIFY_FORM_NAME,
-          honeypot: NETLIFY_HONEY_POT_FIELD,
+          "netlify-honeypot": NETLIFY_HONEY_POT_FIELD,
         };
         try {
           await axios.post(
