@@ -11,8 +11,10 @@ import Button from "components/Button";
 import Input from "components/Input";
 
 const NETLIFY_FORM_NAME = "contact";
+const NETLIFY_HONEY_POT_FIELD = "bees knees";
 
 interface ContactFormData {
+  [NETLIFY_HONEY_POT_FIELD]?: string;
   email: string;
   message: string;
   name: string;
@@ -20,6 +22,10 @@ interface ContactFormData {
 const schema: JSONSchemaType<ContactFormData> = {
   type: "object",
   properties: {
+    [NETLIFY_HONEY_POT_FIELD]: {
+      type: "string",
+      nullable: true,
+    },
     email: {
       type: "string",
       minLength: 1,
@@ -60,7 +66,11 @@ const ContactForm: React.FC = () => {
     (e: React.FormEvent<HTMLFormElement>) => {
       void hookFormHandleSubmit(async (formData: ContactFormData) => {
         setIsSubmitting(true);
-        const data = { ...formData, "form-name": NETLIFY_FORM_NAME };
+        const data = {
+          ...formData,
+          "form-name": NETLIFY_FORM_NAME,
+          honeypot: NETLIFY_HONEY_POT_FIELD,
+        };
         try {
           await axios.post(
             "/contact",
@@ -101,6 +111,11 @@ const ContactForm: React.FC = () => {
         name={NETLIFY_FORM_NAME}
         onSubmit={handleSubmit}
       >
+        <Input
+          label="Leave this blank if you're human."
+          type="hidden"
+          {...register(NETLIFY_HONEY_POT_FIELD)}
+        />
         <Input
           className={classNames([styles.input, styles.detail])}
           disabled={isSubmitting}

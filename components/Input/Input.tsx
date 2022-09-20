@@ -15,7 +15,7 @@ type InputElementProps = React.DetailedHTMLProps<
   HTMLInputElement
 >;
 interface TextInputProps extends InputElementProps {
-  type?: "email" | "text";
+  type?: "email" | "hidden" | "text";
 }
 type TextAreaElementProps = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLTextAreaElement>,
@@ -55,7 +55,6 @@ const Input = React.forwardRef<
           id={name}
           name={name}
           ref={ref as React.ForwardedRef<HTMLTextAreaElement>}
-          type={type}
           {...(props as TextAreaElementProps)}
         />
       ) : (
