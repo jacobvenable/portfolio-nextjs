@@ -66,7 +66,6 @@ const ContactForm: React.FC = () => {
     (e: React.FormEvent<HTMLFormElement>) => {
       void hookFormHandleSubmit(async (formData: ContactFormData) => {
         setIsSubmitting(true);
-        console.log("formData: ", formData);
         const data = {
           ...formData,
           "form-name": NETLIFY_FORM_NAME,
