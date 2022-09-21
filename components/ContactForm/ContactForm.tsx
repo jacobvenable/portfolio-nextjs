@@ -70,7 +70,6 @@ const ContactForm: React.FC = () => {
         const data = {
           ...formData,
           "form-name": NETLIFY_FORM_NAME,
-          "netlify-honeypot": NETLIFY_HONEY_POT_FIELD,
         };
         try {
           await axios.post(
@@ -108,6 +107,7 @@ const ContactForm: React.FC = () => {
         action="/contact"
         className={styles.form}
         data-netlify="true"
+        data-netlify-honeypot={NETLIFY_HONEY_POT_FIELD}
         method="POST"
         name={NETLIFY_FORM_NAME}
         onSubmit={handleSubmit}
