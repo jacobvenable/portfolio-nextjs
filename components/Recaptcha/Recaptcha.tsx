@@ -1,6 +1,9 @@
+import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 import GoogleRecaptcha from "react-google-recaptcha";
 import { Controller } from "react-hook-form";
+
+import Tooltip from "components/Tooltip";
 
 interface RecaptchaProps {
   className?: string;
@@ -18,7 +21,9 @@ const Recaptcha: React.FC<RecaptchaProps> = ({ className, name }) => {
             sitekey={process.env.NEXT_PUBLIC_SITE_RECAPTCHA_KEY}
             theme="dark"
           />
-          {error && "Please prove you aren't a robot."}
+          <Tooltip iconProps={{ icon: faWarning }} visible={!!error}>
+            Please prove you aren&apos;t a robot.
+          </Tooltip>
         </div>
       )}
     />
