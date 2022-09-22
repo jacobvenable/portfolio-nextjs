@@ -148,7 +148,10 @@ const ContactForm: React.FC = () => {
           type="textarea"
           {...contactForm.register("message")}
         />
-        <Recaptcha name={NETLIFY_RECAPTCHA_FIELD} />
+        <Recaptcha
+          className={classNames([styles.input, styles.recaptcha])}
+          name={NETLIFY_RECAPTCHA_FIELD}
+        />
         <Button
           className={styles.button}
           color="yellow-light"
