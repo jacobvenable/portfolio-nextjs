@@ -1,0 +1,42 @@
+@import "../../theme";
+
+.tooltip {
+  background-color: $color-yellow-light;
+  color: $color-background;
+  display: inline-block;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  font-size: px-to-rem(14);
+  line-height: 1;
+  margin: px-to-rem(7) 0 0;
+  opacity: 0;
+  overflow: visible;
+  padding: px-to-rem(4) px-to-rem(3);
+  position: absolute;
+  transform: translateY(px-to-rem(5));
+
+  &::before {
+    border-bottom: px-to-rem(7) solid $color-yellow-light;
+    border-left: px-to-rem(5) solid transparent;
+    border-right: px-to-rem(5) solid transparent;
+    bottom: 100%;
+    content: "";
+    display: block;
+    height: 0;
+    left: px-to-rem(5);
+    position: absolute;
+    width: 0;
+  }
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease-in;
+  }
+}
+
+.icon {
+  display: inline-block;
+  flex: 0 0 auto;
+  margin-right: px-to-rem(5);
+}
