@@ -5,8 +5,9 @@ yarn-error.log
 # custom cache directory
 .cache
 
-# NextJS directories
+# NextJS files & directories
 .next
+.env.local
 
 # OS files
 .DS_STORE
