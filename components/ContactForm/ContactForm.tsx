@@ -4,28 +4,27 @@ import type { JSONSchemaType } from "ajv";
 import axios from "axios";
 import classNames from "classnames";
 import React, { useCallback, useState } from "react";
-import { useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 
 import styles from "./ContactForm.module.scss";
 import Button from "components/Button";
 import Input from "components/Input";
+import Recaptcha from "components/Recaptcha";
 
 const NETLIFY_FORM_NAME = "contact";
 const NETLIFY_HONEY_POT_FIELD = "bees knees";
+const NETLIFY_RECAPTCHA_FIELD = "g-recaptcha-response";
 
 interface ContactFormData {
-  [NETLIFY_HONEY_POT_FIELD]?: string;
   email: string;
   message: string;
   name: string;
+  [NETLIFY_HONEY_POT_FIELD]?: string;
+  [NETLIFY_RECAPTCHA_FIELD]: string;
 }
 const schema: JSONSchemaType<ContactFormData> = {
   type: "object",
   properties: {
-    [NETLIFY_HONEY_POT_FIELD]: {
-      type: "string",
-      nullable: true,
-    },
     email: {
       type: "string",
       minLength: 1,
@@ -47,25 +46,30 @@ const schema: JSONSchemaType<ContactFormData> = {
         minLength: "Please provide a message.",
       },
     },
+    [NETLIFY_HONEY_POT_FIELD]: {
+      type: "string",
+      nullable: true,
+    },
+    [NETLIFY_RECAPTCHA_FIELD]: {
+      type: "string",
+      minLength: 1,
+    },
   },
-  required: ["email", "name", "message"],
-  additionalProperties: false,
+  required: ["email", "name", "message", NETLIFY_RECAPTCHA_FIELD],
+  additionalProperties: true,
 };
 
 const ContactForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
-  const {
-    formState: { errors },
-    handleSubmit: hookFormHandleSubmit,
-    register,
-  } = useForm<ContactFormData>({
+  const contactForm = useForm<ContactFormData>({
     resolver: ajvResolver<ContactFormData>(schema),
   });
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
-      void hookFormHandleSubmit(async (formData: ContactFormData) => {
+      void contactForm.handleSubmit(async (formData: ContactFormData) => {
         setIsSubmitting(true);
+        console.log("formData: ", formData);
         const data = {
           ...formData,
           "form-name": NETLIFY_FORM_NAME,
@@ -97,16 +101,17 @@ const ContactForm: React.FC = () => {
         }
       })(e);
     },
-    [hookFormHandleSubmit]
+    [contactForm]
   );
 
   return (
-    <>
+    <FormProvider {...contactForm}>
       <form
         action="/contact"
         className={styles.form}
         data-netlify="true"
         data-netlify-honeypot={NETLIFY_HONEY_POT_FIELD}
+        data-netlify-recaptcha="true"
         method="POST"
         name={NETLIFY_FORM_NAME}
         onSubmit={handleSubmit}
@@ -114,35 +119,36 @@ const ContactForm: React.FC = () => {
         <Input
           label="Leave this blank if you're human."
           type="hidden"
-          {...register(NETLIFY_HONEY_POT_FIELD)}
+          {...contactForm.register(NETLIFY_HONEY_POT_FIELD)}
         />
         <Input
           className={classNames([styles.input, styles.detail])}
           disabled={isSubmitting}
-          error={errors.name?.message}
+          error={contactForm.formState.errors.name?.message}
           label="What is your name?"
           required={true}
           type="text"
-          {...register("name")}
+          {...contactForm.register("name")}
         />
         <Input
           className={classNames([styles.input, styles.detail])}
           disabled={isSubmitting}
-          error={errors.email?.message}
+          error={contactForm.formState.errors.email?.message}
           label="What is your email?"
           required={true}
           type="email"
-          {...register("email")}
+          {...contactForm.register("email")}
         />
         <Input
           className={classNames([styles.input, styles.message])}
           disabled={isSubmitting}
-          error={errors.message?.message}
+          error={contactForm.formState.errors.message?.message}
           label="What would you like to talk about?"
           required={true}
           type="textarea"
-          {...register("message")}
+          {...contactForm.register("message")}
         />
+        <Recaptcha name={NETLIFY_RECAPTCHA_FIELD} />
         <Button
           className={styles.button}
           color="yellow-light"
@@ -164,7 +170,7 @@ const ContactForm: React.FC = () => {
       >
         {submitMessage}
       </p>
-    </>
+    </FormProvider>
   );
 };
 
