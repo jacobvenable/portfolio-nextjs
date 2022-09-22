@@ -42,6 +42,7 @@ const Input = React.forwardRef<
         className,
         styles.container,
         { [styles.disabled]: disabled },
+        { [styles.hidden]: type === "hidden" },
       ])}
     >
       <label className={styles.label} htmlFor={name}>
