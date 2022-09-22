@@ -1,7 +1,9 @@
+import { faWarning } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 import React from "react";
 
 import styles from "./Input.module.scss";
+import Tooltip from "components/Tooltip";
 
 interface BaseInputProps {
   disabled?: boolean;
@@ -70,17 +72,15 @@ const Input = React.forwardRef<
           {...(props as InputElementProps)}
         />
       )}
-      <p
-        className={classNames([
-          styles.tooltip,
-          {
-            [styles.visible]: !!error,
-          },
-        ])}
+      <Tooltip
+        iconProps={{
+          icon: faWarning,
+        }}
         id={tooltipId}
+        visible={!!error}
       >
         {error}
-      </p>
+      </Tooltip>
     </div>
   );
 });
