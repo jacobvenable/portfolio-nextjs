@@ -1,0 +1,60 @@
+@import "../../theme";
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: px-to-rem(30) auto;
+  text-align: center;
+  width: 100%;
+}
+
+.heading {
+  flex: 0 0 auto;
+  font-size: px-to-rem(50);
+  justify-content: center;
+  line-height: 1.2;
+  margin: 0 auto px-to-rem(30);
+}
+
+.text {
+  display: block;
+  flex: 0 0 auto;
+  font-size: px-to-rem(14);
+  font-style: italic;
+  margin: 0 auto px-to-rem(10);
+  text-align: center;
+  transform: rotate(-15deg);
+}
+
+.svgContainer {
+  flex: 0 0 auto;
+  margin: 0 auto;
+  max-width: 200px;
+  width: 75%;
+
+  @media #{$mq-tablet-min} {
+    max-width: none;
+    width: 30%;
+  }
+}
+
+.svg {
+  display: block;
+  height: 1px;
+  padding-bottom: 383.0712 / 434.9578 * 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.svgObject {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
