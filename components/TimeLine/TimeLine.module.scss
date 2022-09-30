@@ -1,0 +1,37 @@
+@import "../../theme";
+
+.item {
+  display: grid;
+  grid-template-areas:
+    "date title"
+    "date description";
+  grid-template-columns: 1fr 2fr;
+}
+
+.date {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(5);
+  grid-area: date;
+  margin: 0;
+
+  &::before,
+  &::after {
+    border-left: solid 1px $color-yellow-light;
+    content: "";
+    display: block;
+    flex: 1 1 auto;
+  }
+}
+
+.title {
+  grid-area: title;
+  margin: 0;
+}
+
+.description {
+  grid-area: description;
+  grid-column: 2;
+  margin: 0;
+}
