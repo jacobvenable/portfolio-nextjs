@@ -1,15 +1,18 @@
 import ContentContainer from "components/ContentContainer";
 import Head from "components/Head";
+import TimeLine from "components/TimeLine";
 import Typography from "components/Typography";
 
-const ContactPage = () => {
+const AboutPage = () => {
   return (
     <ContentContainer>
       <Head
-        description="A list of Jacob Venable's experience and skills."
+        description="More about Jacob Venable's experience and skills."
         title="Experience"
       />
-      <Typography variant="h1">Experience</Typography>
+      <Typography variant="h2">Experience</Typography>
+      <TimeLine />
+
       <Typography variant="h2">Technical</Typography>
       <Typography variant="h3">Featured</Typography>
       <ul>
@@ -108,4 +111,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default AboutPage;

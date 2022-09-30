@@ -41,8 +41,8 @@ const MainNav: React.FC = () => {
         <MainNavItem className={styles.homeItem} href="/" icon={faHome}>
           Home
         </MainNavItem>
-        <MainNavItem href="/experience" icon={faUserAlt}>
-          Experience
+        <MainNavItem href="/about" icon={faUserAlt}>
+          About
         </MainNavItem>
         <MainNavItem href="/work" icon={faFolderOpen}>
           My Work

@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/skills"
-  to = "/experience"
+  to = "/about"
   status = 301
   force = true
