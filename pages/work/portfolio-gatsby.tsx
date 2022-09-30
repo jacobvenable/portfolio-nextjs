@@ -260,7 +260,7 @@ const PortfolioGatsbyPage = () => {
             the FAQ section of the <Link href="/">home page</Link>
           </li>
           <li>
-            the main content of the <Link href="/skills/">skills page</Link>
+            the main content of the <Link href="/experience/">experience page</Link>
           </li>
         </ul>
         <Typography>
