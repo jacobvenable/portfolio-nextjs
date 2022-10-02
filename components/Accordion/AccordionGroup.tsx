@@ -5,38 +5,59 @@ import { AccordionContent, ExtendedAccordionContent } from "./AccordionContent";
 import AccordionContext, { AccordionContextValue } from "./AccordionContext";
 import Stack from "components/Stack";
 
+interface AccordionGroupChildIndexes {
+  button: number;
+  content: number;
+}
+
 const recursiveMapAccordionGroupChildren = (
   children: React.ReactNode,
   idPrefix: string,
-  startingIndex = 0
+  indexes: AccordionGroupChildIndexes
 ): React.ReactNode => {
-  let numGroups = startingIndex;
   return Children.map<React.ReactNode, React.ReactNode>(children, (child) => {
-    if (child && typeof child === "object" && "type" in child) {
-      if (child.type === AccordionButton) {
-        return (
-          <ExtendedAccordionButton
-            aria-controls={`${idPrefix}-content-${numGroups}`}
-            id={`${idPrefix}-button-${numGroups}`}
-            index={numGroups}
-            {...child.props}
-          />
-        );
-      }
-      if (child.type === AccordionContent) {
-        const index = numGroups;
-        numGroups++;
-        return (
-          <ExtendedAccordionContent
-            id={`${idPrefix}-content-${index}`}
-            index={index}
-            {...child.props}
-          />
-        );
-      }
-      return recursiveMapAccordionGroupChildren(child, idPrefix, numGroups);
+    if (!React.isValidElement(child) || !("children" in child.props)) {
+      return child;
     }
-    return child;
+
+    if (child.type === AccordionButton) {
+      const buttonIndex = indexes.button;
+      indexes.button = indexes.button + 1;
+      return (
+        <ExtendedAccordionButton
+          aria-controls={`${idPrefix}-content-${buttonIndex}`}
+          id={`${idPrefix}-button-${buttonIndex}`}
+          index={buttonIndex}
+          {...child.props}
+        />
+      );
+    }
+    if (child.type === AccordionContent) {
+      const contentIndex = indexes.content;
+      indexes.content = indexes.content + 1;
+      return (
+        <ExtendedAccordionContent
+          id={`${idPrefix}-content-${contentIndex}`}
+          index={contentIndex}
+          {...child.props}
+        />
+      );
+    }
+
+    // we short-circuited above if the element did not have any children
+    const childWithChildren = child as React.ReactElement<{
+      children: React.ReactNode;
+    }>;
+    return React.cloneElement<{ children: React.ReactNode }>(
+      childWithChildren,
+      {
+        children: recursiveMapAccordionGroupChildren(
+          childWithChildren.props.children,
+          idPrefix,
+          indexes
+        ),
+      }
+    );
   });
 };
 
@@ -48,6 +69,10 @@ const AccordionGroup: React.FC<AccordionGroupProps> = ({
   children,
   idPrefix,
 }) => {
+  const indexes: AccordionGroupChildIndexes = {
+    button: 0,
+    content: 0,
+  };
   const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
   const accordionContextValue = useMemo<AccordionContextValue>(
     () => ({
@@ -58,8 +83,8 @@ const AccordionGroup: React.FC<AccordionGroupProps> = ({
   );
   return (
     <AccordionContext.Provider value={accordionContextValue}>
-      <Stack direction="vertical">
-        {recursiveMapAccordionGroupChildren(children, idPrefix)}
+      <Stack direction="vertical" padded>
+        {recursiveMapAccordionGroupChildren(children, idPrefix, indexes)}
       </Stack>
     </AccordionContext.Provider>
   );
