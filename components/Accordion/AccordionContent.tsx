@@ -7,6 +7,7 @@ import AccordionContext from "./AccordionContext";
 interface AccordionContentProps
   extends React.FC<React.HTMLProps<HTMLDivElement>> {
   children: React.ReactNode;
+  className?: string;
   index: number;
 }
 
@@ -15,6 +16,7 @@ export const AccordionContent: React.FC<
 > = () => null;
 
 export const ExtendedAccordionContent: React.FC<AccordionContentProps> = ({
+  className,
   children,
   index,
   ...props
@@ -23,9 +25,12 @@ export const ExtendedAccordionContent: React.FC<AccordionContentProps> = ({
 
   return (
     <div
-      className={classnames({
-        [styles.hidden]: index !== activeIndex,
-      })}
+      className={classnames(
+        {
+          [styles.hidden]: index !== activeIndex,
+        },
+        className
+      )}
       {...props}
     >
       {children}
