@@ -1,52 +1,41 @@
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
-import React, {
-  MouseEvent as RMouseEvent,
-  useCallback,
-  useContext,
-} from "react";
+import React, { useCallback, useState } from "react";
 
 import styles from "./Accordion.module.scss";
-import AccordionContext from "./AccordionContext";
 import Button, { ButtonProps } from "components/Button";
+import {
+  ExtendedCollapsableButton,
+  ExtendedCollapsableButtonProps,
+  CollapsableButtonProps,
+} from "components/Collapsable/CollapsableButton";
 
-interface AccordionButtonProps
-  extends Omit<ButtonProps, "aria-controls" | "aria-expanded" | "id"> {
-  index: number;
-}
+type AccordionButtonProps = CollapsableButtonProps<ButtonProps>;
 
-export const AccordionButton: React.FC<Omit<AccordionButtonProps, "index">> =
+export const AccordionButton: React.FC<CollapsableButtonProps<ButtonProps>> =
   Button;
 
-export const ExtendedAccordionButton: React.FC<AccordionButtonProps> = ({
-  className,
-  iconProps,
-  index,
-  onClick,
-  ...props
-}) => {
-  const { activeIndex, setActiveIndex } = useContext(AccordionContext);
-  const isOpen = activeIndex === index;
-
-  const handleOnClick = useCallback(
-    (e: RMouseEvent<HTMLButtonElement, MouseEvent>) => {
-      onClick && onClick(e);
-      setActiveIndex((i) => (i === index ? undefined : index));
-    },
-    [index, onClick, setActiveIndex]
-  );
+type ExtendedAccordionButtonProps = ExtendedCollapsableButtonProps<ButtonProps>;
+export const ExtendedAccordionButton: React.FC<
+  ExtendedAccordionButtonProps
+> = ({ className, iconProps, ...props }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOpen = useCallback(() => setIsOpen(true), []);
+  const handleClose = useCallback(() => setIsOpen(false), []);
 
   return (
-    <AccordionButton
+    <ExtendedCollapsableButton<AccordionButtonProps>
       aria-expanded={isOpen}
       className={classNames(styles.button, className)}
       color="yellow-light"
+      component={Button}
       iconProps={{
         icon: faChevronUp,
         transform: { rotate: isOpen ? 180 : 0 },
         ...iconProps,
       }}
-      onClick={handleOnClick}
+      onClose={handleClose}
+      onOpen={handleOpen}
       variant="ghost"
       {...props}
     />
