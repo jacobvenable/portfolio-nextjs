@@ -21,7 +21,8 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "import"],
   rules: {
-    "@typescript-eslint/no-unused-vars": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "import/newline-after-import": ["error"],
     "import/order": [
       "error",
