@@ -21,7 +21,7 @@ export type ButtonProps<P = React.HTMLProps<HTMLButtonElement>> =
       component?: string | React.FC;
       iconProps?: FontAwesomeIconProps;
       variant?: "hollow" | "ghost" | "solid";
-      size?: "medium" | "large";
+      size?: "small" | "medium" | "large";
     };
 
 function Button<ExtendedProps>({

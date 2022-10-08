@@ -1,4 +1,21 @@
+@use "sass:map";
 @import "../../theme";
+
+$button-default-font-size: (
+  "mq-large": 23,
+  "mq-tablet-max": 20,
+  "mq-mobile": 20,
+);
+$button-default-padding-horizontal: (
+  "mq-large": 35,
+  "mq-tablet-max": 45,
+  "mq-mobile": 30,
+);
+$button-default-padding-vertical: (
+  "mq-large": 12,
+  "mq-tablet-max": 12,
+  "mq-mobile": 11,
+);
 
 .button {
   align-items: center;
@@ -71,7 +88,7 @@
 
   &[disabled] {
     cursor: default;
-    opacity: 0.5;
+    opacity: 0.75;
 
     &::before {
       left: 0;
@@ -85,13 +102,24 @@
   }
 
   &.large {
-    font-size: px-to-rem(35);
-    padding: px-to-rem(19) px-to-rem(52);
+    font-size: px-to-rem-mobile(map.get($button-default-font-size, "mq-mobile") * 1.25);
+    padding:
+      px-to-rem-mobile(map.get($button-default-padding-vertical, "mq-mobile") * 1.25)
+      px-to-rem-mobile(map.get($button-default-padding-horizontal, "mq-mobile") * 1.25);
   }
 
   &.medium {
-    font-size: px-to-rem(20);
-    padding: px-to-rem(11) px-to-rem(30);
+    font-size: px-to-rem-mobile(map.get($button-default-font-size, "mq-mobile"));
+    padding:
+      px-to-rem-mobile(map.get($button-default-padding-vertical, "mq-mobile"))
+      px-to-rem-mobile(map.get($button-default-padding-horizontal, "mq-mobile"));
+  }
+
+  &.small {
+    font-size: px-to-rem-mobile(map.get($button-default-font-size, "mq-mobile") * 0.75);
+    padding:
+      px-to-rem-mobile(map.get($button-default-padding-vertical, "mq-mobile") * 0.75)
+      px-to-rem-mobile(map.get($button-default-padding-horizontal, "mq-mobile") * 0.75);
   }
 
   &.ghost {
@@ -100,13 +128,24 @@
 
   @media #{$mq-large} {
     &.large {
-      font-size: px-to-rem(40);
-      padding: px-to-rem(21) px-to-rem(61);
+      font-size: px-to-rem-mobile(map.get($button-default-font-size, "mq-large") * 1.25);
+      padding:
+        px-to-rem-mobile(map.get($button-default-padding-vertical, "mq-large") * 1.25)
+        px-to-rem-mobile(map.get($button-default-padding-horizontal, "mq-large") * 1.25);
     }
 
     &.medium {
-      font-size: px-to-rem(23);
-      padding: px-to-rem(12) px-to-rem(35);
+      font-size: px-to-rem(map.get($button-default-font-size, "mq-large"));
+      padding:
+        px-to-rem(map.get($button-default-padding-vertical, "mq-large"))
+        px-to-rem(map.get($button-default-padding-horizontal, "mq-large"));
+    }
+
+    &.small {
+      font-size: px-to-rem-mobile(map.get($button-default-font-size, "mq-large") * 0.75);
+      padding:
+        px-to-rem-mobile(map.get($button-default-padding-vertical, "mq-large") * 0.75)
+        px-to-rem-mobile(map.get($button-default-padding-horizontal, "mq-large") * 0.75);
     }
 
     &.ghost {
@@ -116,13 +155,24 @@
 
   @media #{$mq-tablet-max} {
     &.large {
-      font-size: px-to-rem(35);
-      padding: px-to-rem(12) px-to-rem(35);
+      font-size: px-to-rem-mobile(map.get($button-default-font-size, "mq-tablet-max") * 1.25);
+      padding:
+        px-to-rem-mobile(map.get($button-default-padding-vertical, "mq-tablet-max") * 1.25)
+        px-to-rem-mobile(map.get($button-default-padding-horizontal, "mq-tablet-max") * 1.25);
     }
 
     &.medium {
-      font-size: px-to-rem-mobile(20);
-      padding: px-to-rem-mobile(12) px-to-rem-mobile(45);
+      font-size: px-to-rem(map.get($button-default-font-size, "mq-tablet-max"));
+      padding:
+        px-to-rem(map.get($button-default-padding-vertical, "mq-tablet-max"))
+        px-to-rem(map.get($button-default-padding-horizontal, "mq-tablet-max"));
+    }
+
+    &.small {
+      font-size: px-to-rem-mobile(map.get($button-default-font-size, "mq-tablet-max") * 0.75);
+      padding:
+        px-to-rem-mobile(map.get($button-default-padding-vertical, "mq-tablet-max") * 0.75)
+        px-to-rem-mobile(map.get($button-default-padding-horizontal, "mq-tablet-max") * 0.75);
     }
 
     &.ghost {
