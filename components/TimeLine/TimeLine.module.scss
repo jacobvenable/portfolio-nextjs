@@ -1,37 +1,79 @@
+@use "sass:color";
 @import "../../theme";
+
+@mixin timeline-border {
+  border-right: solid 1px $color-yellow-light;
+}
 
 .item {
   display: grid;
+  gap: 0 px-to-rem(30);
   grid-template-areas:
     "date title"
-    "date description";
-  grid-template-columns: 1fr 2fr;
-}
+    "date company"
+    "date tags"
+    "date button"
+    "dateBorder description";
+  grid-template-columns: 2fr 5fr;
+  min-height: 150px;
 
-.date {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: px-to-rem(5);
-  grid-area: date;
-  margin: 0;
-
-  &::before,
   &::after {
-    border-left: solid 1px $color-yellow-light;
     content: "";
-    display: block;
-    flex: 1 1 auto;
+    grid-area: dateBorder;
+
+    @include timeline-border;
   }
 }
 
-.title {
-  grid-area: title;
+.date {
+  @include timeline-border;
+
+  align-items: center;
+  color: $color-yellow-light;
+  display: flex;
+  flex-direction: row;
+  gap: px-to-rem(5);
+  grid-area: date;
+  justify-content: space-between;
   margin: 0;
+
+  &::after {
+    border-top: solid 1px $color-yellow-light;
+    content: "";
+    display: block;
+    flex: 0 1 auto;
+    width: px-to-rem(30);
+  }
+}
+
+.button {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  font-size: inherit;
+  grid-area: button;
+  margin: px-to-rem(15) 0;
+}
+
+.title {
+  margin: px-to-rem(45) 0 px-to-rem(5);
+  padding: 0;
+}
+
+.company {
+  grid-area: company;
+  margin: 0 0 px-to-rem(15);
+  padding: 0;
+}
+
+.tags {
+  grid-area: tags;
+  grid-column: 2;
+  margin-bottom: px-to-rem(15);
+  margin-top: 0;
 }
 
 .description {
   grid-area: description;
-  grid-column: 2;
-  margin: 0;
 }
