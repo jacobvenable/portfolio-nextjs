@@ -9,7 +9,7 @@ import styles from "./Button.module.scss";
 
 export type ButtonProps<P = React.HTMLProps<HTMLButtonElement>> =
   React.Attributes &
-    P & {
+    Omit<P, "size"> & {
       children: React.ReactNode;
       className?: string;
       color?:
@@ -24,7 +24,7 @@ export type ButtonProps<P = React.HTMLProps<HTMLButtonElement>> =
       size?: "small" | "medium" | "large";
     };
 
-function Button<ExtendedProps>({
+function Button<ExtendedProps = React.HTMLProps<HTMLButtonElement>>({
   children,
   color = "white",
   className: customClassName = "",
