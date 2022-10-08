@@ -1,2 +1,15 @@
-export type { CollapsableContextValue as AccordionContextValue } from "components/Collapsable/CollapsableContext";
-export { default } from "components/Collapsable/CollapsableContext";
+import { createContext } from "react";
+
+type activeIndex = number | undefined;
+export interface AccordionContextValue {
+  activeIndex: activeIndex;
+  setActiveIndex: (activeIndex) => void;
+}
+
+const noop = () => undefined;
+const AccordionContext = createContext<AccordionContextValue>({
+  activeIndex: undefined,
+  setActiveIndex: noop,
+});
+
+export default AccordionContext;
