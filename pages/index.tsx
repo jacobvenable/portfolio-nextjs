@@ -1,6 +1,6 @@
-import About from "components/About";
 import ContentContainer from "components/ContentContainer";
 import Head, { BASE_TITLE } from "components/Head";
+import Intro from "components/Intro";
 
 const IndexPage = () => {
   return (
@@ -10,7 +10,7 @@ const IndexPage = () => {
         title={BASE_TITLE}
       />
       <ContentContainer>
-        <About />
+        <Intro />
       </ContentContainer>
     </>
   );

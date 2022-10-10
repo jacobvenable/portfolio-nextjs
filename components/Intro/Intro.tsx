@@ -1,12 +1,12 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./About.module.scss";
+import styles from "./Intro.module.scss";
 import Button from "components/Button";
 import Link, { LinkProps } from "components/Link";
 import Stack from "components/Stack";
 import Typography from "components/Typography";
 
-const About = () => (
+const Intro = () => (
   <div className={styles.containerOuter}>
     <div className={styles.containerInner}>
       <Typography component="h1" variant="sr-only">
@@ -54,4 +54,4 @@ const About = () => (
   </div>
 );
 
-export default About;
+export default Intro;
