@@ -18,14 +18,17 @@ const items: Item[] = [
     title: "Senior Software Engineer",
     company: "Nutrien Ag Solutions",
     bullets: [
-      "Est sunt consectetur ad quis sit.",
-      "Mollit ullamco sunt mollit esse adipisicing ad amet amet velit ex et adipisicing.",
-      "Deserunt elit adipisicing reprehenderit sunt enim aute consequat velit proident magna mollit nisi culpa eu.",
+      "Created platform application and utilities to serve as base for transition from React to React Native",
+      "Supported React Native transition through researching and implementing process for publishing our React Native features to our released React web applications.",
+      "Actively developed and reviewed re-usable view components of our design system.",
+      "Collaborated with UI/UX to consistently take an iterative approach to feature development.",
     ],
     tech: [
       "TypeScript",
       "React Native",
       "React Native Web",
+      "CSS in JS",
+      "Internationalization (i18n)",
       "Node",
       "GraphQl",
       "Git + GitHub",
@@ -36,11 +39,18 @@ const items: Item[] = [
     title: "Software Engineer",
     company: "Nutrien Ag Solutions",
     bullets: [
-      "Est sunt consectetur ad quis sit.",
-      "Mollit ullamco sunt mollit esse adipisicing ad amet amet velit ex et adipisicing.",
-      "Deserunt elit adipisicing reprehenderit sunt enim aute consequat velit proident magna mollit nisi culpa eu.",
+      "Designed and created system to support legacy auth handling while moving to new OAuth system.",
+      "Implemented utilities for managing dynamic routes and query parameters in our React Web applications.",
+      "Encouraged and participated in numerous pairing sessions throughout sprints.",
     ],
-    tech: ["JavaScript", "React", "Node", "Express", "Git + GitHub"],
+    tech: [
+      "JavaScript (ES6)",
+      "React",
+      "CSS in JS",
+      "Node",
+      "Express",
+      "Git + GitHub",
+    ],
   },
   {
     date: "July 2016 - March 2019",
@@ -53,7 +63,19 @@ const items: Item[] = [
       "Instituted and documented the development team's Git branching model creating uniformity and accountability through code reviews.",
       "Established our team's presence on GitHub sharing our code base and collaborating with all web developers at the university",
     ],
-    tech: ["JavaScript (ES6)", "PHP", "Git + GitHub"],
+    tech: [
+      "HTML5",
+      "SASS",
+      "PostCSS",
+      "JavaScript (ES6)",
+      "A11y",
+      "Gulp.JS",
+      "Uglify",
+      "PHP",
+      "Git + GitHub",
+      "Cascade Server",
+      "Velocity",
+    ],
   },
   {
     date: "June 2014 - July 2016",
@@ -64,7 +86,17 @@ const items: Item[] = [
       "Implemented the Gulp.js task runner automating common development tasks and decreasing project development time.",
       "Converted global CSS files into SCSS modules expanding style reuseability and decreasing the size of the final, processed CSS file by ~60%.",
     ],
-    tech: ["JavaScript (ES6)", "PHP", "Git + GitHub"],
+    tech: [
+      "HTML5",
+      "SASS",
+      "JavaScript (ES6)",
+      "A11y",
+      "Gulp.js",
+      "PHP",
+      "Git + GitHub",
+      "Cascade Server",
+      "Velocity",
+    ],
   },
   {
     date: "May 2012 - May 2014",
@@ -76,7 +108,7 @@ const items: Item[] = [
       "Managed prioritizing and completing numerous page updates in a timely manner",
       "Designed and edited images including photos, banners, and site assets with Adobe Photoshop and Illustrator",
     ],
-    tech: ["HTML5", "CSS", "JavaScript", "jQuery"],
+    tech: ["HTML5", "CSS", "JavaScript", "jQuery", "Photoshop", "Illustrator"],
   },
   {
     date: "Jan 2013 - Nov 2013",
@@ -87,7 +119,7 @@ const items: Item[] = [
       "Effectively communicated with clients about requirements of each site and provided regular updates on project progress.",
       "Designed each web page in Adobe Photoshop and gained client approval before continuing.",
     ],
-    tech: ["HTML5", "CSS", "JavaScript"],
+    tech: ["HTML5", "CSS", "JavaScript", "PHP", "Photoshop"],
   },
 ];
 
@@ -96,13 +128,11 @@ const TimeLine: React.FC = () => {
     <Accordion.Group idPrefix="timeline">
       {items.map((item) => (
         <div className={styles.item} key={`${item.title} ${item.company}`}>
-          <Typography
-            className={styles.title}
-            component="p"
-            id={item.title}
-            variant="h3"
-          >
+          <Typography className={styles.title} id={item.title} variant="h3">
             {item.title}
+          </Typography>
+          <Typography className={styles.date} component="p" variant="h5">
+            {item.date}
           </Typography>
           <Typography className={styles.company} component="p" variant="h6">
             {item.company}
@@ -112,9 +142,6 @@ const TimeLine: React.FC = () => {
               <Tags.Item key={techItem}>{techItem}</Tags.Item>
             ))}
           </Tags.List>
-          <Typography className={styles.date} component="p" variant="h5">
-            {item.date}
-          </Typography>
           <div className={styles.button}>
             <Accordion.Button
               aria-describedby={item.title}

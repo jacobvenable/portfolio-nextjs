@@ -6,43 +6,63 @@
 }
 
 .item {
-  display: grid;
-  gap: 0 px-to-rem(30);
-  grid-template-areas:
-    "date title"
-    "date company"
-    "date tags"
-    "date button"
-    "dateBorder description";
-  grid-template-columns: 2fr 5fr;
-  min-height: 150px;
+  & + & {
+    margin: px-to-rem-mobile(45) 0;
+  }
 
-  &::after {
-    content: "";
-    grid-area: dateBorder;
+  @media #{$mq-tablet-min} {
+    display: grid;
+    gap: 0 px-to-rem(30);
+    grid-template-areas:
+      "date title"
+      "date company"
+      "date tags"
+      "date button"
+      "dateBorder description";
+    min-height: 150px;
 
-    @include timeline-border;
+    & + & {
+      margin: 0;
+    }
+
+    &::after {
+      content: "";
+      grid-area: dateBorder;
+
+      @include timeline-border;
+    }
+  }
+
+  @media #{$mq-tablet} {
+    grid-template-columns: 2fr 6fr;
+  }
+
+  @media #{$mq-medium-min} {
+    grid-template-columns: 2fr 5fr;
   }
 }
 
 .date {
-  @include timeline-border;
-
-  align-items: center;
-  color: $color-yellow-light;
-  display: flex;
-  flex-direction: row;
-  gap: px-to-rem(5);
-  grid-area: date;
-  justify-content: space-between;
   margin: 0;
 
-  &::after {
-    border-top: solid 1px $color-yellow-light;
-    content: "";
-    display: block;
-    flex: 0 1 auto;
-    width: px-to-rem(30);
+  @media #{$mq-tablet-min} {
+    @include timeline-border;
+
+    align-items: center;
+    color: $color-yellow-light;
+    display: flex;
+    flex-direction: row;
+    gap: px-to-rem(5);
+    grid-area: date;
+    justify-content: space-between;
+
+    &::after {
+      border-top: solid 1px $color-yellow-light;
+      content: "";
+      display: block;
+      flex: 0 1 auto;
+      width: px-to-rem(30);
+    }
   }
 }
 
@@ -57,8 +77,12 @@
 }
 
 .title {
-  margin: px-to-rem(45) 0 px-to-rem(5);
-  padding: 0;
+  margin: 0;
+  padding: 0 0 px-to-rem(5);
+
+  @media #{$mq-tablet-min} {
+    padding-top: px-to-rem(45);
+  }
 }
 
 .company {
