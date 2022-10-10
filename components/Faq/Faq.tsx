@@ -15,9 +15,9 @@ const Faq = () => {
           </Accordion.Button>
           <Accordion.Content>
             <Typography>
-              I currently live within driving distance of Boulder and Denver,
-              Colorado. I have been working remotely for Purdue&apos;s Office of
-              Marketing and Media, which is based in Indiana, since August 2017.
+              I currently live in Boulder, Colorado. I have been working
+              remotely for Nutrien Ag Solutions, which is based in Loveland,
+              Colorado since March 2019.
             </Typography>
           </Accordion.Content>
           <Accordion.Button aria-level={3} role="heading">
@@ -74,7 +74,7 @@ const Faq = () => {
             </ul>
           </Accordion.Content>
           <Accordion.Button aria-level={3} role="heading">
-            How did you get into web development?
+            How did you get into development?
           </Accordion.Button>
           <Accordion.Content>
             <Typography>
@@ -98,23 +98,25 @@ const Faq = () => {
             </Typography>
           </Accordion.Content>
           <Accordion.Button aria-level={3} role="heading">
-            What do you love about front-end development?
+            What do you love about software engineering?
           </Accordion.Button>
           <Accordion.Content>
             <Typography>
-              During my time at Purdue, I was exposed to and practiced various
-              skillsets involved with creating a final product for the web:
+              During my time at Purdue and Nutrien, I was exposed to and
+              practiced various skillsets involved with creating a final
+              product:
             </Typography>
             <ul>
               <li>UI/UX research and design</li>
               <li>front-end development</li>
               <li>back-end development</li>
+              <li>project management</li>
             </ul>
             <Typography>
               While each of these skillsets have some overlap and are
-              interesting in their own way, front-end development was where I
-              found a home. It is the perfect combination of{" "}
-              <mark>creativity</mark> and <mark>logic</mark> while also having a{" "}
+              interesting in their own way, development was where I found a
+              home. It is the perfect combination of <mark>creativity</mark> and{" "}
+              <mark>logic</mark> while also having a{" "}
               <mark>visually-rewarding</mark> product as the end-result.
             </Typography>
           </Accordion.Content>
@@ -123,8 +125,8 @@ const Faq = () => {
           </Accordion.Button>
           <Accordion.Content>
             <Typography>
-              Black&hellip; but sometimes I need to splurge on a
-              dessert-in-a-cup mocha.
+              Black&hellip; but sometimes you just need a dessert-in-a-cup
+              mocha.
             </Typography>
           </Accordion.Content>
           <Accordion.Button aria-level={3} role="heading">
