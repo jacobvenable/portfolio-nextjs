@@ -58,9 +58,9 @@
 
   color: $color-white-off;
   font-family: $font-montserrat;
-  font-size: px-to-rem-mobile(20);
+  font-size: px-to-rem-mobile(24);
   font-weight: 400;
-  line-height: px-to-rem-mobile(26);
+  line-height: px-to-rem-mobile(28);
   margin: px-to-rem(20) 0 px-to-rem(8);
   padding: 0 0 px-to-rem(5);
 
@@ -106,16 +106,16 @@
 
   color: $color-yellow-light;
   font-family: $font-opensans;
-  font-size: px-to-rem(22);
+  font-size: px-to-rem-mobile(18);
   font-weight: 400;
-  line-height: px-to-rem(24);
+  line-height: px-to-rem-mobile(22);
   margin: px-to-rem(20) 0 px-to-rem(8);
   padding: 0;
   text-transform: uppercase;
 
   @media #{$mq-tablet-min} {
-    font-size: px-to-rem-mobile(17);
-    line-height: px-to-rem-mobile(20);
+    font-size: px-to-rem(17);
+    line-height: px-to-rem(20);
     margin: px-to-rem(20) 0 px-to-rem(8);
   }
 
