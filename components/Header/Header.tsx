@@ -14,7 +14,7 @@ const Header = () => {
           <div className={styles.heading}>
             <span className={styles.name}>Jacob Venable </span>
             <Typography variant="sr-only">&#8212;</Typography>
-            <span className={styles.title}>Front-End Web Developer</span>
+            <span className={styles.title}>Web Software Engineer</span>
           </div>
         </Link>
         <MainNav />
