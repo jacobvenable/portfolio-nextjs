@@ -15,7 +15,7 @@ interface Props {
   title: string;
 }
 
-export const BASE_TITLE = "Jacob Venable: Front-End Developer";
+export const BASE_TITLE = "Jacob Venable: Web Software Engineer";
 const OG_IMAGE_ALT_DEFAULT = "Jacob Venable logo";
 
 const Head: React.FC<Props> = ({
