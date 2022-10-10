@@ -17,14 +17,14 @@ const AboutPage = () => {
         title="Experience"
       />
       <Typography variant="h1">About</Typography>
-      <Typography>
-        Ever since my sophomore year of high school, I knew that I wanted to
-        make my living through some kind of programming. After being exposed to
-        multiple avenues that could scratch that itch, I found my love of the
-        web where my work could reach millions in an instant.
-      </Typography>
       <Grid.Container>
-        <Grid.Item tablet={50}>
+        <Grid.Item medium={50}>
+          <Typography>
+            Ever since my sophomore year of high school, I knew that I wanted to
+            make my living through some kind of programming. After being exposed
+            to multiple avenues that could scratch that itch, I found my love of
+            the web where my work could reach millions in an instant.
+          </Typography>
           <Typography>
             Since then I&apos;ve created a features for numerous types of
             people: students, researchers, professors, farmers, crop
@@ -33,7 +33,7 @@ const AboutPage = () => {
             with now:
           </Typography>
         </Grid.Item>
-        <Grid.Item tablet={50}>
+        <Grid.Item medium={50}>
           <ul>
             <li>TypeScript</li>
             <li>React</li>
