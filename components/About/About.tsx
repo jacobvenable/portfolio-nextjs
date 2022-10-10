@@ -1,3 +1,5 @@
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
 import styles from "./About.module.scss";
 import Button from "components/Button";
 import Link, { LinkProps } from "components/Link";
@@ -14,25 +16,38 @@ const About = () => (
         Hello,
       </Typography>
       <Typography>
-        I&apos;m Jacob, a front-end web developer. I&apos;ve been developing
-        since high school, but found a love for the practicality and reach of
-        the web.
+        I&apos;m Jacob, a web software engineer. I&apos;ve been developing since
+        high school, but found a love for the practicality and reach of the web.
       </Typography>
       <Typography>
-        Currently, I&apos;m a senior front-end web developer at Purdue
-        University&apos;s Office of Marketing and Media. Boiler Up!
+        Currently, I&apos;m feeding the future as a senior software engineer at
+        Nutrien Ag Solutions.
       </Typography>
-      <Stack>
-        <Button<LinkProps> color="yellow-light" component={Link} href="/work">
-          View my Work
-        </Button>
+      <Stack direction="vertical" padded>
+        <Stack>
+          <Button<LinkProps> color="yellow-light" component={Link} href="/work">
+            View my Work
+          </Button>
+          <Button<LinkProps>
+            color="blue-dark"
+            component={Link}
+            href="/contact"
+            variant="solid"
+          >
+            Contact Me
+          </Button>
+        </Stack>
+
         <Button<LinkProps>
-          color="blue-dark"
+          color="yellow-light"
           component={Link}
-          href="/contact"
-          variant="solid"
+          href="/about"
+          iconProps={{
+            icon: faChevronRight,
+          }}
+          variant="ghost"
         >
-          Contact Me
+          Learn More About Me
         </Button>
       </Stack>
     </div>

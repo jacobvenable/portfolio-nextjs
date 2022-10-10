@@ -84,8 +84,8 @@ const Resume = () => {
               entire Harry Potter series over the summer.
             </li>
             <li>
-              CrossFit: I’ve been going to crossfit since February 2018 because
-              I need someone to yell at me to work out.
+              CrossFit: I&apos;ve been going to crossfit since February 2018
+              because I need someone to yell at me to work out.
             </li>
             <li>
               Hiking: Being originally a flat-lander from Indiana, I love
