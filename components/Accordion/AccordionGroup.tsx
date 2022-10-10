@@ -3,7 +3,6 @@ import React, { Children, useMemo, useState } from "react";
 import { AccordionButton, ExtendedAccordionButton } from "./AccordionButton";
 import { AccordionContent, ExtendedAccordionContent } from "./AccordionContent";
 import AccordionContext, { AccordionContextValue } from "./AccordionContext";
-import Stack from "components/Stack";
 
 interface AccordionGroupChildIndexes {
   button: number;
@@ -83,9 +82,7 @@ const AccordionGroup: React.FC<AccordionGroupProps> = ({
   );
   return (
     <AccordionContext.Provider value={accordionContextValue}>
-      <Stack direction="vertical" padded>
-        {recursiveMapAccordionGroupChildren(children, idPrefix, indexes)}
-      </Stack>
+      {recursiveMapAccordionGroupChildren(children, idPrefix, indexes)}
     </AccordionContext.Provider>
   );
 };
