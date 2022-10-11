@@ -27,8 +27,9 @@ const items: Item[] = [
       "TypeScript",
       "React Native",
       "React Native Web",
-      "CSS in JS",
+      "Jest",
       "Internationalization (i18n)",
+      "CSS in JS",
       "Node",
       "GraphQl",
       "Git + GitHub",
@@ -46,6 +47,7 @@ const items: Item[] = [
     tech: [
       "JavaScript (ES6)",
       "React",
+      "Jest",
       "CSS in JS",
       "Node",
       "Express",

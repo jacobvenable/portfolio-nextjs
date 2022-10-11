@@ -38,6 +38,7 @@ const AboutPage = () => {
             <li>TypeScript</li>
             <li>React</li>
             <li>React Native + React Native Web</li>
+            <li>Jest</li>
             <li>CSS in JS</li>
             <li>SASS</li>
             <li>Node</li>
