@@ -7,9 +7,11 @@ import Image from "components/Image";
 import Link from "components/Link";
 import Stack from "components/Stack";
 import Typography from "components/Typography";
+import VideoPlayer from "components/VideoPlayer";
 import type { WorkItemDefinition } from "components/WorkItem";
 import WorkOverview from "components/WorkOverview";
 import Thumb from "images/portfolio_purdueHomePage-thumb.png";
+import ImageCustomizeHomePagePoster from "images/purdueHomePage_customize-poster.png";
 import ImageOg from "images/purdueHomePage_ogImage.png";
 import ImageHomePageOverview from "images/purdueHomePage_overview.png";
 
@@ -96,21 +98,12 @@ const PurdueHomePage = () => {
           of self-identifying to filter relevant links, and allow them to
           determine what they want to see on the home page.
         </Typography>
-        {/* <Video
-          id={data.videos.edges[0].node.name}
-          mp4={
-            data.videos.edges.find((video) => video.node.extension === "mp4")
-              .node.publicURL
-          }
-          poster={
-            data.images.edges.find((image) => {
-              return image.node.fluid.originalName.includes(
-                "purdueHomePage_customize-poster.png"
-              );
-            }).node.fluid
-          }
+        <VideoPlayer
+          id="purdue-customize-home-page"
+          poster={ImageCustomizeHomePagePoster.src}
+          src="/videos/customize.mp4"
           title="Customization in Action"
-        /> */}
+        />
         <Typography variant="h4">Implementation</Typography>
         <Typography>
           When determining how to go about implementing this feature, I had
