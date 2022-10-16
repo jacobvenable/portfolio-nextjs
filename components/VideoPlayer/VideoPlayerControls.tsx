@@ -66,7 +66,11 @@ const VideoPlayerControls: React.FC<VideoPlayerControlsProps> = ({
           {ButtonTextMap[state] || ButtonTextMap.default}
         </Typography>
       </button>
-      {percentageProgress}
+
+      <div
+        className={styles.progress}
+        style={{ width: `${percentageProgress}%` }}
+      />
     </>
   );
 };

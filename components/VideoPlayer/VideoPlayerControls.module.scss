@@ -131,3 +131,29 @@
     }
   }
 }
+
+.progress {
+  background: #000;
+  background: $color-yellow-light;
+  bottom: 0;
+  cursor: pointer;
+  height: 1vw;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  transition: opacity 0.5s ease-in;
+  width: 100%;
+  z-index: 5;
+
+  @media #{$mq-tablet} {
+    height: px-to-rem(7);
+  }
+
+  @media #{$mq-medium} {
+    height: px-to-rem(8);
+  }
+
+  @media #{$mq-large} {
+    height: px-to-rem(10);
+  }
+}
