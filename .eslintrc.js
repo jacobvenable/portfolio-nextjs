@@ -13,6 +13,7 @@ module.exports = {
     ".lintstagedrc.js",
     "next.config.mjs",
     "next-env.d.ts",
+    "**/*.typegen.ts",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -22,7 +23,10 @@ module.exports = {
   plugins: ["@typescript-eslint", "import"],
   rules: {
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+    ],
     "import/newline-after-import": ["error"],
     "import/order": [
       "error",

@@ -1,8 +1,12 @@
 import { useActor, useInterpret, useSelector } from "@xstate/react";
-import { useEffect, useRef } from "react";
 
-import videoPlayerMachine from "./VideoPlayerMachine";
-import Stack from "components/Stack";
+import Video from "./Video";
+import styles from "./VideoPlayer.module.scss";
+import VideoPlayerControls from "./VideoPlayerControls";
+import videoPlayerMachine, {
+  VideoPlayerState,
+  VideoPlayerStateValue,
+} from "./VideoPlayerMachine";
 
 interface VideoPlayerProps {
   id: string;
@@ -11,13 +15,14 @@ interface VideoPlayerProps {
   title: string;
 }
 
-const selectPercentageProgress = (state) => {
+const selectPercentageProgress = (state: VideoPlayerState) => {
   if (!state.context.duration || !state.context.currentTime) {
     return 0;
   }
   return (state.context.currentTime / state.context.duration) * 100;
 };
-const selectStateValue = (state) => state.value;
+const selectStateValue = (state: VideoPlayerState): VideoPlayerStateValue =>
+  state.value as VideoPlayerStateValue;
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
   id,
@@ -25,7 +30,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   src,
   title,
 }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const videoService = useInterpret(videoPlayerMachine, {});
   const percentageProgress = useSelector(
     videoService,
@@ -35,90 +39,44 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   const [_, send] = useActor(videoService);
   const titleId = `${id}-title`;
 
-  useEffect(() => {
-    const syncVideo = async () => {
-      if (!videoRef.current) {
-        return;
-      }
-
-      switch (stateValue) {
-        case "loading":
-          videoRef.current.load();
-          break;
-        case "playing":
-          await videoRef.current.play();
-          break;
-        case "paused":
-          videoRef.current.pause();
-          break;
-        default:
-          break;
-      }
-    };
-
-    void syncVideo();
-  }, [stateValue]);
-
   return (
-    // <Stack direction="vertical">
-    <>
-      <p>{title}</p>
-      <video
+    <div className={styles.container}>
+      <VideoPlayerControls
+        onPause={() => send("PAUSE")}
+        onPlay={() => {
+          console.log("play!");
+          send("PLAY");
+        }}
+        onPlayAgain={() => send("PLAY_AGAIN")}
+        percentageProgress={percentageProgress}
+        state={stateValue}
+        title={title}
+        videoId={id}
+      />
+      <Video
         aria-labelledby={titleId}
         controls={false}
         id={id}
         loop={false}
-        onCanPlayThrough={() => {
-          if (!videoRef.current?.duration) {
-            return;
-          }
+        onEnded={() => send("END")}
+        onLoaded={(duration) => {
           send({
             type: "LOADED",
-            duration: videoRef.current?.duration,
+            duration,
           });
         }}
-        onEnded={() => send("END")}
-        onTimeUpdate={() => {
-          if (!videoRef.current?.currentTime) {
-            return;
-          }
+        onProgressUpdate={(currentTime) => {
           send({
             type: "UPDATE_CURRENT_TIME",
-            currentTime: videoRef.current.currentTime,
+            currentTime,
           });
         }}
         poster={poster}
         preload="none"
-        ref={videoRef}
-      >
-        <source src={src} type="video/mp4" />
-      </video>
-      <button
-        onClick={() => {
-          switch (stateValue) {
-            case "playing":
-              return send("PAUSE");
-            case "ended":
-              return send("PLAY_AGAIN");
-            default:
-              return send("PLAY");
-          }
-        }}
-      >
-        {(() => {
-          switch (stateValue) {
-            case "playing":
-              return "Pause";
-            case "ended":
-              return "Play Again";
-            default:
-              return "Play";
-          }
-        })()}
-      </button>
-      percentage progress: {percentageProgress}
-    </>
-    // </Stack>
+        src={src}
+        state={stateValue}
+      />
+    </div>
   );
 };
 

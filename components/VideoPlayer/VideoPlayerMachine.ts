@@ -1,3 +1,4 @@
+import { StateFrom, StateValueFrom } from "xstate";
 import { createModel } from "xstate/lib/model";
 
 interface VideoPlayerContext {
@@ -36,6 +37,7 @@ const videoPlayerModel = createModel<VideoPlayerContext, VideoPlayerEvents>(
 const videoPlayerMachine = videoPlayerModel
   .createMachine(
     {
+      tsTypes: {} as import("./VideoPlayerMachine.typegen").Typegen0,
       context: videoPlayerModel.initialContext,
       initial: "idle",
       states: {
@@ -116,5 +118,8 @@ const videoPlayerMachine = videoPlayerModel
       }),
     },
   });
+
+export type VideoPlayerState = StateFrom<typeof videoPlayerMachine>;
+export type VideoPlayerStateValue = StateValueFrom<typeof videoPlayerMachine>;
 
 export default videoPlayerMachine;

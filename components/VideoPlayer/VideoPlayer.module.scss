@@ -1,0 +1,9 @@
+@import "../../theme";
+
+.container {
+  display: block;
+  margin: px-to-rem(30) 0;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
