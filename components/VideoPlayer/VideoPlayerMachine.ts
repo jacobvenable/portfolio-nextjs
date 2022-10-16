@@ -37,6 +37,7 @@ const videoPlayerModel = createModel<VideoPlayerContext, VideoPlayerEvents>(
 const videoPlayerMachine = videoPlayerModel
   .createMachine(
     {
+      predictableActionArguments: true,
       tsTypes: {} as import("./VideoPlayerMachine.typegen").Typegen0,
       context: videoPlayerModel.initialContext,
       initial: "idle",

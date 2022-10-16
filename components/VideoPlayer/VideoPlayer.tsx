@@ -1,4 +1,4 @@
-import { useActor, useInterpret, useSelector } from "@xstate/react";
+import { useInterpret, useSelector } from "@xstate/react";
 
 import Video from "./Video";
 import styles from "./VideoPlayer.module.scss";
@@ -30,23 +30,22 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   src,
   title,
 }) => {
-  const videoService = useInterpret(videoPlayerMachine, {});
+  const videoService = useInterpret(videoPlayerMachine);
   const percentageProgress = useSelector(
     videoService,
     selectPercentageProgress
   );
   const stateValue = useSelector(videoService, selectStateValue);
-  const [_, send] = useActor(videoService);
   const titleId = `${id}-title`;
 
   return (
     <div className={styles.container}>
       <VideoPlayerControls
-        onPause={() => send("PAUSE")}
+        onPause={() => videoService.send("PAUSE")}
         onPlay={() => {
-          send("PLAY");
+          videoService.send("PLAY");
         }}
-        onPlayAgain={() => send("PLAY_AGAIN")}
+        onPlayAgain={() => videoService.send("PLAY_AGAIN")}
         percentageProgress={percentageProgress}
         state={stateValue}
         title={title}
@@ -57,15 +56,15 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         controls={false}
         id={id}
         loop={false}
-        onEnded={() => send("END")}
+        onEnded={() => videoService.send("END")}
         onLoaded={(duration) => {
-          send({
+          videoService.send({
             type: "LOADED",
             duration,
           });
         }}
         onProgressUpdate={(currentTime) => {
-          send({
+          videoService.send({
             type: "UPDATE_CURRENT_TIME",
             currentTime,
           });
