@@ -22,6 +22,8 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "import"],
   rules: {
+    "no-console": "error",
+    "no-debugger": "error",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
