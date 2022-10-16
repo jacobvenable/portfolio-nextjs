@@ -54,7 +54,6 @@ const Video: React.FC<VideoProps> = ({
   return (
     <video
       onCanPlayThrough={() => {
-        console.log("LOADED!");
         if (videoRef.current?.duration) {
           onLoaded(videoRef.current.duration);
         }

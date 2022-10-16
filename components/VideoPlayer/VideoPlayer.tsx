@@ -44,7 +44,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       <VideoPlayerControls
         onPause={() => send("PAUSE")}
         onPlay={() => {
-          console.log("play!");
           send("PLAY");
         }}
         onPlayAgain={() => send("PLAY_AGAIN")}
