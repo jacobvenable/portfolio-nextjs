@@ -1,7 +1,8 @@
 import {
   faPlay,
   faPause,
-  faRedo,
+  faSpinner,
+  faRotateLeft,
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,7 +25,7 @@ interface VideoPlayerControlsProps {
 
 const ButtonIconMap: Record<string, IconDefinition> = {
   playing: faPause,
-  ended: faRedo,
+  ended: faRotateLeft,
   default: faPlay,
 };
 
@@ -60,6 +61,14 @@ const VideoPlayerControls: React.FC<VideoPlayerControlsProps> = ({
       <p className={styles.title} id={titleId}>
         {title}
       </p>
+      {stateValue === "loading" && (
+        <FontAwesomeIcon
+          aria-label="loading"
+          className={styles.spinner}
+          icon={faSpinner}
+          spinPulse
+        />
+      )}
       <button
         aria-controls={videoId}
         className={styles.button}
