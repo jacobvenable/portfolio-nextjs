@@ -16,8 +16,9 @@ interface VideoPlayerControlsProps {
   onPlay: () => void;
   onPlayAgain: () => void;
   percentageProgress: number;
-  state: VideoPlayerStateValue;
+  stateValue: VideoPlayerStateValue;
   title: string;
+  titleId: string;
   videoId: string;
 }
 
@@ -38,12 +39,13 @@ const VideoPlayerControls: React.FC<VideoPlayerControlsProps> = ({
   onPlay,
   onPlayAgain,
   percentageProgress,
-  state,
+  stateValue,
   title,
+  titleId,
   videoId,
 }) => {
   const handleClick = useCallback(() => {
-    switch (state) {
+    switch (stateValue) {
       case "playing":
         return onPause();
       case "ended":
@@ -51,19 +53,23 @@ const VideoPlayerControls: React.FC<VideoPlayerControlsProps> = ({
       default:
         return onPlay();
     }
-  }, [onPause, onPlay, onPlayAgain, state]);
+  }, [onPause, onPlay, onPlayAgain, stateValue]);
 
   return (
     <>
-      <p className={styles.title}>{title}</p>
+      <p className={styles.title} id={titleId}>
+        {title}
+      </p>
       <button
         aria-controls={videoId}
         className={styles.button}
         onClick={handleClick}
       >
-        <FontAwesomeIcon icon={ButtonIconMap[state] || ButtonIconMap.default} />
+        <FontAwesomeIcon
+          icon={ButtonIconMap[stateValue] || ButtonIconMap.default}
+        />
         <Typography variant="sr-only">
-          {ButtonTextMap[state] || ButtonTextMap.default}
+          {ButtonTextMap[stateValue] || ButtonTextMap.default}
         </Typography>
       </button>
 

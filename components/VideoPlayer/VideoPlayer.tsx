@@ -47,8 +47,9 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         }}
         onPlayAgain={() => videoService.send("PLAY_AGAIN")}
         percentageProgress={percentageProgress}
-        state={stateValue}
+        stateValue={stateValue}
         title={title}
+        titleId={titleId}
         videoId={id}
       />
       <Video
@@ -72,7 +73,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         poster={poster}
         preload="none"
         src={src}
-        state={stateValue}
+        stateValue={stateValue}
       />
     </div>
   );

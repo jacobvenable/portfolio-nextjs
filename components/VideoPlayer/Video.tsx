@@ -15,14 +15,14 @@ interface VideoProps
   onLoaded: (duration: number) => void;
   onProgressUpdate: (currentTime: number) => void;
   src: string;
-  state: VideoPlayerStateValue;
+  stateValue: VideoPlayerStateValue;
 }
 
 const Video: React.FC<VideoProps> = ({
   onLoaded,
   onProgressUpdate,
   src,
-  state,
+  stateValue,
   ...videoProps
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -33,7 +33,7 @@ const Video: React.FC<VideoProps> = ({
         return;
       }
 
-      switch (state) {
+      switch (stateValue) {
         case "loading":
           videoRef.current.load();
           break;
@@ -49,7 +49,7 @@ const Video: React.FC<VideoProps> = ({
     };
 
     void syncVideo();
-  }, [state]);
+  }, [stateValue]);
 
   return (
     <video
