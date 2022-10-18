@@ -11,8 +11,8 @@ import styles from "./PlayPauseButton.module.scss";
 import Typography from "components/Typography";
 
 interface PlayPauseButtonProps {
+  className?: string;
   ended: boolean;
-  hidden: boolean;
   onFocus: () => void;
   onBlur: () => void;
   onPause: () => void;
@@ -23,8 +23,8 @@ interface PlayPauseButtonProps {
 }
 
 const PlayPauseButton: React.FC<PlayPauseButtonProps> = ({
+  className,
   ended,
-  hidden,
   onFocus,
   onBlur,
   onPause,
@@ -46,7 +46,7 @@ const PlayPauseButton: React.FC<PlayPauseButtonProps> = ({
   return (
     <button
       aria-controls={videoId}
-      className={classNames(styles.button, { [styles.hidden]: hidden })}
+      className={classNames(styles.button, className)}
       onBlur={onBlur}
       onClick={handleClick}
       onFocus={onFocus}

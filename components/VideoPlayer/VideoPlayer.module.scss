@@ -6,10 +6,19 @@
   max-width: 100%;
   overflow: hidden;
   position: relative;
+
+  &.hidden {
+    cursor: none;
+  }
 }
 
-.hidden {
-  cursor: none;
+.hidable {
+  transition: opacity 0.5s ease-out;
+
+  &.hidden {
+    cursor: none;
+    opacity: 0;
+  }
 }
 
 .loading {

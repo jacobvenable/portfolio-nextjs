@@ -60,12 +60,19 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       })}
       onMouseMove={() => videoService.send("INTERACT_MOUSE")}
     >
-      <Title hidden={isVideoControlsHidden} id={titleId}>
+      <Title
+        className={classNames(styles.hidable, {
+          [styles.hidden]: isVideoControlsHidden,
+        })}
+        id={titleId}
+      >
         {title}
       </Title>
       <PlayPauseButton
+        className={classNames(styles.hidable, {
+          [styles.hidden]: isVideoControlsHidden,
+        })}
         ended={isVideoEnded}
-        hidden={isVideoControlsHidden}
         onBlur={() => videoService.send("INTERACT_MOUSE")}
         onFocus={() => videoService.send("INTERACT_KEYBOARD")}
         onPause={() => videoService.send("PAUSE")}
@@ -77,7 +84,9 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         videoId={id}
       />
       <ProgressMeter
-        hidden={isVideoControlsHidden}
+        className={classNames(styles.hidable, {
+          [styles.hidden]: isVideoControlsHidden,
+        })}
         percentageProgress={percentageProgress}
       />
       {isVideoLoading && (

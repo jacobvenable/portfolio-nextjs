@@ -5,19 +5,19 @@ import styles from "./Title.module.scss";
 import Typography, { TypographyProps } from "components/Typography";
 
 type VideoPlayerControlsProps = TypographyProps<{
-  hidden: boolean;
+  className?: string;
   id: string;
 }>;
 
 const Title: React.FC<VideoPlayerControlsProps> = ({
   children,
-  hidden,
+  className,
   id,
   ...props
 }) => {
   return (
     <Typography
-      className={classNames(styles.title, { [styles.hidden]: hidden })}
+      className={classNames(styles.title, className)}
       iconProps={{ icon: faVideo }}
       id={id}
       {...props}

@@ -1,12 +1,6 @@
 @import "../../theme";
 
-@mixin hidden-transition {
-  transition: opacity 0.5s ease-out;
-}
-
 .title {
-  @include hidden-transition;
-
   align-items: center;
   color: $color-yellow-light;
   display: flex;
@@ -76,9 +70,4 @@
       border-width: px-to-rem(5);
     }
   }
-}
-
-.hidden {
-  cursor: hidden;
-  opacity: 0;
 }

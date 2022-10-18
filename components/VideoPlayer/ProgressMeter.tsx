@@ -3,17 +3,17 @@ import classNames from "classnames";
 import styles from "./ProgressMeter.module.scss";
 
 interface ProgressMeterProps {
-  hidden: boolean;
+  className?: string;
   percentageProgress: number;
 }
 
 const ProgressMeterProps: React.FC<ProgressMeterProps> = ({
-  hidden,
+  className,
   percentageProgress,
 }) => {
   return (
     <div
-      className={classNames(styles.progress, { [styles.hidden]: hidden })}
+      className={classNames(styles.progress, className)}
       style={{ width: `${percentageProgress}%` }}
     />
   );
