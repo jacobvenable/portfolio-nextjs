@@ -54,7 +54,10 @@ const VideoPlayerControls: React.FC<VideoPlayerControlsProps> = ({
 
   return (
     <>
-      <p className={styles.title} id={titleId}>
+      <p
+        className={classNames(styles.title, { [styles.hidden]: hidden })}
+        id={titleId}
+      >
         {title}
       </p>
       {loading && (
