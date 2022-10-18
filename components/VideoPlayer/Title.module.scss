@@ -1,0 +1,84 @@
+@import "../../theme";
+
+@mixin hidden-transition {
+  transition: opacity 0.5s ease-out;
+}
+
+.title {
+  @include hidden-transition;
+
+  align-items: center;
+  color: $color-yellow-light;
+  display: flex;
+  font-size: 4vw;
+  left: 1.5vw;
+  margin: 0;
+  overflow: visible;
+  padding: 0.75vw 1.75vw;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+
+  &::before {
+    background: rgb(0 0 0 / 75%);
+    border: none 0.5vw $color-yellow-light;
+    border-left-style: solid;
+    border-right-style: solid;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: skewX(20deg);
+    z-index: -1;
+  }
+
+  @media #{$mq-tablet} {
+    font-size: px-to-rem(18);
+    left: px-to-rem(10);
+    padding: px-to-rem(5) px-to-rem(15);
+
+    &--hidden {
+      transform: translateY(px-to-rem(-10));
+    }
+
+    &::before {
+      border-width: px-to-rem(3);
+    }
+  }
+
+  @media #{$mq-medium} {
+    font-size: px-to-rem(22);
+    left: px-to-rem(12);
+    padding: px-to-rem(7) px-to-rem(18);
+
+    &--hidden {
+      transform: translateY(px-to-rem(-12));
+    }
+
+    &::before {
+      border-width: px-to-rem(4);
+    }
+  }
+
+  @media #{$mq-large} {
+    font-size: px-to-rem(26);
+    left: px-to-rem(15);
+    padding: px-to-rem(7) px-to-rem(22);
+
+    &--hidden {
+      transform: translateY(px-to-rem(-15));
+    }
+
+    &::before {
+      border-width: px-to-rem(5);
+    }
+  }
+}
+
+.hidden {
+  cursor: hidden;
+  opacity: 0;
+}

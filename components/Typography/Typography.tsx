@@ -9,7 +9,7 @@ import styles from "./Typography.module.scss";
 
 type ElementVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
 type CustomVariant = "sr-only" | "tagline";
-type TypographyProps<P> = React.Attributes &
+export type TypographyProps<P> = React.Attributes &
   P & {
     children: React.ReactNode;
     className?: string;

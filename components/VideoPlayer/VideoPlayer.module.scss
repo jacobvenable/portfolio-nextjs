@@ -11,3 +11,15 @@
 .hidden {
   cursor: none;
 }
+
+.loading {
+  $spinner-size: px-to-rem(60);
+
+  color: $color-yellow-light;
+  font-size: $spinner-size;
+  left: 50%;
+  margin-left: $spinner-size / -2;
+  margin-top: $spinner-size / -2;
+  position: absolute;
+  top: 50%;
+}

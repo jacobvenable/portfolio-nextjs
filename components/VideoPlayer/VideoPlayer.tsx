@@ -1,9 +1,13 @@
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useInterpret, useSelector } from "@xstate/react";
 import classNames from "classnames";
 
+import PlayPauseButton from "./PlayPauseButton";
+import ProgressMeter from "./ProgressMeter";
+import Title from "./Title";
 import Video from "./Video";
 import styles from "./VideoPlayer.module.scss";
-import VideoPlayerControls from "./VideoPlayerControls";
 import videoPlayerMachine, {
   VideoPlayerState,
   selectVideoControlsHidden,
@@ -56,10 +60,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       })}
       onMouseMove={() => videoService.send("INTERACT_MOUSE")}
     >
-      <VideoPlayerControls
+      <Title hidden={isVideoControlsHidden} id={titleId}>
+        {title}
+      </Title>
+      <PlayPauseButton
         ended={isVideoEnded}
         hidden={isVideoControlsHidden}
-        loading={isVideoLoading}
         onBlur={() => videoService.send("INTERACT_MOUSE")}
         onFocus={() => videoService.send("INTERACT_KEYBOARD")}
         onPause={() => videoService.send("PAUSE")}
@@ -67,12 +73,21 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           videoService.send("PLAY");
         }}
         onPlayAgain={() => videoService.send("PLAY_AGAIN")}
-        percentageProgress={percentageProgress}
         playing={isVideoPlaying}
-        title={title}
-        titleId={titleId}
         videoId={id}
       />
+      <ProgressMeter
+        hidden={isVideoControlsHidden}
+        percentageProgress={percentageProgress}
+      />
+      {isVideoLoading && (
+        <FontAwesomeIcon
+          aria-label="loading"
+          className={styles.loading}
+          icon={faSpinner}
+          spinPulse
+        />
+      )}
       <Video
         aria-labelledby={titleId}
         controls={false}

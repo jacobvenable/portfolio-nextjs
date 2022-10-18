@@ -1,0 +1,73 @@
+@import "../../theme";
+
+@mixin hidden-transition {
+  transition: opacity 0.5s ease-out;
+}
+
+.button {
+  @include hidden-transition;
+
+  background: rgb(0 0 0 / 75%);
+  border: none;
+  color: $color-white-off;
+  display: block;
+  font-size: 8vw;
+  left: 50%;
+  margin-left: -7vw;
+  margin-top: -6vw;
+  opacity: 1;
+  padding: 2vw 2.5vw;
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    background: rgb(0 0 0 / 75%);
+    border: none;
+    color: $color-yellow-light;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: dotted 1px $color-yellow-light;
+    outline-offset: 2px;
+  }
+
+  @media #{$mq-tablet-min} {
+    margin-left: 0;
+    margin-top: 0;
+    top: auto;
+  }
+
+  @media #{$mq-tablet} {
+    bottom: px-to-rem(12);
+    font-size: px-to-rem(24);
+    left: px-to-rem(5);
+    padding: px-to-rem(10) px-to-rem(20);
+  }
+
+  @media #{$mq-medium} {
+    bottom: px-to-rem(14);
+    font-size: px-to-rem(28);
+    left: px-to-rem(8);
+    padding: px-to-rem(12) px-to-rem(24);
+  }
+
+  @media #{$mq-large} {
+    bottom: px-to-rem(15);
+    font-size: px-to-rem(32);
+    left: px-to-rem(10);
+    padding: px-to-rem(15) px-to-rem(28);
+  }
+}
+
+.hidden {
+  cursor: hidden;
+  opacity: 0;
+}
