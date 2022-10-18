@@ -3,87 +3,85 @@ import {
   faPause,
   faSpinner,
   faRotateLeft,
-  IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "classnames";
 import { useCallback } from "react";
 
 import styles from "./VideoPlayerControls.module.scss";
-import { VideoPlayerStateValue } from "./VideoPlayerMachine";
 import Typography from "components/Typography";
 
 interface VideoPlayerControlsProps {
+  ended: boolean;
+  hidden: boolean;
+  loading: boolean;
+  onFocus: () => void;
+  onBlur: () => void;
   onPause: () => void;
   onPlay: () => void;
   onPlayAgain: () => void;
   percentageProgress: number;
-  stateValue: VideoPlayerStateValue;
+  playing: boolean;
   title: string;
   titleId: string;
   videoId: string;
 }
 
-const ButtonIconMap: Record<string, IconDefinition> = {
-  playing: faPause,
-  ended: faRotateLeft,
-  default: faPlay,
-};
-
-const ButtonTextMap: Record<string, string> = {
-  playing: "pause",
-  ended: "play again",
-  default: "play",
-};
-
 const VideoPlayerControls: React.FC<VideoPlayerControlsProps> = ({
+  ended,
+  hidden,
+  loading,
+  onFocus,
+  onBlur,
   onPause,
   onPlay,
   onPlayAgain,
   percentageProgress,
-  stateValue,
+  playing,
   title,
   titleId,
   videoId,
 }) => {
   const handleClick = useCallback(() => {
-    switch (stateValue) {
-      case "playing":
-        return onPause();
-      case "ended":
-        return onPlayAgain();
-      default:
-        return onPlay();
+    if (playing) {
+      return onPause();
     }
-  }, [onPause, onPlay, onPlayAgain, stateValue]);
+    if (ended) {
+      return onPlayAgain();
+    }
+    return onPlay();
+  }, [ended, onPause, onPlay, onPlayAgain, playing]);
 
   return (
     <>
       <p className={styles.title} id={titleId}>
         {title}
       </p>
-      {stateValue === "loading" && (
+      {loading && (
         <FontAwesomeIcon
           aria-label="loading"
-          className={styles.spinner}
+          className={classNames(styles.spinner, { [styles.hidden]: hidden })}
           icon={faSpinner}
           spinPulse
         />
       )}
       <button
         aria-controls={videoId}
-        className={styles.button}
+        className={classNames(styles.button, { [styles.hidden]: hidden })}
+        onBlur={onBlur}
         onClick={handleClick}
+        onFocus={onFocus}
       >
         <FontAwesomeIcon
-          icon={ButtonIconMap[stateValue] || ButtonIconMap.default}
+          icon={(playing && faPause) || (ended && faRotateLeft) || faPlay}
         />
         <Typography variant="sr-only">
-          {ButtonTextMap[stateValue] || ButtonTextMap.default}
+          {(playing && "pause") || (ended && "play again") || "play"}
         </Typography>
       </button>
 
       <div
-        className={styles.progress}
+        className={classNames(styles.progress, { [styles.hidden]: hidden })}
         style={{ width: `${percentageProgress}%` }}
       />
     </>

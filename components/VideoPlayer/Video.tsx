@@ -5,24 +5,26 @@ import {
   useRef,
 } from "react";
 
-import { VideoPlayerStateValue } from "./VideoPlayerMachine";
-
 interface VideoProps
   extends DetailedHTMLProps<
     VideoHTMLAttributes<HTMLVideoElement>,
     HTMLVideoElement
   > {
+  loading: boolean;
+  paused: boolean;
+  playing: boolean;
   onLoaded: (duration: number) => void;
   onProgressUpdate: (currentTime: number) => void;
   src: string;
-  stateValue: VideoPlayerStateValue;
 }
 
 const Video: React.FC<VideoProps> = ({
+  loading,
+  paused,
+  playing,
   onLoaded,
   onProgressUpdate,
   src,
-  stateValue,
   ...videoProps
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -33,23 +35,19 @@ const Video: React.FC<VideoProps> = ({
         return;
       }
 
-      switch (stateValue) {
-        case "loading":
-          videoRef.current.load();
-          break;
-        case "playing":
-          await videoRef.current.play();
-          break;
-        case "paused":
-          videoRef.current.pause();
-          break;
-        default:
-          break;
+      if (loading) {
+        return videoRef.current.load();
+      }
+      if (playing) {
+        return videoRef.current.play();
+      }
+      if (paused) {
+        return videoRef.current.pause();
       }
     };
 
     void syncVideo();
-  }, [stateValue]);
+  }, [loading, paused, playing]);
 
   return (
     <video

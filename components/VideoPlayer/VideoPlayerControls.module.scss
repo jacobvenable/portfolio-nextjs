@@ -1,6 +1,12 @@
 @import "../../theme";
 
+@mixin hidden-transition {
+  transition: opacity 0.5s ease-out;
+}
+
 .button {
+  @include hidden-transition;
+
   background: rgb(0 0 0 / 75%);
   border: none;
   color: $color-white-off;
@@ -62,6 +68,8 @@
 }
 
 .title {
+  @include hidden-transition;
+
   color: $color-yellow-light;
   display: block;
   font-size: 4vw;
@@ -133,6 +141,8 @@
 }
 
 .progress {
+  @include hidden-transition;
+
   background: #000;
   background: $color-yellow-light;
   bottom: 0;
@@ -168,4 +178,9 @@
   margin-top: $spinner-size / -2;
   position: absolute;
   top: 50%;
+}
+
+.hidden {
+  cursor: hidden;
+  opacity: 0;
 }

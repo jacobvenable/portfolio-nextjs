@@ -1,11 +1,16 @@
 import { useInterpret, useSelector } from "@xstate/react";
+import classNames from "classnames";
 
 import Video from "./Video";
 import styles from "./VideoPlayer.module.scss";
 import VideoPlayerControls from "./VideoPlayerControls";
 import videoPlayerMachine, {
   VideoPlayerState,
-  VideoPlayerStateValue,
+  selectVideoControlsHidden,
+  selectVideoLoading,
+  selectVideoEnded,
+  selectVideoPaused,
+  selectVideoPlaying,
 } from "./VideoPlayerMachine";
 
 interface VideoPlayerProps {
@@ -21,8 +26,6 @@ const selectPercentageProgress = (state: VideoPlayerState) => {
   }
   return (state.context.currentTime / state.context.duration) * 100;
 };
-const selectStateValue = (state: VideoPlayerState): VideoPlayerStateValue =>
-  state.value as VideoPlayerStateValue;
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
   id,
@@ -35,19 +38,36 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     videoService,
     selectPercentageProgress
   );
-  const stateValue = useSelector(videoService, selectStateValue);
+  const isVideoControlsHidden = useSelector(
+    videoService,
+    selectVideoControlsHidden
+  );
+  const isVideoLoading = useSelector(videoService, selectVideoLoading);
+  const isVideoEnded = useSelector(videoService, selectVideoEnded);
+  const isVideoPaused = useSelector(videoService, selectVideoPaused);
+  const isVideoPlaying = useSelector(videoService, selectVideoPlaying);
+
   const titleId = `${id}-title`;
 
   return (
-    <div className={styles.container}>
+    <div
+      className={classNames(styles.container, {
+        [styles.hidden]: isVideoControlsHidden,
+      })}
+    >
       <VideoPlayerControls
+        ended={isVideoEnded}
+        hidden={isVideoControlsHidden}
+        loading={isVideoLoading}
+        onBlur={() => videoService.send("INTERACT_MOUSE")}
+        onFocus={() => videoService.send("INTERACT_KEYBOARD")}
         onPause={() => videoService.send("PAUSE")}
         onPlay={() => {
           videoService.send("PLAY");
         }}
         onPlayAgain={() => videoService.send("PLAY_AGAIN")}
         percentageProgress={percentageProgress}
-        stateValue={stateValue}
+        playing={isVideoPlaying}
         title={title}
         titleId={titleId}
         videoId={id}
@@ -56,6 +76,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         aria-labelledby={titleId}
         controls={false}
         id={id}
+        loading={isVideoLoading}
         loop={false}
         onEnded={() => videoService.send("END")}
         onLoaded={(duration) => {
@@ -64,16 +85,18 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             duration,
           });
         }}
+        onMouseMove={() => videoService.send("INTERACT_MOUSE")}
         onProgressUpdate={(currentTime) => {
           videoService.send({
             type: "UPDATE_CURRENT_TIME",
             currentTime,
           });
         }}
+        paused={isVideoPaused}
+        playing={isVideoPlaying}
         poster={poster}
         preload="none"
         src={src}
-        stateValue={stateValue}
       />
     </div>
   );
