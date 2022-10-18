@@ -54,6 +54,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       className={classNames(styles.container, {
         [styles.hidden]: isVideoControlsHidden,
       })}
+      onMouseMove={() => videoService.send("INTERACT_MOUSE")}
     >
       <VideoPlayerControls
         ended={isVideoEnded}
@@ -85,7 +86,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             duration,
           });
         }}
-        onMouseMove={() => videoService.send("INTERACT_MOUSE")}
         onProgressUpdate={(currentTime) => {
           videoService.send({
             type: "UPDATE_CURRENT_TIME",
