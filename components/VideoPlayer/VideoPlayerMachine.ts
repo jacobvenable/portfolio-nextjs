@@ -159,8 +159,14 @@ const videoPlayerMachine = videoPlayerModel.createMachine(
   }
 );
 
-export type VideoPlayerState = StateFrom<typeof videoPlayerMachine>;
+type VideoPlayerState = StateFrom<typeof videoPlayerMachine>;
 
+export const selectVideoCurrentTime = (state: VideoPlayerState) => {
+  return state.context.currentTime;
+};
+export const selectVideoDuration = (state: VideoPlayerState) => {
+  return state.context.duration;
+};
 export const selectVideoEnded = (state: VideoPlayerState) =>
   state.matches("video.ended");
 export const selectVideoPlaying = (state: VideoPlayerState) =>

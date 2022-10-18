@@ -9,8 +9,9 @@ import Title from "./Title";
 import Video from "./Video";
 import styles from "./VideoPlayer.module.scss";
 import videoPlayerMachine, {
-  VideoPlayerState,
   selectVideoControlsHidden,
+  selectVideoCurrentTime,
+  selectVideoDuration,
   selectVideoLoading,
   selectVideoEnded,
   selectVideoPaused,
@@ -24,13 +25,6 @@ interface VideoPlayerProps {
   title: string;
 }
 
-const selectPercentageProgress = (state: VideoPlayerState) => {
-  if (!state.context.duration || !state.context.currentTime) {
-    return 0;
-  }
-  return (state.context.currentTime / state.context.duration) * 100;
-};
-
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
   id,
   poster,
@@ -38,20 +32,19 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   title,
 }) => {
   const videoService = useInterpret(videoPlayerMachine);
-  const percentageProgress = useSelector(
-    videoService,
-    selectPercentageProgress
-  );
   const isVideoControlsHidden = useSelector(
     videoService,
     selectVideoControlsHidden
   );
+  const videoCurrentTime = useSelector(videoService, selectVideoCurrentTime);
+  const videoDuration = useSelector(videoService, selectVideoDuration);
   const isVideoLoading = useSelector(videoService, selectVideoLoading);
   const isVideoEnded = useSelector(videoService, selectVideoEnded);
   const isVideoPaused = useSelector(videoService, selectVideoPaused);
   const isVideoPlaying = useSelector(videoService, selectVideoPlaying);
 
   const titleId = `${id}-title`;
+  const progressMeterId = `${id}-progressMeter`;
 
   return (
     <div
@@ -87,7 +80,9 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         className={classNames(styles.hidable, {
           [styles.hidden]: isVideoControlsHidden,
         })}
-        percentageProgress={percentageProgress}
+        currentTime={videoCurrentTime}
+        duration={videoDuration}
+        id={progressMeterId}
       />
       {isVideoLoading && (
         <FontAwesomeIcon
@@ -98,6 +93,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         />
       )}
       <Video
+        aria-describedby={progressMeterId}
         aria-labelledby={titleId}
         controls={false}
         id={id}
