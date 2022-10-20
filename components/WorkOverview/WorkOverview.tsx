@@ -4,10 +4,10 @@ import React from "react";
 import Grid from "components/Grid";
 import Typography from "components/Typography";
 
-interface WorkOverviewProps {
+type WorkOverviewProps = {
   responsibilities: string[];
   tech: Record<string, string>;
-}
+};
 
 const WorkOverview: React.FC<WorkOverviewProps> = ({
   responsibilities,

@@ -4,10 +4,10 @@ import { AccordionButton, ExtendedAccordionButton } from "./AccordionButton";
 import { AccordionContent, ExtendedAccordionContent } from "./AccordionContent";
 import AccordionContext, { AccordionContextValue } from "./AccordionContext";
 
-interface AccordionGroupChildIndexes {
+type AccordionGroupChildIndexes = {
   button: number;
   content: number;
-}
+};
 
 const recursiveMapAccordionGroupChildren = (
   children: React.ReactNode,
@@ -60,10 +60,10 @@ const recursiveMapAccordionGroupChildren = (
   });
 };
 
-interface AccordionGroupProps {
+type AccordionGroupProps = {
   children: React.ReactNode;
   idPrefix: string;
-}
+};
 const AccordionGroup: React.FC<AccordionGroupProps> = ({
   children,
   idPrefix,

@@ -2,23 +2,23 @@ import NextHead from "next/head";
 
 import OgImageDefault from "images/meta_og-image-default.png";
 
-interface OgImage {
+type OgImage = {
   alt: string;
   src: string;
-}
+};
 
-interface Props {
+type HeadProps = {
   children?: React.ReactNode;
   description: string;
   mergeTitle?: boolean;
   ogImage?: OgImage;
   title: string;
-}
+};
 
 export const BASE_TITLE = "Jacob Venable: Web Software Engineer";
 const OG_IMAGE_ALT_DEFAULT = "Jacob Venable logo";
 
-const Head: React.FC<Props> = ({
+const Head: React.FC<HeadProps> = ({
   children,
   description,
   mergeTitle = true,

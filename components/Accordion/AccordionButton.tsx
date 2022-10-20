@@ -10,10 +10,12 @@ import styles from "./Accordion.module.scss";
 import AccordionContext from "./AccordionContext";
 import Button, { ButtonProps } from "components/Button";
 
-interface AccordionButtonProps
-  extends Omit<ButtonProps, "aria-controls" | "aria-expanded" | "id"> {
+type AccordionButtonProps = Omit<
+  ButtonProps,
+  "aria-controls" | "aria-expanded" | "id"
+> & {
   index: number;
-}
+};
 
 export const AccordionButton: React.FC<Omit<AccordionButtonProps, "index">> =
   Button;

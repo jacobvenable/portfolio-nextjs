@@ -1,6 +1,6 @@
-interface SkipToMainProps {
+type SkipToMainProps = {
   mainId: string;
-}
+};
 
 import styles from "./SkipToMain.module.scss";
 

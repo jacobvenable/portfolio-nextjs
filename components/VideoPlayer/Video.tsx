@@ -5,18 +5,17 @@ import {
   useRef,
 } from "react";
 
-interface VideoProps
-  extends DetailedHTMLProps<
-    VideoHTMLAttributes<HTMLVideoElement>,
-    HTMLVideoElement
-  > {
+type VideoProps = DetailedHTMLProps<
+  VideoHTMLAttributes<HTMLVideoElement>,
+  HTMLVideoElement
+> & {
   loading: boolean;
   paused: boolean;
   playing: boolean;
   onLoaded: (duration: number) => void;
   onProgressUpdate: (currentTime: number) => void;
   src: string;
-}
+};
 
 const Video: React.FC<VideoProps> = ({
   loading,

@@ -10,7 +10,7 @@ import { useCallback } from "react";
 import styles from "./PlayPauseButton.module.scss";
 import Typography from "components/Typography";
 
-interface PlayPauseButtonProps {
+type PlayPauseButtonProps = {
   className?: string;
   ended: boolean;
   onFocus: () => void;
@@ -20,7 +20,7 @@ interface PlayPauseButtonProps {
   onPlayAgain: () => void;
   playing: boolean;
   videoId: string;
-}
+};
 
 const PlayPauseButton: React.FC<PlayPauseButtonProps> = ({
   className,

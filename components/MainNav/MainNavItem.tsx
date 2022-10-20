@@ -5,12 +5,12 @@ import classnames from "classnames";
 import styles from "./MainNav.module.scss";
 import Link, { LinkProps } from "components/Link";
 
-interface Props extends LinkProps {
+type MainNavItemProps = LinkProps & {
   children: React.ReactNode;
   icon: IconProp;
-}
+};
 
-const MainNavItem: React.FC<Props> = ({
+const MainNavItem: React.FC<MainNavItemProps> = ({
   children,
   className,
   icon,

@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
 type activeIndex = number | undefined;
-export interface AccordionContextValue {
+export type AccordionContextValue = {
   activeIndex: activeIndex;
   setActiveIndex: (activeIndex) => void;
-}
+};
 
 const noop = () => undefined;
 const AccordionContext = createContext<AccordionContextValue>({

@@ -2,10 +2,10 @@ import Footer from "components/Footer";
 import Header from "components/Header";
 import SkipToMain from "components/SkipToMain";
 
-interface Props {
+type LayoutProps = {
   children: React.ReactNode;
-}
-const Layout: React.FC<Props> = ({ children }) => {
+};
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const mainId = "main";
   return (
     <>

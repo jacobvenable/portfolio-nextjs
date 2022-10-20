@@ -5,27 +5,27 @@ import React from "react";
 import styles from "./Input.module.scss";
 import Tooltip from "components/Tooltip";
 
-interface BaseInputProps {
+type BaseInputProps = {
   disabled?: boolean;
   error?: string;
   label: string;
   name: string;
-}
+};
 
 type InputElementProps = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 >;
-interface TextInputProps extends InputElementProps {
+type TextInputProps = InputElementProps & {
   type?: "email" | "hidden" | "text";
-}
+};
 type TextAreaElementProps = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLTextAreaElement>,
   HTMLTextAreaElement
 >;
-interface TextAreaInputProps extends TextAreaElementProps {
+type TextAreaInputProps = TextAreaElementProps & {
   type: "textarea";
-}
+};
 
 type InputProps = BaseInputProps & (TextInputProps | TextAreaInputProps);
 

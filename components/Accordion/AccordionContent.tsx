@@ -4,12 +4,11 @@ import React, { useContext } from "react";
 import styles from "./Accordion.module.scss";
 import AccordionContext from "./AccordionContext";
 
-interface AccordionContentProps
-  extends React.FC<React.HTMLProps<HTMLDivElement>> {
+type AccordionContentProps = React.FC<React.HTMLProps<HTMLDivElement>> & {
   children: React.ReactNode;
   className?: string;
   index: number;
-}
+};
 
 export const AccordionContent: React.FC<
   Omit<AccordionContentProps, "index">

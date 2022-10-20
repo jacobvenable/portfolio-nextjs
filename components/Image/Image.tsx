@@ -4,11 +4,11 @@ import { useMemo } from "react";
 
 import styles from "./Image.module.scss";
 
-interface ImageProps extends NextImageProps {
+type ImageProps = NextImageProps & {
   alt?: string;
   caption?: string;
   className?: string;
-}
+};
 
 const Image: React.FC<ImageProps> = ({
   alt = "",

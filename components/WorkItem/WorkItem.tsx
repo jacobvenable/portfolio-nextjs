@@ -8,18 +8,18 @@ import Link, { LinkProps } from "components/Link";
 import Tags from "components/Tags";
 import Typography from "components/Typography";
 
-export interface WorkItemDefinition {
+export type WorkItemDefinition = {
   blurb: string;
   roles: string[];
   route: string;
   tech: string[];
   thumb: typeof ImageData;
   title: string;
-}
+};
 
-interface WorkItemProps extends WorkItemDefinition {
+type WorkItemProps = WorkItemDefinition & {
   reverse?: boolean;
-}
+};
 
 const WorkItem: React.FC<WorkItemProps> = ({
   blurb,

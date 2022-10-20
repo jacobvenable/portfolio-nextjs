@@ -7,10 +7,10 @@ import { Controller } from "react-hook-form";
 import styles from "./Recaptcha.module.scss";
 import Tooltip from "components/Tooltip";
 
-interface RecaptchaProps {
+type RecaptchaProps = {
   className?: string;
   name: string;
-}
+};
 
 const Recaptcha: React.FC<RecaptchaProps> = ({ className, name }) => {
   const [isLoading, setIsLoading] = useState(true);

@@ -3,12 +3,12 @@ import classNames from "classnames";
 import styles from "./ProgressMeter.module.scss";
 import Typography from "components/Typography";
 
-interface ProgressMeterProps {
+type ProgressMeterProps = {
   className?: string;
   currentTime: number;
   duration?: number;
   id: string;
-}
+};
 
 const ProgressMeterProps: React.FC<ProgressMeterProps> = ({
   className,

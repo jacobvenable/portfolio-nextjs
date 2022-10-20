@@ -4,13 +4,13 @@ import Button from "components/Button";
 import Tags from "components/Tags";
 import Typography from "components/Typography";
 
-interface Item {
+type Item = {
   date: string;
   title: string;
   company: string;
   bullets: string[];
   tech: string[];
-}
+};
 
 const items: Item[] = [
   {

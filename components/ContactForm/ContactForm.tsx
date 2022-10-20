@@ -15,13 +15,13 @@ const NETLIFY_FORM_NAME = "contact";
 const NETLIFY_HONEY_POT_FIELD = "bees knees";
 const NETLIFY_RECAPTCHA_FIELD = "g-recaptcha-response";
 
-interface ContactFormData {
+type ContactFormData = {
   email: string;
   message: string;
   name: string;
   [NETLIFY_HONEY_POT_FIELD]?: string;
   [NETLIFY_RECAPTCHA_FIELD]: string;
-}
+};
 const schema: JSONSchemaType<ContactFormData> = {
   type: "object",
   properties: {

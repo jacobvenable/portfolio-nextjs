@@ -3,13 +3,13 @@ import NextLink, { LinkProps as NextLinkProps } from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
 
-export interface LinkProps extends NextLinkProps {
+export type LinkProps = NextLinkProps & {
   activeClassName?: string;
   children: ReactNode;
   className?: string;
   // next/link also supports a Url object but we'll only support string for now
   href: string;
-}
+};
 
 /**
  * An extension of NextJS's link with support of an activeClassName

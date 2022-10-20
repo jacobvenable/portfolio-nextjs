@@ -13,11 +13,11 @@ import styles from "./Disclosure.module.scss";
 import Button, { ButtonProps } from "components/Button";
 
 const noop = () => undefined;
-interface DisclosureContextValue {
+type DisclosureContextValue = {
   contentId: string;
   isOpen: boolean;
   setIsOpen: (boolean) => void;
-}
+};
 const DisclosureContext = createContext<DisclosureContextValue>({
   contentId: "disclosureContentId",
   isOpen: false,
@@ -64,13 +64,13 @@ export const DisclosureContent: React.FC<React.HTMLProps<HTMLDivElement>> = ({
   );
 };
 
-interface DisclosureProps {
+type DisclosureProps = {
   children: React.ReactNode;
   idPrefix: string;
   isOpen?: boolean;
   onClose?: () => void;
   onOpen?: () => void;
-}
+};
 
 export const Disclosure: React.FC<DisclosureProps> = ({
   children,

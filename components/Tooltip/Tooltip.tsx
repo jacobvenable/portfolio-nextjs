@@ -6,15 +6,14 @@ import classNames from "classnames";
 
 import styles from "./Tooltip.module.scss";
 
-interface TooltipProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLParagraphElement>,
-    HTMLParagraphElement
-  > {
+type TooltipProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLParagraphElement>,
+  HTMLParagraphElement
+> & {
   children: React.ReactNode;
   iconProps?: FontAwesomeIconProps;
   visible?: boolean;
-}
+};
 
 const Tooltip: React.FC<TooltipProps> = ({
   children,

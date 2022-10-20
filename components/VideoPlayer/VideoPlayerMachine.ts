@@ -1,13 +1,13 @@
 import { StateFrom } from "xstate";
 import { createModel } from "xstate/lib/model";
 
-interface VideoPlayerContext {
+type VideoPlayerContext = {
   canPlayThrough: boolean;
   currentTime: number;
   duration?: number;
-}
+};
 
-interface VideoPlayerEvents {
+type VideoPlayerEvents = {
   events: {
     END: () => Record<string, never>;
     HIDE: () => Record<string, never>;
@@ -19,7 +19,7 @@ interface VideoPlayerEvents {
     PLAY_AGAIN: () => Record<string, never>;
     UPDATE_CURRENT_TIME: (currentTime: number) => { currentTime: number };
   };
-}
+};
 
 const videoPlayerModel = createModel<VideoPlayerContext, VideoPlayerEvents>(
   {

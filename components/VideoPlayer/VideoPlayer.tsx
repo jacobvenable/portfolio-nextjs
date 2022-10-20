@@ -18,12 +18,12 @@ import videoPlayerMachine, {
   selectVideoPlaying,
 } from "./VideoPlayerMachine";
 
-interface VideoPlayerProps {
+type VideoPlayerProps = {
   id: string;
   poster: string;
   src: string;
   title: string;
-}
+};
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
   id,
