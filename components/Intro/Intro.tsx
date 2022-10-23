@@ -24,7 +24,12 @@ const Intro = () => (
         Nutrien Ag Solutions.
       </Typography>
       <Stack direction="vertical" padded>
-        <Stack>
+        <Stack
+          direction={{
+            mobile: "vertical",
+            tablet: "horizontal",
+          }}
+        >
           <Button<LinkProps> color="yellow-light" component={Link} href="/work">
             View my Work
           </Button>
