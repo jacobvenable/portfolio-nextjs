@@ -15,6 +15,7 @@ pre[class*="language-"] {
   color: #c5c8c6;
   direction: ltr;
   font-family: Inconsolata, Monaco, Consolas, "Courier New", Courier, monospace;
+  font-size: px-to-rem-mobile(12);
   hyphens: none;
   line-height: 1.5;
   tab-size: 4;
@@ -23,6 +24,10 @@ pre[class*="language-"] {
   white-space: pre;
   word-break: normal;
   word-spacing: normal;
+
+  @media #{$mq-tablet-min} {
+    font-size: px-to-rem(16);
+  }
 }
 
 /* Code blocks */
