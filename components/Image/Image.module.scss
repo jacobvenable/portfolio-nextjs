@@ -9,29 +9,27 @@
 }
 
 .figureCaption {
+  $border-height: px-to-rem(1);
+  $border-color: $color-yellow-light;
+
   align-self: flex-end;
+  border-top: solid $border-height $border-color;
   color: $color-yellow-light;
   flex: 0 1 auto;
   font-size: px-to-rem(14);
   margin: px-to-rem(20) 0 0;
-  padding: px-to-rem(15) 0;
+  padding: px-to-rem(15) 0 px-to-rem(15) px-to-rem(15);
   position: relative;
 
-  &::before,
   &::after {
-    background-color: $color-yellow-light;
+    background-color: $border-color;
+    bottom: 0;
     content: "";
     display: block;
-    height: px-to-rem(1);
-    left: -15px;
+    height: $border-height;
+    left: 25%;
     position: absolute;
     right: 0;
-    top: 0;
-  }
-
-  &::after {
-    bottom: 0;
-    left: 25%;
     top: initial;
   }
 }
