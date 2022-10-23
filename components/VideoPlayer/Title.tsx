@@ -1,4 +1,3 @@
-import { faVideo } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
 
 import styles from "./Title.module.scss";
@@ -18,7 +17,6 @@ const Title: React.FC<VideoPlayerControlsProps> = ({
   return (
     <Typography
       className={classNames(styles.title, className)}
-      iconProps={{ icon: faVideo }}
       id={id}
       {...props}
     >
