@@ -4,8 +4,11 @@ import rehypePrism from "rehype-prism-plus";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  experimental: {
+    scrollRestoration: true,
+  },
   pageExtensions: ["js", "jsx", "ts", "tsx"],
+  reactStrictMode: true,
 };
 
 const withMDX = createMDX({
