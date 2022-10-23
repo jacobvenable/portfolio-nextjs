@@ -95,6 +95,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       <Video
         aria-describedby={progressMeterId}
         aria-labelledby={titleId}
+        className={styles.video}
         controls={false}
         id={id}
         loading={isVideoLoading}
