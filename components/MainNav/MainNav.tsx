@@ -8,7 +8,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classnames from "classnames";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 import styles from "./MainNav.module.scss";
 import MainNavItem from "./MainNavItem";
@@ -17,6 +18,11 @@ import Typography from "components/Typography";
 
 const MainNav: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsMobileNavOpen(false);
+  }, [router.pathname]);
 
   return (
     <nav
