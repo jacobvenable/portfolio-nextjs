@@ -2,7 +2,7 @@ import classnames from "classnames";
 import { createContext, useContext, useMemo } from "react";
 
 import styles from "./Grid.module.scss";
-import { StackProps } from "components/Stack";
+import { getStackDirectionClassNames, StackProps } from "components/Stack";
 
 type GridContainerProps = Omit<StackProps, "itemProps">;
 type GridContext = Omit<GridContainerProps, "children" | "direction"> & {
@@ -22,10 +22,15 @@ const GridContainer: React.FC<GridContainerProps> = ({
     }),
     [direction, padded]
   );
+  const directionClassNames = useMemo(
+    () => getStackDirectionClassNames(direction),
+    [direction]
+  );
+
   return (
     <GridContext.Provider value={gridContextValue}>
       <div
-        className={classnames(styles.stack, styles[direction], {
+        className={classnames(styles.stack, directionClassNames, {
           [styles.padded]: padded,
         })}
       >
@@ -42,7 +47,7 @@ type GridItemProps = {
   medium?: columnSize;
   tablet?: columnSize;
   mobile?: columnSize;
-}
+};
 const GridItem: React.FC<GridItemProps> = ({
   children,
   large,
@@ -56,12 +61,16 @@ const GridItem: React.FC<GridItemProps> = ({
   const sizeTablet = tablet || sizeMobile;
   const sizeMedium = medium || sizeTablet;
   const sizeLarge = large || sizeMedium;
+  const directionClassNames = useMemo(
+    () => getStackDirectionClassNames(direction),
+    [direction]
+  );
 
   return (
     <div
       className={classnames(
         styles.item,
-        styles[direction],
+        directionClassNames,
         { [styles.padded]: padded },
         styles[`mobile-${sizeMobile}`],
         styles[`tablet-${sizeTablet}`],

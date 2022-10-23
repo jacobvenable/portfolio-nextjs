@@ -1,24 +1,58 @@
 import classnames from "classnames";
-import { Children } from "react";
+import { Children, useMemo } from "react";
 
 import styles from "./Stack.module.scss";
 
+type ScreenSize = "mobile" | "tablet" | "medium" | "large";
+type Direction = "horizontal" | "vertical";
+type DirectionByScreenSize = Partial<Record<ScreenSize, Direction>>;
+type DirectionProp = Direction | DirectionByScreenSize;
+
 export type StackProps = {
   children: React.ReactNode;
-  direction?: "horizontal" | "vertical";
+  direction?: DirectionProp;
   itemProps?: React.HTMLProps<HTMLDivElement>;
   padded?: boolean;
 };
 
+const DEFAULT_DIRECTION = "horizontal";
+
+export const getStackDirectionClassNames = (direction: DirectionProp) => {
+  if (typeof direction === "string") {
+    return [
+      styles[`mobile-${direction}`],
+      styles[`tablet-${direction}`],
+      styles[`medium-${direction}`],
+      styles[`large-${direction}`],
+    ];
+  }
+
+  const mobileDirection = direction.mobile || DEFAULT_DIRECTION;
+  const tabletDirection = direction.tablet || mobileDirection;
+  const mediumDirection = direction.medium || tabletDirection;
+  const largeDirection = direction.large || mediumDirection;
+  return [
+    styles[`mobile-${mobileDirection}`],
+    styles[`tablet-${tabletDirection}`],
+    styles[`medium-${mediumDirection}`],
+    styles[`large-${largeDirection}`],
+  ];
+};
+
 const Stack: React.FC<StackProps> = ({
   children,
-  direction = "horizontal",
+  direction = DEFAULT_DIRECTION,
   itemProps: { className: itemClassName = "", ...itemProps } = {},
   padded,
 }) => {
+  const directionClassNames = useMemo(
+    () => getStackDirectionClassNames(direction),
+    [direction]
+  );
+
   return (
     <div
-      className={classnames(styles.stack, styles[direction], {
+      className={classnames(styles.stack, directionClassNames, {
         [styles.padded]: padded,
       })}
     >
@@ -26,7 +60,7 @@ const Stack: React.FC<StackProps> = ({
         <div
           className={classnames(
             styles.item,
-            styles[direction],
+            directionClassNames,
             {
               [styles.padded]: padded,
             },

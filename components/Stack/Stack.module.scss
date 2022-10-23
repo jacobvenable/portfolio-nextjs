@@ -3,40 +3,64 @@
 $gap: px-to-rem(15);
 $gap-padded: $gap * 2;
 
+@mixin stack-horizontal {
+  flex-direction: row;
+  margin: 0 ($gap * -1 / 2);
+
+  &.padded {
+    margin: 0 ($gap-padded * -1 / 2);
+  }
+}
+
+@mixin stack-vertical {
+  flex-direction: column;
+}
+
 .stack {
   display: flex;
   flex-wrap: wrap;
 
-  &.horizontal {
-    flex-direction: row;
-    margin: 0 ($gap * -1 / 2);
+  @each $mqKey, $mq in $mqs {
+    @media #{$mq} {
+      &.#{$mqKey}-horizontal {
+        @include stack-horizontal;
+      }
 
-    &.padded {
-      margin: 0 ($gap-padded * -1 / 2);
+      &.#{$mqKey}-vertical {
+        @include stack-vertical;
+      }
     }
   }
+}
 
-  &.vertical {
-    flex-direction: column;
+@mixin item-horizontal {
+  padding: 0 ($gap / 2);
+
+  &.padded {
+    padding: 0 $gap-padded / 2;
+  }
+}
+
+@mixin item-vertical {
+  padding: ($gap / 2) 0;
+
+  &.padded {
+    padding: ($gap-padded / 2) 0;
   }
 }
 
 .item {
   flex: 0 1 auto;
 
-  &.horizontal {
-    padding: 0 ($gap / 2);
+  @each $mqKey, $mq in $mqs {
+    @media #{$mq} {
+      &.#{$mqKey}-horizontal {
+        @include item-horizontal;
+      }
 
-    &.padded {
-      padding: 0 $gap-padded / 2;
-    }
-  }
-
-  &.vertical {
-    padding: ($gap / 2) 0;
-
-    &.padded {
-      padding: ($gap-padded / 2) 0;
+      &.#{$mqKey}-vertical {
+        @include item-vertical;
+      }
     }
   }
 }
