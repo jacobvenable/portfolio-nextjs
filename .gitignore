@@ -8,7 +8,6 @@ yarn-error.log
 # NextJS files & directories
 .next
 .env.local
-out
 
 # OS files
 .DS_STORE
