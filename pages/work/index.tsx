@@ -5,12 +5,14 @@ import { definition as PortfolioGatsbyDefinition } from "./portfolio-gatsby";
 import { definition as PurdueConferencesDefinition } from "./purdue-conferences";
 import { definition as PurdueHomePageDefinition } from "./purdue-home-page";
 import { definition as PurdueTemplatesDefinition } from "./purdue-templates";
+import { definition as UpSwyngDefinition } from "./upswyng";
 import ContentContainer from "components/ContentContainer";
 import Head from "components/Head";
 import TriangleMask from "components/TriangleMask";
 import WorkItem, { WorkItemDefinition } from "components/WorkItem";
 
 const workItemDefintions: WorkItemDefinition[] = [
+  UpSwyngDefinition,
   PortfolioGatsbyDefinition,
   PurdueConferencesDefinition,
   PurdueHomePageDefinition,
