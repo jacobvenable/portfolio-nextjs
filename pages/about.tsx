@@ -2,6 +2,7 @@ import { faGraduationCap, faStar } from "@fortawesome/free-solid-svg-icons";
 
 import Accordion from "components/Accordion";
 import ContentContainer from "components/ContentContainer";
+import CurrentTech from "components/CurrentTech";
 import Faq from "components/Faq";
 import Grid from "components/Grid";
 import Head from "components/Head";
@@ -17,34 +18,23 @@ const AboutPage = () => {
         title="Experience"
       />
       <Typography variant="h1">About</Typography>
-      <Grid.Container>
+      <Grid.Container padded>
         <Grid.Item medium={50}>
           <Typography>
-            Ever since my sophomore year of high school, I knew that I wanted to
-            make my living through some kind of programming. After being exposed
-            to multiple avenues that could scratch that itch, I found my love of
-            the web where my work could reach millions in an instant.
+            By early high school, I knew that I wanted to make a living through
+            some kind of development. After exploring many avenues that could
+            scratch that itch, I found a love for the web, where my creations
+            could reach millions in an instant.
           </Typography>
           <Typography>
-            Since then I&apos;ve created a features for numerous types of
-            people: students, researchers, professors, farmers, crop
-            consultants, and even developers. Building these features required
-            various toolsets, but here&apos;s a list of what I enjoy working
-            with now:
+            Since then, I&apos;ve created features for numerous audiences:
+            students, researchers, professors, farmers, crop consultants, and
+            even developers. Building these features required various toolsets,
+            but here&apos;s a list of what I work with now:
           </Typography>
         </Grid.Item>
         <Grid.Item medium={50}>
-          <ul>
-            <li>TypeScript</li>
-            <li>React</li>
-            <li>React Native + React Native Web</li>
-            <li>Jest</li>
-            <li>CSS in JS</li>
-            <li>SASS</li>
-            <li>Node</li>
-            <li>GraphQl</li>
-            <li>Express</li>
-          </ul>
+          <CurrentTech />
         </Grid.Item>
       </Grid.Container>
       <Typography variant="h2">Experience</Typography>

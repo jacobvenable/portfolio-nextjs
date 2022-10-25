@@ -1,0 +1,30 @@
+@import "../../theme";
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(20);
+  padding: 0;
+}
+
+.item {
+  align-items: center;
+  display: flex;
+  gap: px-to-rem(30);
+  margin: 0;
+
+  &::before {
+    display: none;
+  }
+}
+
+.icon {
+  flex: 1 1 auto;
+  font-size: px-to-rem(50);
+  height: px-to-rem(50);
+  max-width: px-to-rem(50);
+}
+
+.content {
+  flex: 2 1 auto;
+}
