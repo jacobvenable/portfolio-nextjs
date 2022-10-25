@@ -72,16 +72,15 @@ const AboutPage = () => {
             </Typography>
             <ul>
               <li>
-                Reading: Believe it or not, I only just recently finished the
-                entire Harry Potter series over the summer.
-              </li>
-              <li>
-                CrossFit: I&apos;ve been going to crossfit since February 2018
-                because I need someone to yell at me to work out.
-              </li>
-              <li>
                 Hiking: Being originally a flat-lander from Indiana, I love
                 soaking in the views of the Rocky Mountains.
+              </li>
+              <li>
+                Coffee: I wouldn&apos;t call myself a snob but lets say I like
+                putting in some extra work for a good cup of Joe.
+              </li>
+              <li>
+                Archery: Honestly I can&apos;t help but feel like Legolas.
               </li>
             </ul>
           </Grid.Item>

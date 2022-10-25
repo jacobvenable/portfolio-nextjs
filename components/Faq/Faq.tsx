@@ -21,59 +21,6 @@ const Faq = () => {
             </Typography>
           </Accordion.Content>
           <Accordion.Button aria-level={3} role="heading">
-            What exactly is it that you do?
-          </Accordion.Button>
-          <Accordion.Content>
-            <Typography>
-              In my current role as a senior front-end developer for Purdue
-              Marketing and Media, I have a wide range of duties:
-            </Typography>
-            <ul>
-              <li>
-                create sites based on mockups provided by UX/UI designers (HTML,
-                CSS, and JS)
-              </li>
-              <li>
-                setup sites within the university&apos;s content management
-                system (Cascade Server)
-              </li>
-              <li>train end-users in using the content management system</li>
-              <li>
-                setup and improve the team&apos;s development workflows and
-                standards
-              </li>
-              <li>guide other web developers on the team</li>
-            </ul>
-            <Typography>
-              In the end, I like to think of myself a problem-solver. If
-              something doesn&apos;t work well or efficiently, I like to find
-              out how to make it better, and it shows with the changes I&apos;ve
-              made while at Purdue:
-            </Typography>
-            <ul>
-              <li>implemented Gulp.js to automate the development workflow</li>
-              <li>added SCSS to our toolkit to improve styles management</li>
-              <li>
-                created reusable patterns using BEM CSS class structuring
-                reducing CSS specificity to 1 - 2 levels
-              </li>
-              <li>improved JS bundling to decrease page load times</li>
-              <li>
-                instituted and documented the development team’s Git branching
-                model creating uniformity and accountability through code
-                reviews
-              </li>
-              <li>
-                developed an automatic, custom SVG parser within our CMS to
-                eliminate developer intervention when implementing inline SVGs
-              </li>
-              <li>
-                initiated and developed an improved UI within our content
-                management system
-              </li>
-            </ul>
-          </Accordion.Content>
-          <Accordion.Button aria-level={3} role="heading">
             How did you get into development?
           </Accordion.Button>
           <Accordion.Content>
