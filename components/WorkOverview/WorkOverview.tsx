@@ -1,6 +1,7 @@
 import { faClipboardList, faToolbox } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
+import styles from "./WorkOverview.module.scss";
 import Grid from "components/Grid";
 import Typography from "components/Typography";
 
@@ -14,7 +15,7 @@ const WorkOverview: React.FC<WorkOverviewProps> = ({
   tech,
 }) => {
   return (
-    <section aria-labelledby="overview">
+    <section aria-labelledby="overview" className={styles.container}>
       <Typography id="overview" variant="h2">
         Overview
       </Typography>
