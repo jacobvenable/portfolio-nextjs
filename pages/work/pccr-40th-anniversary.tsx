@@ -67,9 +67,21 @@ const PccrAnniversaryPage = () => {
         }}
       />
       <Stack direction="vertical">
-        <Image alt="screenshot of the home page" src={ImageHomeDesktop} />
-        <Image alt="screenshot of the about page" src={ImageContentDesktop1} />
-        <Image alt="screenshot of a story page" src={ImageContentDesktop2} />
+        <Image
+          alt="screenshot of the home page"
+          fullPageWidth
+          src={ImageHomeDesktop}
+        />
+        <Image
+          alt="screenshot of the about page"
+          fullPageWidth
+          src={ImageContentDesktop1}
+        />
+        <Image
+          alt="screenshot of a story page"
+          fullPageWidth
+          src={ImageContentDesktop2}
+        />
       </Stack>
     </ContentContainer>
   );

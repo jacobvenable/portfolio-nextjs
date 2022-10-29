@@ -74,6 +74,7 @@ const UpswyngPage = () => {
       <Image
         alt="UpSwyng's home page on a phone containing a search input and food, shelter, hygiene, transit, resources, hotlines, health, Wifi, job training, social services, and coordinated entry buttons"
         caption="the home page of the directory application"
+        fullPageWidth
         src={ImageHomeMobile}
       />
       <section aria-labelledby="dev">

@@ -74,7 +74,7 @@ const PurdueConferencesPage = () => {
           Templating: "reusable components generated via Handlebars",
         }}
       />
-      <Image alt="" src={ImageContentDesktop} />
+      <Image alt="" fullPageWidth src={ImageContentDesktop} />
       <section aria-labelledby="dev">
         <Typography id="dev" variant="h2">
           Development Notes
@@ -103,6 +103,7 @@ const PurdueConferencesPage = () => {
         <Image
           alt=""
           caption="the home page of the site, which implements CSS grid"
+          fullPageWidth
           src={ImageHomeDesktop}
         />
         <Typography>

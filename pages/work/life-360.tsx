@@ -75,6 +75,7 @@ const Life360Page = () => {
       <Image
         alt=""
         caption='the main "cover" story of the home page'
+        fullPageWidth
         src={HomeCoverImage}
       />
       <section aria-labelledby="dev">
@@ -108,11 +109,13 @@ const Life360Page = () => {
         <Image
           alt="example of desktop version of featured stories section of home page"
           caption="BEM was especially helpful when styling the various components that shared elements."
+          fullPageWidth
           src={HomeFeaturedImage}
         />
         <Image
           alt="example of desktop version of highlighted and other stories sections of home page"
           caption=""
+          fullPageWidth
           src={HomeHighlightsImage}
         />
         <Typography underline variant="h3">

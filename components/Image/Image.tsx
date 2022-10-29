@@ -1,6 +1,4 @@
-import classnames from "classnames";
 import NextImage, { ImageProps as NextImageProps } from "next/image";
-import { useMemo } from "react";
 
 import styles from "./Image.module.scss";
 
@@ -8,41 +6,46 @@ type ImageProps = NextImageProps & {
   alt?: string;
   caption?: string;
   className?: string;
+  fullPageWidth?: boolean;
 };
 
 const Image: React.FC<ImageProps> = ({
   alt = "",
   caption,
-  className,
-  height,
+  fullPageWidth,
   placeholder = "blur",
-  src,
-  width,
+  ...imageProps
 }) => {
-  const img = useMemo(
-    () => (
-      <NextImage
-        alt={alt}
-        className={classnames(styles.image, className)}
-        height={height}
-        placeholder={placeholder}
-        src={src}
-        width={width}
-      />
-    ),
-    [alt, className, height, placeholder, src, width]
-  );
+  const sizes = fullPageWidth
+    ? "(max-width: 47.9375em) 100vw, (max-width: 64em) 44.4375em, (max-width: 74.9375em) 100vw, (min-width: 75em) 71.4375em"
+    : undefined;
 
-  if (caption) {
+  if (!caption) {
     return (
-      <figure className={styles.figure}>
-        {img}
-        <figcaption className={styles.figureCaption}>{caption}</figcaption>
-      </figure>
+      <div className={styles.image}>
+        <NextImage
+          alt={alt}
+          placeholder={placeholder}
+          sizes={sizes}
+          {...imageProps}
+        />
+      </div>
     );
   }
 
-  return img;
+  return (
+    <figure className={styles.figure}>
+      <div className={styles.image}>
+        <NextImage
+          alt={alt}
+          placeholder={placeholder}
+          sizes={sizes}
+          {...imageProps}
+        />
+      </div>
+      <figcaption className={styles.figureCaption}>{caption}</figcaption>
+    </figure>
+  );
 };
 
 export default Image;

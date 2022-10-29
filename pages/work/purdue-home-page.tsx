@@ -67,6 +67,7 @@ const PurdueHomePage = () => {
         />
         <Image
           alt="screenshot of features added to the Purdue home page"
+          fullPageWidth
           src={ImageHomePageOverview}
         />
       </Stack>

@@ -62,6 +62,7 @@ const BoilerLifePage = () => {
       <Image
         alt=""
         caption="the landing page of the site displaying the currently featured Boilers"
+        fullPageWidth
         src={HomePageScreenshot}
       />
       <section aria-labelledby="dev">
@@ -92,6 +93,7 @@ const BoilerLifePage = () => {
         <Image
           alt=""
           caption="an example of a page telling the story of the featured Boiler"
+          fullPageWidth
           src={ContentPageScreenshot}
         />
         <Typography>

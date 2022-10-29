@@ -78,6 +78,7 @@ const PurdueTemplatesPage = () => {
       <Image
         alt=""
         caption="example of a page using the current audience template"
+        fullPageWidth
         src={ImageAudienceDesktop}
       />
       <section aria-labelledby="about">
@@ -134,11 +135,13 @@ const PurdueTemplatesPage = () => {
         <Image
           alt="example of Purdue Templates header used in 2014 featuring a light and dark gray striped background"
           caption="the header of the 2014 version of the web templates"
+          fullPageWidth
           src={ImageHeader2014}
         />
         <Image
           alt="example of Purdue Templates header used in 2015 featuring a black and dark gray striped background"
           caption="the header after the 2015 updates"
+          fullPageWidth
           src={ImageHeader2015}
         />
         <Typography>
@@ -175,7 +178,12 @@ const PurdueTemplatesPage = () => {
           Using these endpoints, I was able to setup our events feed page to
           pull from the central calendar system.
         </Typography>
-        <Image alt="" caption="example of the events feed" src={ImageEvents} />
+        <Image
+          alt=""
+          caption="example of the events feed"
+          fullPageWidth
+          src={ImageEvents}
+        />
         <Typography>
           The events feed was created using server-side PHP rather than
           client-side JS. This decision was made in an effort to improve
