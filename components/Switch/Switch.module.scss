@@ -1,0 +1,45 @@
+@import "../../theme";
+
+.container {
+  align-items: center;
+  background: none;
+  border: none;
+  color: $color-white-off;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: px-to-rem(5);
+}
+
+.switch {
+  background-color: $color-blue-light;
+  border: none;
+  border-radius: 25% / 50%;
+  display: block;
+  flex: 0 0 auto;
+  height: px-to-rem(25);
+  padding: 0;
+  position: relative;
+  width: px-to-rem(50);
+
+  &::before {
+    background-color: $color-black;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 90%;
+    left: 5%;
+    padding-left: 45%;
+    position: absolute;
+    top: 5%;
+    transition: left 0.25s;
+  }
+
+  &.toggled {
+    background-color: $color-yellow-light;
+
+    &::before {
+      left: 50%;
+    }
+  }
+}
