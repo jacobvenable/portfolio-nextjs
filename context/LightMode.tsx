@@ -1,12 +1,18 @@
-import React, { createContext, useEffect, useContext, useState } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-type TIsLightMode = boolean;
+type TIsLightMode = boolean | undefined;
 type LightModeContextValue = [
   TIsLightMode,
   React.Dispatch<React.SetStateAction<TIsLightMode>>
 ];
 export const LightModeContext = createContext<LightModeContextValue>([
-  false,
+  undefined,
   () => undefined,
 ]);
 
@@ -17,15 +23,26 @@ type LightModeContextProviderProps = {
 export const LightModeProvider: React.FC<LightModeContextProviderProps> = ({
   children,
 }) => {
-  const isLightModeState = useState(true);
-  const setIsLightMode = isLightModeState[1];
+  const [isLightMode, setIsLightMode] = useState<TIsLightMode>(undefined);
+
+  const wrappedSetIsLightMode = useCallback(
+    (isLightMode: boolean) => {
+      localStorage.setItem("isLightMode", isLightMode.toString());
+      setIsLightMode(isLightMode);
+    },
+    [setIsLightMode]
+  );
 
   useEffect(() => {
-    setIsLightMode(window.matchMedia("(prefers-color-scheme: light)").matches);
-  }, [setIsLightMode]);
+    const storedIsLightMode = localStorage.getItem("isLightMode") === "true";
+    const isLightModeByPreference = window.matchMedia(
+      "(prefers-color-scheme: light)"
+    ).matches;
+    wrappedSetIsLightMode(storedIsLightMode ?? isLightModeByPreference);
+  }, [wrappedSetIsLightMode]);
 
   return (
-    <LightModeContext.Provider value={isLightModeState}>
+    <LightModeContext.Provider value={[isLightMode, wrappedSetIsLightMode]}>
       {children}
     </LightModeContext.Provider>
   );

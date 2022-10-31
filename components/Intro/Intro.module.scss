@@ -11,8 +11,8 @@
   @media #{$mq-tablet-min} {
     // psuedo element used to as half "V"
     &::after {
-      border-bottom: solid 3px $color-yellow-light;
-      border-top: solid 3px $color-yellow-light;
+      border-bottom: solid 3px var(--color-primary-light);
+      border-top: solid 3px var(--color-primary-light);
       bottom: 100%;
       content: "";
       display: block;

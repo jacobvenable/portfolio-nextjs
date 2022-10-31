@@ -160,7 +160,7 @@
 }
 
 .role {
-  color: $color-yellow-light;
+  color: var(--color-primary-light);
   font-size: px-to-rem(19);
   margin: px-to-rem(5) 0 0;
 

@@ -18,7 +18,7 @@
   width: 100%;
 
   &.loading {
-    background: color.adjust($color-background, $lightness: 2%);
+    background: color.adjust($color-grey-dark, $lightness: 2%);
     position: relative;
 
     /* layer 1: title */
@@ -30,7 +30,7 @@
         linear-gradient(
           to right,
           transparent,
-          color.adjust($color-background, $lightness: 7%),
+          color.adjust($color-grey-dark, $lightness: 7%),
           transparent,
         );
       content: "";

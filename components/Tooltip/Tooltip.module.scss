@@ -1,8 +1,8 @@
 @import "../../theme";
 
 .tooltip {
-  background-color: $color-yellow-light;
-  color: $color-background;
+  background-color: var(--color-primary-light);
+  color: var(--color-background);
   display: inline-block;
   display: inline-flex;
   flex-flow: row nowrap;
@@ -16,7 +16,7 @@
   transform: translateY(px-to-rem(5));
 
   &::before {
-    border-bottom: px-to-rem(7) solid $color-yellow-light;
+    border-bottom: px-to-rem(7) solid var(--color-primary-light);
     border-left: px-to-rem(5) solid transparent;
     border-right: px-to-rem(5) solid transparent;
     bottom: 100%;

@@ -31,6 +31,7 @@ $button-default-padding-vertical: (
   position: relative;
   text-decoration: none;
   transition: unset;
+  z-index: 0;
 
   &::before,
   &::after {
@@ -187,40 +188,40 @@ $button-default-padding-vertical: (
 
 @mixin button-color($color, $color-accessible-foreground) {
   &:focus {
-    outline-color: $color-yellow-light;
+    outline-color: var(--color-primary-light);
   }
 
   &.hollow {
-    border-color: $color;
-    color: $color;
+    border-color: var($color);
+    color: var($color);
 
     &::before,
     &::after {
-      background-color: $color-background;
+      background-color: var(--color-background);
     }
 
     &:link,
     &:visited {
-      border-color: $color;
-      color: $color;
+      border-color: var($color);
+      color: var($color);
     }
 
     &:hover,
     &:active,
     &:focus,
     &[disabled] {
-      border-color: $color;
-      color: $color-accessible-foreground;
+      border-color: var($color);
+      color: var($color-accessible-foreground);
 
       &::before {
-        background-color: $color;
+        background-color: var($color);
       }
     }
   }
 
   &.ghost {
     border: none;
-    color: $color;
+    color: var($color);
 
     &::before,
     &::after {
@@ -230,7 +231,7 @@ $button-default-padding-vertical: (
     &:link,
     &:visited {
       border: none;
-      color: $color;
+      color: var($color);
     }
 
     &:hover,
@@ -238,17 +239,17 @@ $button-default-padding-vertical: (
     &:focus,
     &[disabled] {
       border: none;
-      color: $color;
+      color: var($color);
     }
   }
 
   &.solid {
-    border-color: $color;
-    color: $color-accessible-foreground;
+    border-color: var($color);
+    color: var($color-accessible-foreground);
 
     &::before,
     &::after {
-      background-color: $color;
+      background-color: var($color);
     }
 
     &::after {
@@ -257,40 +258,32 @@ $button-default-padding-vertical: (
 
     &:link,
     &:visited {
-      border-color: $color;
-      color: $color-accessible-foreground;
+      border-color: var($color);
+      color: var($color-accessible-foreground);
     }
 
     &:hover,
     &:active,
     &:focus,
     &[disabled] {
-      border-color: $color;
-      color: $color-accessible-foreground;
+      border-color: var($color);
+      color: var(--color-foreground);
 
       &::before {
-        background-color: $color-background;
+        background-color: var(--color-background);
       }
     }
   }
 }
 
 .blue-dark {
-  @include button-color($color-blue-dark, $color-white-off);
-}
-
-.blue-light {
-  @include button-color($color-blue-light, $color-background);
+  @include button-color(--color-secondary-dark, --color-secondary-dark-accessible);
 }
 
 .white {
-  @include button-color($color-white-off, $color-background);
+  @include button-color(--color-foreground, --color-background);
 }
 
 .yellow-light {
-  @include button-color($color-yellow-light, $color-background);
-}
-
-.yellow-dark {
-  @include button-color($color-yellow-dark, $color-background);
+  @include button-color(--color-primary-light, --color-primary-light-accessible);
 }

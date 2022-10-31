@@ -1,4 +1,5 @@
 import { config } from "@fortawesome/fontawesome-svg-core";
+import classNames from "classnames";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -16,8 +17,13 @@ import favSafariPinnedTab from "images/favicon_safari-pinned-tab.svg";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const [isLightMode] = useLightMode();
+
   return (
-    <div className={isLightMode ? "light" : "dark"}>
+    <div
+      className={classNames(isLightMode ? "light" : "dark", "app", {
+        loading: typeof isLightMode !== "boolean",
+      })}
+    >
       <Head>
         <meta charSet="utf-8" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />

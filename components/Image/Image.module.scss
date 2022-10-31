@@ -10,11 +10,11 @@
 
 .figureCaption {
   $border-height: 1px;
-  $border-color: $color-yellow-light;
+  $border-color: var(--color-primary-light);
 
   align-self: flex-end;
   border-top: solid $border-height $border-color;
-  color: $color-yellow-light;
+  color: var(--color-primary-light);
   flex: 0 1 auto;
   font-size: px-to-rem(14);
   margin: px-to-rem(20) 0 0;

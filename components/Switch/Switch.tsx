@@ -5,6 +5,7 @@ import styles from "./Switch.module.scss";
 import Typography from "components/Typography";
 
 type SwitchProps = {
+  className?: string;
   id: string;
   isToggled?: boolean;
   label: string;
@@ -16,6 +17,7 @@ type SwitchProps = {
 const noop = () => undefined;
 
 const Switch: React.FC<SwitchProps> = ({
+  className,
   isToggled: isToggledProp,
   id,
   label,
@@ -30,10 +32,10 @@ const Switch: React.FC<SwitchProps> = ({
     <>
       <button
         aria-checked={isToggledProp ?? isToggled}
-        className={styles.container}
+        className={classNames(styles.container, className)}
         id={id}
         onClick={() => {
-          onToggle(!isToggledInternal);
+          onToggle(!isToggled);
           setIsToggledInternal((isToggled) => !isToggled);
         }}
         role="switch"

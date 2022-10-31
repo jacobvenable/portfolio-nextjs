@@ -1,5 +1,6 @@
 import styles from "./Header.module.scss";
 import ContentContainer from "components/ContentContainer";
+import LightModeSwitch from "components/LightModeSwitch";
 import Link from "components/Link";
 import Logo from "components/Logo";
 import MainNav from "components/MainNav";
@@ -18,6 +19,7 @@ const Header = () => {
           </div>
         </Link>
         <MainNav />
+        <LightModeSwitch />
       </ContentContainer>
     </header>
   );

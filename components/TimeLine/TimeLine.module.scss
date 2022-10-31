@@ -2,7 +2,7 @@
 @import "../../theme";
 
 @mixin timeline-border {
-  border-right: solid 1px $color-yellow-light;
+  border-right: solid 1px var(--color-primary-light);
 }
 
 .item {
@@ -49,7 +49,7 @@
     @include timeline-border;
 
     align-items: center;
-    color: $color-yellow-light;
+    color: var(--color-primary-light);
     display: flex;
     flex-direction: row;
     gap: px-to-rem(5);
@@ -57,7 +57,7 @@
     justify-content: space-between;
 
     &::after {
-      border-top: solid 1px $color-yellow-light;
+      border-top: solid 1px var(--color-primary-light);
       content: "";
       display: block;
       flex: 0 1 auto;

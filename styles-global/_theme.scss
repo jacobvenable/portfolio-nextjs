@@ -1,0 +1,33 @@
+@import "../theme";
+
+.dark {
+  --color-background: #{$color-grey-dark};
+  --color-foreground: #{$color-white};
+  --color-primary-light: #{$color-yellow-light};
+  --color-primary-light-accessible: #{$color-black};
+  --color-primary-dark: #{$color-yellow-dark};
+  --color-primary-dark-accessible: #{$color-black};
+  --color-secondary-light: #{$color-blue-light};
+  --color-secondary-light-accessible: #{$color-black};
+  --color-secondary-dark: #{$color-blue-dark};
+  --color-secondary-dark-accessible: #{$color-white};
+
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.light {
+  --color-background: #{$color-white};
+  --color-foreground: #{$color-grey-dark};
+  --color-primary-light: #{$color-blue-light};
+  --color-primary-light-accessible: #{$color-black};
+  --color-primary-dark: #{$color-blue-dark};
+  --color-primary-dark-accessible: #{$color-white};
+  --color-secondary-light: #{$color-blue-light};
+  --color-secondary-light-accessible: #{$color-black};
+  --color-secondary-dark: #{$color-blue-dark};
+  --color-secondary-dark-accessible: #{$color-white};
+
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}

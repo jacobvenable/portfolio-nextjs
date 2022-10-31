@@ -62,7 +62,7 @@
 
 .submitMessage {
   clear: both;
-  color: $color-yellow-light;
+  color: var(--color-primary-light);
   display: block;
   font-size: px-to-rem(16);
   line-height: 1.2;

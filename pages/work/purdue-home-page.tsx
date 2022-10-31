@@ -5,7 +5,6 @@ import ContentContainer from "components/ContentContainer";
 import Head from "components/Head";
 import Image from "components/Image";
 import Link from "components/Link";
-import Stack from "components/Stack";
 import Typography from "components/Typography";
 import VideoPlayer from "components/VideoPlayer";
 import type { WorkItemDefinition } from "components/WorkItem";
@@ -48,29 +47,27 @@ const PurdueHomePage = () => {
         title="Purdue Home Page Redesign"
       />
       <Typography variant="h1">Purdue Home Page</Typography>
-      <Stack direction="vertical">
-        <WorkOverview
-          responsibilities={[
-            "review design for accessibility issues",
-            "use Git and GitHub for version control and tracking progress",
-            "implement custom features according to WCAG 2.0",
-            "test for browser inconsistencies",
-            "implement all content management within Cascade Server",
-          ]}
-          tech={{
-            "Task Runner": "Gulp.js",
-            CSS: "new components structured with BEM and written/compiled in SCSS",
-            JS: "JS modules bundled with Browserify + Watchify and minified via Uglify",
-            "Back-end": "PHP for handling scheduled components",
-            CMS: "UI built & data stored in Cascade Server and compiled via Apache Velocity",
-          }}
-        />
-        <Image
-          alt="screenshot of features added to the Purdue home page"
-          fullPageWidth
-          src={ImageHomePageOverview}
-        />
-      </Stack>
+      <WorkOverview
+        responsibilities={[
+          "review design for accessibility issues",
+          "use Git and GitHub for version control and tracking progress",
+          "implement custom features according to WCAG 2.0",
+          "test for browser inconsistencies",
+          "implement all content management within Cascade Server",
+        ]}
+        tech={{
+          "Task Runner": "Gulp.js",
+          CSS: "new components structured with BEM and written/compiled in SCSS",
+          JS: "JS modules bundled with Browserify + Watchify and minified via Uglify",
+          "Back-end": "PHP for handling scheduled components",
+          CMS: "UI built & data stored in Cascade Server and compiled via Apache Velocity",
+        }}
+      />
+      <Image
+        alt="screenshot of features added to the Purdue home page"
+        fullPageWidth
+        src={ImageHomePageOverview}
+      />
       <section aria-labelledby="dev">
         <Typography id="dev" variant="h2">
           Development Notes

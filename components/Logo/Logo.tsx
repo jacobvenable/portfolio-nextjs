@@ -1,8 +1,11 @@
 import styles from "./Logo.module.scss";
 import Image from "components/Image";
-import logoSvg from "images/logo.svg";
+import { useLightMode } from "context/LightMode";
+import logoDarkSvg from "images/logo-dark.svg";
+import logoLightSvg from "images/logo-light.svg";
 
 const Logo: React.FC = () => {
+  const [isLightMode] = useLightMode();
   return (
     <div className={styles.outerContainer}>
       <div className={styles.innerContainer}>
@@ -12,7 +15,7 @@ const Logo: React.FC = () => {
           loading="eager"
           placeholder="empty"
           priority
-          src={logoSvg}
+          src={isLightMode ? logoLightSvg : logoDarkSvg}
         />
       </div>
     </div>

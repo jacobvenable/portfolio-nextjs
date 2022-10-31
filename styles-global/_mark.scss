@@ -1,5 +1,5 @@
 @mixin mark {
-  background-color: $color-blue-dark;
+  background-color: var(--color-secondary-dark);
   color: #fff;
 }
 

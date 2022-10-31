@@ -3,7 +3,7 @@
 .container {
   background: none;
   bottom: 0;
-  color: $color-white-off;
+  color: var(--color-foreground);
   display: block;
   font-family: $font-montserrat;
   font-size: px-to-rem(20);
@@ -23,7 +23,7 @@
     max-height: px-to-rem-mobile(100);
   }
 
-  @media #{$mq-tablet-min} {
+  @media #{$mq-medium-min} {
     float: left;
     margin: 0 0 0 px-to-rem(7);
     max-height: none;
@@ -37,15 +37,15 @@
   left: 0;
   position: absolute;
 
-  @media #{$mq-tablet-min} {
+  @media #{$mq-medium-min} {
     display: none;
   }
 
   button {
     align-items: center;
-    background-color: $color-yellow-light;
+    background-color: var(--color-primary-light);
     border: none;
-    color: $color-background;
+    color: var(--color-background);
     display: inline-flex;
     flex-direction: row;
     float: none;
@@ -67,7 +67,7 @@
 
     &:hover,
     &:focus {
-      background-color: $color-yellow-light;
+      background-color: var(--color-primary-light);
       border: none;
       cursor: pointer;
       outline: none;
@@ -76,13 +76,13 @@
 }
 
 .icon {
-  color: $color-yellow-light;
+  color: var(--color-primary-light);
   display: block;
   font-size: px-to-rem-mobile(30);
   margin-bottom: px-to-rem-mobile(7);
   transition: transform 0.2s ease-out;
 
-  @media #{$mq-tablet-min} {
+  @media #{$mq-medium-min} {
     display: none;
   }
 }
@@ -99,7 +99,7 @@
 .list {
   align-items: stretch;
   background-color: #000;
-  border-top: solid 1px $color-white-off;
+  border-top: solid 1px var(--color-foreground);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
@@ -108,7 +108,7 @@
   padding: 0;
   width: 100%;
 
-  @media #{$mq-tablet-min} {
+  @media #{$mq-medium-min} {
     background: none;
     border-top: none;
     justify-content: flex-start;
@@ -135,7 +135,7 @@
     display: block;
   }
 
-  @media #{$mq-tablet-min} {
+  @media #{$mq-medium-min} {
     flex: 0 0 auto;
     padding: 0 0 0 px-to-rem(14);
 
@@ -180,13 +180,13 @@
 
   &:link,
   &:visited {
-    color: $color-white-off;
+    color: var(--color-foreground);
     text-decoration: none;
   }
 
   &:hover,
   &:active {
-    color: $color-white-off;
+    color: var(--color-foreground);
     text-decoration: none;
 
     .icon {
@@ -195,10 +195,10 @@
   }
 
   &.currentLink {
-    border-bottom: solid 1px $color-yellow-light;
+    border-bottom: solid 1px var(--color-primary-light);
   }
 
-  @media #{$mq-tablet-min} {
+  @media #{$mq-medium-min} {
     display: inline-block;
     font-size: 1em;
     padding: px-to-rem(5) px-to-rem(18);
@@ -206,7 +206,7 @@
 
     &::before,
     &::after {
-      background-color: $color-yellow-light;
+      background-color: var(--color-primary-light);
       content: "";
       display: block;
       height: px-to-rem(2);
@@ -232,7 +232,7 @@
     &:hover,
     &:active,
     &:focus {
-      color: $color-white-off;
+      color: var(--color-foreground);
       text-decoration: none;
 
       &::before {
@@ -249,12 +249,12 @@
     }
 
     &:focus {
-      outline: dotted 1px $color-white-off;
+      outline: dotted 1px var(--color-foreground);
     }
 
     &.currentLink {
       border-bottom: none;
-      color: $color-yellow-light;
+      color: var(--color-primary-light);
 
       &::before {
         left: px-to-rem(5);
@@ -268,7 +268,7 @@
 
       &:link,
       &:visited {
-        color: $color-yellow-light;
+        color: var(--color-primary-light);
 
         &::before {
           left: px-to-rem(5);
@@ -283,7 +283,7 @@
 
       &:hover,
       &:active {
-        color: $color-yellow-light;
+        color: var(--color-primary-light);
       }
     }
   }

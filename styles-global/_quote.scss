@@ -1,5 +1,5 @@
 @mixin quote {
-  color: $color-yellow-light;
+  color: var(--color-primary-light);
   display: inline;
   font-size: 1em;
   font-style: italic;

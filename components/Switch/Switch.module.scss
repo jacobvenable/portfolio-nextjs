@@ -4,7 +4,7 @@
   align-items: center;
   background: none;
   border: none;
-  color: $color-white-off;
+  color: var(--color-foreground);
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -36,9 +36,10 @@
   }
 
   &.toggled {
-    background-color: $color-yellow-light;
+    background-color: var(--color-primary-light);
 
     &::before {
+      background-color: $color-yellow-light;
       left: 50%;
     }
   }

@@ -12,12 +12,7 @@ export type ButtonProps<P = React.HTMLProps<HTMLButtonElement>> =
     Omit<P, "size"> & {
       children: React.ReactNode;
       className?: string;
-      color?:
-        | "blue-dark"
-        | "blue-light"
-        | "white"
-        | "yellow-dark"
-        | "yellow-light";
+      color?: "blue-dark" | "white" | "yellow-light";
       component?: string | React.FC;
       iconProps?: FontAwesomeIconProps;
       variant?: "hollow" | "ghost" | "solid";

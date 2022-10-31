@@ -9,7 +9,7 @@
 @mixin heading-1 {
   @include heading;
 
-  color: $color-yellow-dark;
+  color: var(--color-primary-dark);
   font-family: $font-montserrat;
   font-size: px-to-rem-mobile(41);
   font-weight: 700;
@@ -56,7 +56,7 @@
 @mixin heading-3 {
   @include heading;
 
-  color: $color-white-off;
+  color: var(--color-foreground);
   font-family: $font-montserrat;
   font-size: px-to-rem-mobile(24);
   font-weight: 400;
@@ -80,7 +80,7 @@
 @mixin heading-4 {
   @include heading;
 
-  color: $color-yellow-light;
+  color: var(--color-primary-light);
   font-family: $font-montserrat;
   font-size: px-to-rem-mobile(19);
   font-weight: 700;
@@ -104,7 +104,7 @@
 @mixin heading-5 {
   @include heading;
 
-  color: $color-yellow-light;
+  color: var(--color-primary-light);
   font-family: $font-opensans;
   font-size: px-to-rem-mobile(18);
   font-weight: 400;
@@ -129,7 +129,7 @@
 @mixin heading-6 {
   @include heading;
 
-  color: $color-yellow-light;
+  color: var(--color-primary-light);
   font-family: $font-opensans;
   font-size: px-to-rem-mobile(14);
   font-weight: 400;

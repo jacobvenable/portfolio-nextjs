@@ -1,5 +1,5 @@
 @mixin label {
-  color: $color-yellow-light;
+  color: var(--color-primary-light);
   display: block;
   font-family: $font-opensans;
   font-size: px-to-rem(18);

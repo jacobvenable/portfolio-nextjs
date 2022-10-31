@@ -1,8 +1,8 @@
 @import "../../theme";
 
 .link {
-  background-color: $color-background;
-  border: solid 1px $color-white-off;
+  background-color: var(--color-background);
+  border: solid 1px var(--color-foreground);
   display: inline-block;
   font-size: px-to-rem(20);
   left: -10rem;
@@ -20,7 +20,7 @@
   &:visited,
   &:hover,
   &:active {
-    color: $color-yellow-light;
+    color: var(--color-primary-light);
     text-decoration: none;
   }
 }

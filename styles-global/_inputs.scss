@@ -4,7 +4,7 @@
   border: none;
   border-bottom: solid 1px $color-blue-light;
   border-radius: 0;
-  color: $color-white-off;
+  color: var(--color-foreground);
   display: block;
   font-family: $font-opensans;
   font-size: px-to-rem(22);
@@ -14,7 +14,7 @@
   width: 100%;
 
   &:focus {
-    border-color: $color-yellow-light;
+    border-color: var(--color-primary-light);
     outline: none;
   }
 }

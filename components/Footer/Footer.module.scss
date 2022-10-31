@@ -14,7 +14,7 @@
 
   &::before,
   &::after {
-    background: $color-yellow-light;
+    background: var(--color-primary-light);
     content: "";
     display: inline-block;
     height: px-to-rem(1);

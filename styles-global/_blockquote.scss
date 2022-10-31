@@ -1,6 +1,6 @@
 @mixin blockquote {
-  border-left: solid px-to-rem(5) $color-yellow-light;
-  color: $color-yellow-light;
+  border-left: solid px-to-rem(5) var(--color-primary-light);
+  color: var(--color-primary-light);
   display: block;
   font-size: 1em;
   line-height: 1.72em;

@@ -1,7 +1,7 @@
 @import "../../theme";
 
 .containerOuter {
-  background: $color-background;
+  background: var(--color-background);
   display: block;
   overflow: hidden;
   padding: px-to-rem-mobile(15) 0;
@@ -10,7 +10,7 @@
   width: 100%;
   z-index: 10;
 
-  @media #{$mq-tablet-min} {
+  @media #{$mq-medium-min} {
     padding: px-to-rem(15) 0;
     position: sticky;
   }
@@ -21,7 +21,11 @@
   display: block;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: space-between;
+
+  @media #{$mq-medium-min} {
+    justify-content: flex-start;
+  }
 }
 
 .linkLogo {
@@ -55,34 +59,26 @@
   white-space: nowrap;
 
   @media #{$mq-tablet-min} {
-    border-right: solid 2px $color-yellow-dark;
+    border-right: solid 2px var(--color-primary-dark);
   }
 }
 
 .name {
-  color: $color-yellow-dark;
+  color: var(--color-primary-dark);
   display: block;
   flex: 0 0 auto;
   font-family: $font-montserrat;
-  font-size: px-to-rem(26);
+  font-size: px-to-rem(22);
   font-weight: 400;
   line-height: 1.2em;
-
-  @media #{$mq-tablet-min} {
-    font-size: px-to-rem(22);
-  }
 }
 
 .title {
-  color: $color-white-off;
+  color: var(--color-foreground);
   display: block;
   flex: 0 0 auto;
   font-family: $font-montserrat;
-  font-size: px-to-rem(18);
+  font-size: px-to-rem(14);
   font-weight: 300;
   line-height: 1.2em;
-
-  @media #{$mq-tablet-min} {
-    font-size: px-to-rem(14);
-  }
 }

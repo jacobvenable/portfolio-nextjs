@@ -24,7 +24,7 @@
   }
 
   &:focus {
-    outline: dotted 1px $color-white-off;
+    outline: dotted 1px var(--color-foreground);
   }
 
   &::after {

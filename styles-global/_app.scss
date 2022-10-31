@@ -1,0 +1,13 @@
+.app {
+  margin: 0;
+  opacity: 1;
+  padding-bottom: px-to-rem-mobile(60);
+
+  @media #{$mq-tablet-min} {
+    padding-bottom: 0;
+  }
+
+  &.loading {
+    opacity: 0;
+  }
+}
