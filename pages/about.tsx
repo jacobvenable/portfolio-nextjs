@@ -87,7 +87,7 @@ const AboutPage = () => {
         </Grid.Container>
         <Accordion.Group idPrefix="learn-more">
           <Stack direction="vertical" padded>
-            <Accordion.Button color="blue-dark" variant="solid">
+            <Accordion.Button color="secondary" variant="solid">
               I need to know more
             </Accordion.Button>
             <Accordion.Content>

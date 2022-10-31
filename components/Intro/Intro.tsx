@@ -30,11 +30,11 @@ const Intro = () => (
             tablet: "horizontal",
           }}
         >
-          <Button<LinkProps> color="yellow-light" component={Link} href="/work">
+          <Button<LinkProps> color="primary" component={Link} href="/work">
             View my Work
           </Button>
           <Button<LinkProps>
-            color="blue-dark"
+            color="secondary"
             component={Link}
             href="/contact"
             variant="solid"
@@ -44,7 +44,7 @@ const Intro = () => (
         </Stack>
 
         <Button<LinkProps>
-          color="yellow-light"
+          color="primary"
           component={Link}
           href="/about"
           iconProps={{

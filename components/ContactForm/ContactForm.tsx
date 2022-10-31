@@ -153,7 +153,7 @@ const ContactForm: React.FC = () => {
         />
         <Button
           className={styles.button}
-          color="yellow-light"
+          color="primary"
           disabled={isSubmitting}
           iconProps={{
             icon: isSubmitting ? faSpinner : faPaperPlane,

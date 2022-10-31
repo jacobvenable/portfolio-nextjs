@@ -51,7 +51,7 @@ const PurdueConferencesPage = () => {
       />
       <Typography variant="h1">Purdue Conferences</Typography>
       <Button<LinkProps>
-        color="blue-dark"
+        color="secondary"
         component={Link}
         href="https://www.purdue.edu/conferences/"
         variant="solid"

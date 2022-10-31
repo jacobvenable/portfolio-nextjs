@@ -49,7 +49,7 @@ const Life360Page = () => {
         (HHS)
       </Typography>
       <Button<LinkProps>
-        color="blue-dark"
+        color="secondary"
         component={Link}
         href="https://www.purdue.edu/hhs/life360/"
         variant="solid"

@@ -276,14 +276,14 @@ $button-default-padding-vertical: (
   }
 }
 
-.blue-dark {
+.secondary {
   @include button-color(--color-secondary-dark, --color-secondary-dark-accessible);
 }
 
-.white {
+.foreground {
   @include button-color(--color-foreground, --color-background);
 }
 
-.yellow-light {
+.primary {
   @include button-color(--color-primary-light, --color-primary-light-accessible);
 }

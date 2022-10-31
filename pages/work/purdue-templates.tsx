@@ -50,7 +50,7 @@ const PurdueTemplatesPage = () => {
         organizations across Purdue University
       </Typography>
       <Button<LinkProps>
-        color="yellow-light"
+        color="primary"
         component={Link}
         href="https://github.com/PurdueMarketingAndMedia/purdueTemplates-2015"
         variant="hollow"

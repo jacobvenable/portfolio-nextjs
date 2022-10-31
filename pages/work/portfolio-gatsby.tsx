@@ -52,7 +52,7 @@ const PortfolioGatsbyPage = () => {
         a previous version of my personal portfolio site built via GatsbyJS
       </Typography>
       <Button<LinkProps>
-        color="yellow-light"
+        color="primary"
         component={Link}
         href="https://github.com/jacobvenable/portfolio-gatsby/"
         variant="hollow"
@@ -260,7 +260,8 @@ const PortfolioGatsbyPage = () => {
             the FAQ section of the <Link href="/">home page</Link>
           </li>
           <li>
-            the main content of the <Link href="/experience/">experience page</Link>
+            the main content of the{" "}
+            <Link href="/experience/">experience page</Link>
           </li>
         </ul>
         <Typography>

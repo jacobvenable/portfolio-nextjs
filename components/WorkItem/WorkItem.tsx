@@ -77,7 +77,7 @@ const WorkItem: React.FC<WorkItemProps> = ({
         <Button<LinkProps>
           aria-describedby={title}
           className={styles.button}
-          color="yellow-light"
+          color="primary"
           component={Link}
           href={route}
         >

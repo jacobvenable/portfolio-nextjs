@@ -42,7 +42,7 @@ export const ExtendedAccordionButton: React.FC<AccordionButtonProps> = ({
     <AccordionButton
       aria-expanded={isOpen}
       className={classNames(styles.button, className)}
-      color="yellow-light"
+      color="primary"
       iconProps={{
         icon: faChevronUp,
         transform: { rotate: isOpen ? 180 : 0 },

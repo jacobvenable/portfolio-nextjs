@@ -30,7 +30,7 @@ const ContactPage = () => {
           </Typography>
           <Stack padded>
             <Button<LinkProps>
-              color="yellow-light"
+              color="primary"
               component={Link}
               href="https://www.linkedin.com/in/jacob-venable/"
               size="large"
@@ -42,7 +42,7 @@ const ContactPage = () => {
               <FontAwesomeIcon icon={faLinkedin} />
             </Button>
             <Button<LinkProps>
-              color="yellow-light"
+              color="primary"
               component={Link}
               href="https://github.com/jacobvenable"
               size="large"

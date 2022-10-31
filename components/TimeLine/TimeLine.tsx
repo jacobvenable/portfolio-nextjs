@@ -147,7 +147,7 @@ const TimeLine: React.FC = () => {
           <div className={styles.button}>
             <Accordion.Button
               aria-describedby={item.title}
-              color="yellow-light"
+              color="primary"
               component={Button}
               size="small"
               variant="hollow"

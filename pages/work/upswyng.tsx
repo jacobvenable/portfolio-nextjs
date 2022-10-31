@@ -48,7 +48,7 @@ const UpswyngPage = () => {
         and at-risk communities
       </Typography>
       <Button<LinkProps>
-        color="yellow-light"
+        color="primary"
         component={Link}
         href="https://github.com/CodeForBoulder/upswyng"
         variant="hollow"
