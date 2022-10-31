@@ -6,6 +6,7 @@ import { Controller } from "react-hook-form";
 
 import styles from "./Recaptcha.module.scss";
 import Tooltip from "components/Tooltip";
+import { useLightMode } from "context/LightMode";
 
 type RecaptchaProps = {
   className?: string;
@@ -14,6 +15,8 @@ type RecaptchaProps = {
 
 const Recaptcha: React.FC<RecaptchaProps> = ({ className, name }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isLightMode] = useLightMode();
+
   return (
     <Controller
       name={name}
@@ -29,7 +32,7 @@ const Recaptcha: React.FC<RecaptchaProps> = ({ className, name }) => {
             asyncScriptOnLoad={() => setIsLoading(false)}
             onChange={onChange}
             sitekey={process.env.NEXT_PUBLIC_SITE_RECAPTCHA_KEY}
-            theme="dark"
+            theme={isLightMode ? "light" : "dark"}
           />
           <Tooltip iconProps={{ icon: faWarning }} visible={!!error}>
             Please prove you aren&apos;t a robot.
