@@ -186,6 +186,12 @@ $button-default-padding-vertical: (
   }
 }
 
+:global(.light) {
+  .button {
+    border-width: 2px;
+  }
+}
+
 @mixin button-color($color, $color-accessible-foreground) {
   &:focus {
     outline-color: var(--color-primary-light);
