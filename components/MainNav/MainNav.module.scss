@@ -98,7 +98,7 @@
 
 .list {
   align-items: stretch;
-  background-color: #000;
+  background-color: var(--color-background);
   border-top: solid 1px var(--color-foreground);
   display: flex;
   flex-flow: row nowrap;
