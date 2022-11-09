@@ -16,7 +16,7 @@ export const definition: WorkItemDefinition = {
   title: "UpSwyng",
   roles: ["Full-Stack Development", "Project Management"],
   blurb:
-    "a mobile-ready, digital directory of resources to assist the unhoused and at-risk communities",
+    "an open source, digital directory of resources to assist the unhoused and at-risk communities",
   route: "/work/upswyng",
   thumb: Thumb,
   tech: [
@@ -37,14 +37,14 @@ const UpswyngPage = () => {
   return (
     <ContentContainer>
       <Head
-        description="An overview of UpSwyng, a mobile-ready, digital directory of resources to assist the unhoused and at-risk communities."
-        title="Personal Portfolio (Previous)"
+        description="An overview of UpSwyng, an open source, digital directory of resources to assist the unhoused and at-risk communities."
+        title="Personal Portfolio (Previous)`"
       >
         <meta content="noindex" name="robots" />
       </Head>
       <Typography variant="h1">UpSwyng</Typography>
       <Typography variant="tagline">
-        a mobile-ready, digital directory of resources to assist the unhoused
+        an open source, digital directory of resources to assist the unhoused
         and at-risk communities
       </Typography>
       <Button<LinkProps>
